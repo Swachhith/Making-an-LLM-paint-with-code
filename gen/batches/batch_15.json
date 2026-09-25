@@ -1,0 +1,86 @@
+[
+ {
+  "category": "trees",
+  "subject": "an old apple tree with fruit",
+  "composition": "a tall vertical composition",
+  "palette": "warm light",
+  "id": "b15_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "desert sand dunes",
+  "composition": "a path or river leading into the distance",
+  "palette": "muted and earthy",
+  "id": "b15_02"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a city skyline",
+  "composition": "the sun low and off-centre",
+  "palette": "high contrast with dark silhouettes",
+  "id": "b15_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a golden black-eyed susan",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "high contrast with deep shadowed centres",
+  "id": "b15_04"
+ },
+ {
+  "category": "night",
+  "subject": "fireflies over a dark meadow",
+  "composition": "a tall vertical composition",
+  "palette": "deep blue and violet",
+  "id": "b15_05"
+ },
+ {
+  "category": "houses",
+  "subject": "a red barn in a field",
+  "composition": "seen from a low angle",
+  "palette": "muted and earthy",
+  "id": "b15_06"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple and yellow pansy",
+  "composition": "a small cluster of three blooms",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b15_07"
+ },
+ {
+  "category": "night",
+  "subject": "a snowy night with a glowing cabin",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "cool teal and indigo",
+  "id": "b15_08"
+ },
+ {
+  "category": "night",
+  "subject": "a crescent moon above pine trees",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "near-black with a few warm lights",
+  "id": "b15_09"
+ },
+ {
+  "category": "mountains",
+  "subject": "a lone red-roofed hut below a mountain",
+  "composition": "one peak large and off-centre",
+  "palette": "warm light",
+  "id": "b15_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "a coral peony",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b15_11"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over the sea",
+  "composition": "silhouettes against the sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "id": "b15_12"
+ }
+]

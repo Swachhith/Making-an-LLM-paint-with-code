@@ -1,0 +1,86 @@
+[
+ {
+  "category": "sunsets",
+  "subject": "a desert sunset with a lone cactus",
+  "composition": "silhouettes against the sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "id": "b20_01"
+ },
+ {
+  "category": "mountains",
+  "subject": "snow-capped mountains",
+  "composition": "layered ridges fading into the distance",
+  "palette": "warm light",
+  "id": "b20_02"
+ },
+ {
+  "category": "flowers",
+  "subject": "a plum hellebore",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "saturated and bold",
+  "id": "b20_03"
+ },
+ {
+  "category": "night",
+  "subject": "a snowy night with a glowing cabin",
+  "composition": "a tall vertical composition",
+  "palette": "limited palette: one dark blue plus one warm yellow",
+  "id": "b20_04"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a quiet lake with reeds",
+  "composition": "a path or river leading into the distance",
+  "palette": "cool light",
+  "id": "b20_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a violet iris",
+  "composition": "a small cluster of three blooms",
+  "palette": "muted and earthy",
+  "id": "b20_06"
+ },
+ {
+  "category": "flowers",
+  "subject": "a pale pink cherry blossom branch",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b20_07"
+ },
+ {
+  "category": "trees",
+  "subject": "a row of tall cypress trees",
+  "composition": "seen from far across a field",
+  "palette": "misty and soft, low contrast",
+  "id": "b20_08"
+ },
+ {
+  "category": "people",
+  "subject": "a cyclist on a country road",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b20_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a house with one lit window at dusk",
+  "composition": "seen from a low angle",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b20_10"
+ },
+ {
+  "category": "people",
+  "subject": "a figure walking alone along a beach",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "saturated and bold",
+  "id": "b20_11"
+ },
+ {
+  "category": "people",
+  "subject": "a fisherman in a small boat",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "limited palette: two colours plus one neutral",
+  "id": "b20_12"
+ }
+]

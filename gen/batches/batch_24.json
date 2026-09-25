@@ -1,0 +1,86 @@
+[
+ {
+  "category": "trees",
+  "subject": "a row of tall cypress trees",
+  "composition": "seen from far across a field",
+  "palette": "saturated and bold",
+  "id": "b24_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a blue cornflower",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b24_02"
+ },
+ {
+  "category": "trees",
+  "subject": "a baobab tree at dusk",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "muted and earthy",
+  "id": "b24_03"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over the sea",
+  "composition": "the sun low and off-centre",
+  "palette": "saturated and bold",
+  "id": "b24_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a row of tall cypress trees",
+  "composition": "seen from far across a field",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b24_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a hot pink zinnia",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "id": "b24_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a lone oak tree in a field",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "id": "b24_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a row of colourful townhouses",
+  "composition": "the building small in a wide landscape",
+  "palette": "soft and pastel",
+  "id": "b24_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a country road between fields",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "saturated and bold",
+  "id": "b24_09"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a pink dusk sky over fields",
+  "composition": "silhouettes against the sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "id": "b24_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "an orange dahlia",
+  "composition": "a small cluster of three blooms",
+  "palette": "saturated and bold",
+  "id": "b24_11"
+ },
+ {
+  "category": "night",
+  "subject": "the milky way above mountains",
+  "composition": "the moon large and off-centre",
+  "palette": "saturated and bold",
+  "id": "b24_12"
+ }
+]

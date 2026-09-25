@@ -58,11 +58,13 @@ FALLBACK_JUDGE = "openrouter:z-ai/glm-5.3-flash"
 JUDGE_IMAGE_PX = 384
 
 RUBRIC = (
-    "You are judging watercolour paintings of flowers.\n"
-    "Weigh, in this order: does it read as the flower described; does it look like "
+    "You are judging watercolour paintings.\n"
+    "Weigh, in this order: does it read as the subject described; does it look like "
     "real watercolour (soft bleeding edges, translucent washes, pigment pooling "
     "where shapes meet, paper showing through); is it a pleasing composition.\n"
-    "Penalise flat even fills, hard vector-like edges, muddy colour, empty canvases."
+    "Penalise flat even fills, hard vector-like edges, muddy colour, empty canvases.\n"
+    "A full-bleed painting (sky or landscape to the edges) is as valid as one on "
+    "bare paper; do not prefer either."
 )
 
 
@@ -217,20 +219,37 @@ class BaseJudge:
         raise NotImplementedError
 
     # -- prompt ------------------------------------------------------------
-    def _round(self, images: list, pairs: list):
+    def _round(self, images: list, pairs: list, subjects: list | None = None):
         """Ask for several pairwise verdicts in one request.
 
         `pairs` are 1-based index pairs into `images`. Returns the winning
         index per pair, or None where the verdict could not be read.
+
+        `subjects` names what EACH image is meant to depict. With a multi-flower
+        pool the references are usually a different flower from the candidate
+        (Paniego's pool is all hibiscus), and "which is the better painting of a
+        coral peony?" against a hibiscus reference rewards any recognisable peony
+        for its subject alone. Each image is judged against its own subject.
         """
         qs = "; ".join(f"image {a} or image {b}" for a, b in pairs)
         example = ",".join(str(p[0]) for p in pairs)
-        content = [{"text": f"{len(images)} watercolour paintings of {self.subject}, "
-                            f"numbered 1 to {len(images)}."}]
+        if subjects:
+            listing = "; ".join(f"image {i + 1} is meant to show {s}"
+                                for i, s in enumerate(subjects))
+            header = (f"{len(images)} watercolour paintings, numbered 1 to {len(images)}. "
+                      f"{listing}.")
+            question = ("Which is the better watercolour painting of its own subject: "
+                        f"{qs}?\nJudge each image against what it is meant to show; "
+                        "do not prefer one flower species over another.")
+        else:
+            header = (f"{len(images)} watercolour paintings of {self.subject}, "
+                      f"numbered 1 to {len(images)}.")
+            question = f"Which is the better watercolour painting: {qs}?"
+        content = [{"text": header}]
         for b64 in images:
             content.append({"image": b64})
         content.append({"text": (
-            f"{RUBRIC}\n\nWhich is the better watercolour painting: {qs}?\n"
+            f"{RUBRIC}\n\n{question}\n"
             f"You must pick one for each; ties are not allowed.\n"
             f"Think briefly, then end your reply with exactly this final line:\n"
             f"ANSWER: {example.replace(example, ','.join('<n>' for _ in pairs))}"
@@ -255,24 +274,32 @@ class BaseJudge:
         return out
 
     # -- scoring -----------------------------------------------------------
-    def score(self, candidate_png, reference_pngs: list) -> dict:
+    def score(self, candidate_png, reference_pngs: list,
+              candidate_subject: str | None = None,
+              reference_subjects: list | None = None) -> dict:
         """Fraction of comparisons the candidate wins.
 
         Two requests: the candidate leads in the first and trails in the
         second, so a model that favours whichever image comes first cancels
         out. score=None when too few verdicts returned to mean anything, so
         the caller drops the rollout rather than scoring it zero.
+
+        Pass candidate_subject and reference_subjects whenever the references
+        can be a different flower from the candidate.
         """
         cand = _b64_image(candidate_png, self.image_px)
         refs = [_b64_image(r, self.image_px) for r in reference_pngs]
         n = len(refs)
         wins = done = 0
+        per_image = candidate_subject is not None and reference_subjects is not None
+        s1 = [candidate_subject] + list(reference_subjects) if per_image else None
+        s2 = list(reference_subjects) + [candidate_subject] if per_image else None
 
-        for v in self._round([cand] + refs, [(1, i + 2) for i in range(n)]):
+        for v in self._round([cand] + refs, [(1, i + 2) for i in range(n)], s1):
             if v is not None:
                 done += 1
                 wins += 1 if v == 1 else 0
-        for v in self._round(refs + [cand], [(i + 1, n + 1) for i in range(n)]):
+        for v in self._round(refs + [cand], [(i + 1, n + 1) for i in range(n)], s2):
             if v is not None:
                 done += 1
                 wins += 1 if v == n + 1 else 0
@@ -547,11 +574,14 @@ class GroupJudge:
             self._fallback = make_judge(self.fallback_spec)
         return self._fallback
 
-    def _run(self, judge, pngs: list, refs: list, subject: str) -> list:
+    def _run(self, judge, pngs: list, refs: list, subject: str,
+             ref_subjects: list | None = None) -> list:
         import concurrent.futures
         judge.subject = subject
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.concurrency) as ex:
-            return [r.get("score") for r in ex.map(lambda p: judge.score(p, refs), pngs)]
+            return [r.get("score") for r in ex.map(
+                lambda p: judge.score(p, refs, subject if ref_subjects else None, ref_subjects),
+                pngs)]
 
     def _check_latency(self):
         lat = self.primary.latencies[-self.guard_window:]
@@ -562,14 +592,16 @@ class GroupJudge:
                 self.switch_reason = (f"latency guard: primary median {med:.1f}s over "
                                       f"last {len(lat)} calls > {self.latency_guard_s}s")
 
-    def score_group(self, pngs: list, refs: list, subject: str) -> tuple:
+    def score_group(self, pngs: list, refs: list, subject: str,
+                    ref_subjects: list | None = None) -> tuple:
         """Returns (scores, judge_name). A score is None only if even the
-        fallback could not produce it; the caller treats that as infra noise."""
+        fallback could not produce it; the caller treats that as infra noise.
+        Pass ref_subjects so each image is judged against its own subject."""
         if not pngs:
             return ([], None)
         if not self.sticky_fallback:
             try:
-                scores = self._run(self.primary, pngs, refs, subject)
+                scores = self._run(self.primary, pngs, refs, subject, ref_subjects)
                 if all(s is not None for s in scores):
                     self._check_latency()
                     return (scores, f"{self.primary.name}:{self.primary.model}")
@@ -578,7 +610,7 @@ class GroupJudge:
                 self.sticky_fallback = True
                 self.switch_reason = f"primary unavailable: {e}"
         fb = self._fb()
-        return (self._run(fb, pngs, refs, subject), f"{fb.name}:{fb.model}")
+        return (self._run(fb, pngs, refs, subject, ref_subjects), f"{fb.name}:{fb.model}")
 
     def stats(self) -> dict:
         out = {"primary": self.primary.stats(), "sticky_fallback": self.sticky_fallback,

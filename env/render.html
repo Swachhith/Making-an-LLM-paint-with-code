@@ -107,9 +107,11 @@ const HARNESS = (() => {
     });
   }
 
-  /* The sketch paints its own background, and every sketch picks a different
-     paper colour, so paper has to be measured rather than assumed. The border
-     ring is the most reliable sample: bleeds rarely reach all four edges. */
+  /* Paper colour. Preferred: the colour the sketch itself passed to
+     background(), captured at call time (see paintSketch). Fallback: the median
+     of the border ring. The border alone is wrong for full-canvas paintings --
+     on a sunset it reported the pink sky wash as "paper", so coverage was
+     measured against the wrong colour. */
   function detectPaper(px, W, H) {
     const samples = [];
     const step = Math.max(1, Math.floor(W / 64));
@@ -132,8 +134,8 @@ const HARNESS = (() => {
     return [med(0), med(1), med(2)];
   }
 
-  function metricsFrom(px, W, H) {
-    const paper = detectPaper(px, W, H);
+  function metricsFrom(px, W, H, declaredPaper) {
+    const paper = declaredPaper || detectPaper(px, W, H);
     const pr = paper[0], pg = paper[1], pb = paper[2];
     const hues = new Float64Array(16);
     let painted = 0, inkSum = 0, satSum = 0, valSum = 0;
@@ -265,6 +267,23 @@ const HARNESS = (() => {
           C.limits.renderTimeoutMs
         );
 
+        // Record the paper colour the sketch declares. Wrapped on the prototype
+        // BEFORE p5 binds its globals, so the sketch's bare background() call
+        // goes through it. The last call wins (sketches set it once, in draw).
+        let declaredPaper = null;
+        const origBackground = p5.prototype.background;
+        p5.prototype.background = function (...args) {
+          try {
+            const c = this.color(...args);
+            const rgb = [this.red(c), this.green(c), this.blue(c)].map(Math.round);
+            // Only trust it on the default 0-255 RGB scale; otherwise fall back
+            // to the border sample rather than measure against a wrong colour.
+            if (rgb.every((v) => Number.isFinite(v) && v >= 0 && v <= 255) &&
+                rgb.some((v) => v > 1)) declaredPaper = rgb;
+          } catch (_) {}
+          return origBackground.apply(this, args);
+        };
+
         // Bootstrap p5 global mode. p5 reads window.setup / window.draw.
         let inst;
         try { inst = new p5(); } catch (e) {
@@ -300,7 +319,8 @@ const HARNESS = (() => {
             resolve({
               ok: true,
               png: cnv.toDataURL('image/png'),
-              metrics: metricsFrom(px, g.width, g.height),
+              metrics: Object.assign(metricsFrom(px, g.width, g.height, declaredPaper),
+                                     { paperSource: declaredPaper ? 'declared' : 'border' }),
               settle: settle,
               canvas: { w: cnv.width, h: cnv.height }
             });

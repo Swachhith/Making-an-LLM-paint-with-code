@@ -1,0 +1,86 @@
+[
+ {
+  "category": "mountains",
+  "subject": "a volcano with a smoke plume",
+  "composition": "layered ridges fading into the distance",
+  "palette": "saturated and bold",
+  "id": "b09_01"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a desert sunset with a lone cactus",
+  "composition": "silhouettes against the sky",
+  "palette": "high contrast with dark silhouettes",
+  "id": "b09_02"
+ },
+ {
+  "category": "houses",
+  "subject": "a row of colourful townhouses",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b09_03"
+ },
+ {
+  "category": "people",
+  "subject": "children playing in a meadow",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "cool light",
+  "id": "b09_04"
+ },
+ {
+  "category": "houses",
+  "subject": "a small cottage with a red roof",
+  "composition": "the building small in a wide landscape",
+  "palette": "warm light",
+  "id": "b09_05"
+ },
+ {
+  "category": "houses",
+  "subject": "a wooden cabin in snowy woods",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b09_06"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain valley in autumn",
+  "composition": "a wide view with a low horizon",
+  "palette": "saturated and bold",
+  "id": "b09_07"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunrise over a misty lake",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "id": "b09_08"
+ },
+ {
+  "category": "trees",
+  "subject": "an autumn maple in red and orange",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b09_09"
+ },
+ {
+  "category": "mountains",
+  "subject": "layered blue mountain ridges",
+  "composition": "a reflection in the lower half",
+  "palette": "high contrast with deep shadows",
+  "id": "b09_10"
+ },
+ {
+  "category": "mountains",
+  "subject": "jagged desert mesas",
+  "composition": "a wide view with a low horizon",
+  "palette": "saturated and bold",
+  "id": "b09_11"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a misty meadow at dawn",
+  "composition": "a tall vertical composition",
+  "palette": "warm light",
+  "id": "b09_12"
+ }
+]

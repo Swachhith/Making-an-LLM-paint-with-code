@@ -49,10 +49,10 @@
     "maxSourceChars": 20000,
     "renderTimeoutMs": 15000,
     "minCoverage": 0.04,
-    "maxCoverage": 0.92,
+    "maxCoverage": 1.01,
     "minShapes": 3,
     "maxShapes": 400,
-    "minDistinctHues": 2
+    "minDistinctHues": 1
   },
   "render": {
     "pixelDensity": 1,

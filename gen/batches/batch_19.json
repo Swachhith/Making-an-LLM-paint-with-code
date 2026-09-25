@@ -1,0 +1,86 @@
+[
+ {
+  "category": "mountains",
+  "subject": "layered blue mountain ridges",
+  "composition": "one peak large and off-centre",
+  "palette": "high contrast with deep shadows",
+  "id": "b19_01"
+ },
+ {
+  "category": "trees",
+  "subject": "a palm tree on a beach",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "misty and soft, low contrast",
+  "id": "b19_02"
+ },
+ {
+  "category": "houses",
+  "subject": "an old windmill",
+  "composition": "seen from a low angle",
+  "palette": "soft and pastel",
+  "id": "b19_03"
+ },
+ {
+  "category": "people",
+  "subject": "children playing in a meadow",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "limited palette: two colours plus one neutral",
+  "id": "b19_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "a lone red-roofed hut below a mountain",
+  "composition": "a wide view with a low horizon",
+  "palette": "warm light",
+  "id": "b19_05"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a lavender field in rows",
+  "composition": "a tall vertical composition",
+  "palette": "cool light",
+  "id": "b19_06"
+ },
+ {
+  "category": "people",
+  "subject": "a woman in a wide sun hat",
+  "composition": "the figure small in a wide scene",
+  "palette": "cool light",
+  "id": "b19_07"
+ },
+ {
+  "category": "night",
+  "subject": "a starry night over a small village with lit windows",
+  "composition": "the moon large and off-centre",
+  "palette": "saturated and bold",
+  "id": "b19_08"
+ },
+ {
+  "category": "people",
+  "subject": "a person reading under a tree",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "cool light",
+  "id": "b19_09"
+ },
+ {
+  "category": "trees",
+  "subject": "a bare winter tree against a pale sky",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b19_10"
+ },
+ {
+  "category": "trees",
+  "subject": "an autumn maple in red and orange",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b19_11"
+ },
+ {
+  "category": "flowers",
+  "subject": "a white and pink magnolia",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b19_12"
+ }
+]

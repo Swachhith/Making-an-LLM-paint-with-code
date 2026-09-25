@@ -1,0 +1,86 @@
+[
+ {
+  "category": "flowers",
+  "subject": "a pink coneflower",
+  "composition": "a small cluster of three blooms",
+  "palette": "cool light",
+  "id": "b14_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "an orange gerbera daisy",
+  "composition": "one open bloom with a stem and two leaves",
+  "palette": "saturated and bold",
+  "id": "b14_02"
+ },
+ {
+  "category": "night",
+  "subject": "a lighthouse at night under stars",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "cool teal and indigo",
+  "id": "b14_03"
+ },
+ {
+  "category": "houses",
+  "subject": "an old windmill",
+  "composition": "the building small in a wide landscape",
+  "palette": "muted and earthy",
+  "id": "b14_04"
+ },
+ {
+  "category": "people",
+  "subject": "a woman in a wide sun hat",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b14_05"
+ },
+ {
+  "category": "people",
+  "subject": "a dancer in a flowing dress",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "cool light",
+  "id": "b14_06"
+ },
+ {
+  "category": "night",
+  "subject": "a snowy night with a glowing cabin",
+  "composition": "a tall vertical composition",
+  "palette": "near-black with a few warm lights",
+  "id": "b14_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a red barn in a field",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "saturated and bold",
+  "id": "b14_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a country road between fields",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b14_09"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a desert sunset with a lone cactus",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "id": "b14_10"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a stormy orange sunset with dark clouds",
+  "composition": "silhouettes against the sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b14_11"
+ },
+ {
+  "category": "people",
+  "subject": "a hiker standing on a mountain top",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "warm light",
+  "id": "b14_12"
+ }
+]

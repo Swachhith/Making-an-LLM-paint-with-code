@@ -1,0 +1,86 @@
+[
+ {
+  "category": "flowers",
+  "subject": "a violet iris",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b26_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a plum hellebore",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "muted and earthy",
+  "id": "b26_02"
+ },
+ {
+  "category": "trees",
+  "subject": "a weeping willow beside a pond",
+  "composition": "seen from far across a field",
+  "palette": "muted and earthy",
+  "id": "b26_03"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a river winding through a valley",
+  "composition": "a wide view with a high horizon",
+  "palette": "muted and earthy",
+  "id": "b26_04"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple aster",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b26_05"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a river winding through a valley",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "warm light",
+  "id": "b26_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a cherry tree in full blossom",
+  "composition": "seen from far across a field",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b26_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a small cottage with a red roof",
+  "composition": "seen from a low angle",
+  "palette": "saturated and bold",
+  "id": "b26_08"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset through palm trees",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "soft and pastel",
+  "id": "b26_09"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain lake with a reflection",
+  "composition": "one peak large and off-centre",
+  "palette": "misty and soft, low contrast",
+  "id": "b26_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "a violet clematis",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b26_11"
+ },
+ {
+  "category": "mountains",
+  "subject": "snow-capped mountains",
+  "composition": "layered ridges fading into the distance",
+  "palette": "misty and soft, low contrast",
+  "id": "b26_12"
+ }
+]

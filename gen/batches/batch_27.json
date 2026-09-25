@@ -1,0 +1,86 @@
+[
+ {
+  "category": "trees",
+  "subject": "a grove of white birch trees",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "id": "b27_01"
+ },
+ {
+  "category": "houses",
+  "subject": "a seaside village on a hill",
+  "composition": "seen from a low angle",
+  "palette": "warm light",
+  "id": "b27_02"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a stormy orange sunset with dark clouds",
+  "composition": "silhouettes against the sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "id": "b27_03"
+ },
+ {
+  "category": "trees",
+  "subject": "a baobab tree at dusk",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "cool light",
+  "id": "b27_04"
+ },
+ {
+  "category": "flowers",
+  "subject": "a bronze chrysanthemum",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b27_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a burgundy dahlia",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b27_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a cherry tree in full blossom",
+  "composition": "seen from far across a field",
+  "palette": "muted and earthy",
+  "id": "b27_07"
+ },
+ {
+  "category": "flowers",
+  "subject": "a golden black-eyed susan",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "cool light",
+  "id": "b27_08"
+ },
+ {
+  "category": "houses",
+  "subject": "a houseboat on a canal",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "saturated and bold",
+  "id": "b27_09"
+ },
+ {
+  "category": "people",
+  "subject": "a person holding a red umbrella in the rain",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "saturated and bold",
+  "id": "b27_10"
+ },
+ {
+  "category": "trees",
+  "subject": "a lone oak tree in a field",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "muted and earthy",
+  "id": "b27_11"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a quiet lake with reeds",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "misty and soft, low contrast",
+  "id": "b27_12"
+ }
+]

@@ -29,6 +29,9 @@ if [ ! -x "${DEST}/chrome-linux64/chrome" ]; then
 fi
 
 # Chrome's shared libraries (libnss3, libgbm1, fonts, ...) through apt.
+# The image ships an ondrej/php PPA that the sandbox proxy answers with 403
+# during `apt-get update`. apt reports the error and carries on; it is harmless
+# here (nothing from that PPA is needed).
 $SUDO python3 -m playwright install-deps chromium >/dev/null
 
 CHROME="${DEST}/chrome-linux64/chrome"

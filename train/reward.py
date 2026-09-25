@@ -244,9 +244,12 @@ class Reward:
                 if not idx:
                     continue
                 refs = self.pool.sample()
+                # Each reference carries its own subject: the pool mixes flowers,
+                # and the judge must not reward a candidate for merely being a
+                # different species from the reference.
                 scores, judge_name = self.judge.score_group(
                     [renders[i]["png_b64"] for i in idx], [r["png"] for r in refs],
-                    subjects[idx[0]])
+                    subjects[idx[0]], [r.get("subject") or "a flower" for r in refs])
                 for i, s in zip(idx, scores):
                     rows[i]["judge"] = judge_name
                     rows[i]["refs"] = [r["stem"] for r in refs]

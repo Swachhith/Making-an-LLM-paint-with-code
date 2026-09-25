@@ -1,0 +1,86 @@
+[
+ {
+  "category": "trees",
+  "subject": "the edge of a pine forest",
+  "composition": "seen from far across a field",
+  "palette": "cool light",
+  "id": "b22_01"
+ },
+ {
+  "category": "night",
+  "subject": "a starry night over a small village with lit windows",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "cool teal and indigo",
+  "id": "b22_02"
+ },
+ {
+  "category": "people",
+  "subject": "a woman in a wide sun hat",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "warm light",
+  "id": "b22_03"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a field of red poppies",
+  "composition": "a wide view with a high horizon",
+  "palette": "misty and soft, low contrast",
+  "id": "b22_04"
+ },
+ {
+  "category": "night",
+  "subject": "a crescent moon above pine trees",
+  "composition": "the moon large and off-centre",
+  "palette": "cool teal and indigo",
+  "id": "b22_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a violet clematis",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b22_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a weeping willow beside a pond",
+  "composition": "a tall vertical composition",
+  "palette": "muted and earthy",
+  "id": "b22_07"
+ },
+ {
+  "category": "flowers",
+  "subject": "a tiger orange lily",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b22_08"
+ },
+ {
+  "category": "people",
+  "subject": "a person holding a red umbrella in the rain",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b22_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a country road between fields",
+  "composition": "a wide view with a high horizon",
+  "palette": "saturated and bold",
+  "id": "b22_10"
+ },
+ {
+  "category": "night",
+  "subject": "a night sky full of stars over dark hills",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "cool teal and indigo",
+  "id": "b22_11"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset behind rolling hills",
+  "composition": "a reflection on water in the lower half",
+  "palette": "saturated and bold",
+  "id": "b22_12"
+ }
+]

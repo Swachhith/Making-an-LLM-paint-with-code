@@ -1,6 +1,8 @@
 # Generation brief for a cloud session
 
-You are painting watercolours in code for a hand-rated reference pool. A person
+You are painting watercolours in code for a hand-rated reference pool. Subjects
+range well beyond flowers: trees, landscapes, sunsets, night skies, mountains,
+houses and people. A person
 will rate every painting you make; the good ones become the definition of
 "beautiful" for a reinforcement-learning run, and training data for a smaller
 model. Your task names one batch file, e.g. `gen/batches/batch_03.json`.
@@ -19,6 +21,14 @@ program with its own `setup()` and `draw()`, a 600x600 WEBGL canvas, only the te
 brush methods listed there, hex colours with opacity. Anything else fails the gate
 and the painting is wasted.
 
+## What the gate checks
+
+A painting fails as "near-blank" when fewer than 4% of its pixels differ from
+the paper colour set with background(), and it needs at least 3 shapes. Pale
+palettes ("lots of white paper showing") and white subjects are the usual
+failures: keep a background wash or strong shadows in them so the painting clears
+4%. Full-canvas paintings (a sky to every edge) are fine.
+
 ## Work loop -- three rounds, then stop
 
 For each item in the batch (`id`, `subject`, `composition`, `palette`):
@@ -26,7 +36,7 @@ For each item in the batch (`id`, `subject`, `composition`, `palette`):
 1. **Round 0 -- draft.** Write `gen/out/<batch>/<id>_r0.js` for every item.
 2. Run `python3 gen/render_batch.py gen/batches/<batch>.json --round 0`.
 3. Look at each contact sheet it prints (one image shows 12 paintings). Note, for
-   each painting, what would most improve it: does it read as the flower named;
+   each painting, what would most improve it: does it read as the subject named;
    does it look like real watercolour (soft bleeding edges, translucent layered
    washes, pigment pooling where shapes meet, paper showing through); is the
    composition the one asked for.
@@ -45,8 +55,8 @@ one picture. So:
 - Write each sketch for its own subject. Do not reuse a code template, helper
   function or petal routine across items, and do not copy structure between files.
 - Vary the construction: petals as few broad washes vs many small strokes, loose
-  vs tight, background wash vs bare paper, stems and leaves or none, where the
-  flower sits on the canvas.
+  vs tight, background wash vs bare paper, where the subject sits on the canvas,
+  how much sky and ground there is.
 - Follow the item's `palette` and `composition` literally; they are there to
   force difference.
 - Vary the paper: the `background()` colour may change to suit the palette

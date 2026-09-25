@@ -1,0 +1,86 @@
+[
+ {
+  "category": "night",
+  "subject": "a night sky full of stars over dark hills",
+  "composition": "the moon large and off-centre",
+  "palette": "saturated and bold",
+  "id": "b17_01"
+ },
+ {
+  "category": "trees",
+  "subject": "a bare winter tree against a pale sky",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "misty and soft, low contrast",
+  "id": "b17_02"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a rocky coastline with waves",
+  "composition": "a path or river leading into the distance",
+  "palette": "muted and earthy",
+  "id": "b17_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a pink coneflower",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b17_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "jagged desert mesas",
+  "composition": "a wide view with a low horizon",
+  "palette": "cool light",
+  "id": "b17_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "an orange dahlia",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "limited palette: two colours plus one green",
+  "id": "b17_06"
+ },
+ {
+  "category": "night",
+  "subject": "a lighthouse at night under stars",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "limited palette: one dark blue plus one warm yellow",
+  "id": "b17_07"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain lake with a reflection",
+  "composition": "layered ridges fading into the distance",
+  "palette": "high contrast with deep shadows",
+  "id": "b17_08"
+ },
+ {
+  "category": "mountains",
+  "subject": "misty mountain peaks above clouds",
+  "composition": "one peak large and off-centre",
+  "palette": "misty and soft, low contrast",
+  "id": "b17_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a rocky coastline with waves",
+  "composition": "a wide view with a high horizon",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b17_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "an orange gerbera daisy",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "saturated and bold",
+  "id": "b17_11"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain valley in autumn",
+  "composition": "a reflection in the lower half",
+  "palette": "saturated and bold",
+  "id": "b17_12"
+ }
+]

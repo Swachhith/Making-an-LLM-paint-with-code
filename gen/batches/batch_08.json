@@ -1,0 +1,86 @@
+[
+ {
+  "category": "houses",
+  "subject": "a red barn in a field",
+  "composition": "seen from a low angle",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b08_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a blue cornflower",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b08_02"
+ },
+ {
+  "category": "people",
+  "subject": "a fisherman in a small boat",
+  "composition": "the figure small in a wide scene",
+  "palette": "saturated and bold",
+  "id": "b08_03"
+ },
+ {
+  "category": "people",
+  "subject": "a figure walking alone along a beach",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b08_04"
+ },
+ {
+  "category": "houses",
+  "subject": "a white chapel on a hill",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b08_05"
+ },
+ {
+  "category": "houses",
+  "subject": "a seaside village on a hill",
+  "composition": "seen from a low angle",
+  "palette": "saturated and bold",
+  "id": "b08_06"
+ },
+ {
+  "category": "mountains",
+  "subject": "a volcano with a smoke plume",
+  "composition": "a wide view with a low horizon",
+  "palette": "cool light",
+  "id": "b08_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a white chapel on a hill",
+  "composition": "seen from a low angle",
+  "palette": "saturated and bold",
+  "id": "b08_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a river winding through a valley",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "muted and earthy",
+  "id": "b08_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a house with one lit window at dusk",
+  "composition": "seen from a low angle",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b08_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "an orange dahlia",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "soft and pastel",
+  "id": "b08_11"
+ },
+ {
+  "category": "people",
+  "subject": "a hiker standing on a mountain top",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "id": "b08_12"
+ }
+]

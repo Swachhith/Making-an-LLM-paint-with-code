@@ -1,0 +1,86 @@
+[
+ {
+  "category": "landscapes",
+  "subject": "green rice terraces",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "muted and earthy",
+  "id": "b11_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a blue cornflower",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "limited palette: two colours plus one green",
+  "id": "b11_02"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a desert sunset with a lone cactus",
+  "composition": "the sun low and off-centre",
+  "palette": "saturated and bold",
+  "id": "b11_03"
+ },
+ {
+  "category": "houses",
+  "subject": "a row of colourful townhouses",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "soft and pastel",
+  "id": "b11_04"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a rocky coastline with waves",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "saturated and bold",
+  "id": "b11_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a pink cosmos",
+  "composition": "a small cluster of three blooms",
+  "palette": "soft and pastel",
+  "id": "b11_06"
+ },
+ {
+  "category": "houses",
+  "subject": "an old windmill",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "saturated and bold",
+  "id": "b11_07"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a wheat field under a big sky",
+  "composition": "a wide view with a high horizon",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b11_08"
+ },
+ {
+  "category": "houses",
+  "subject": "a wooden cabin in snowy woods",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b11_09"
+ },
+ {
+  "category": "people",
+  "subject": "a cyclist on a country road",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b11_10"
+ },
+ {
+  "category": "night",
+  "subject": "a full moon over a dark sea",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "deep blue and violet",
+  "id": "b11_11"
+ },
+ {
+  "category": "people",
+  "subject": "a dancer in a flowing dress",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b11_12"
+ }
+]

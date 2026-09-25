@@ -423,3 +423,91 @@ Kaggle 2x T4, 178 pool images, 2609s. Our deployment vs the dataset's `hpsv3_mu`
   Round 2 still produced 4 of the 6 loves, so it earns its cost -- but "later
   round = better" is not a safe assumption for picking what to keep.
 - Coverage when rated: love 0.151, okay 0.144, nope 0.103.
+
+
+## Batches 02-07 and the material calibration (2026-09-25)
+
+216 sketches, ~$12, all six sessions stayed inside their folders.
+
+| | batch 01 (old prompt) | batches 02-07 (opacity fix) |
+|---|---|---|
+| round-0 gate pass | 9/12 | 68/72 |
+| round-0 coverage | mean 0.064 | median 0.191 |
+| rounds 1-2 | 12/12 | 72/72 each |
+
+All four round-0 failures were in the "lots of white paper showing" palette.
+
+Every session reported the same problems, so each was measured before touching
+the prompt (results/calibration.png):
+
+- **Paleness: real, and bigger than reported.** One fill pass of #c8204a at
+  opacity 255 reaches only ~9% of the way from paper to the hex colour at a
+  swatch centre (two passes ~17%). Fills are mottled: pigment pools at edges and
+  in patches. Strength comes from layering and a darker hex, not a higher number.
+- **"Thin shapes vanish": wrong, but pointing at something real.** Strips under
+  ~16px do not shrink -- a 2px strip paints ~8.5x its area -- they smear into
+  large faint angular fans around a thin line. 16px renders as a clean band.
+- Love-tier parameter ranges (pool sources): fillBleed strength p10-p90
+  0.20-0.30, never with a direction argument; fillTexture both args ~0.3-0.55.
+- Prompt gained a short "how the materials behave" paragraph with exactly these
+  facts, plus white-flower guidance (leave petals as paper, paint the shadows and
+  a wash around them).
+- **The gate's 4% coverage threshold is in the generation brief, deliberately not
+  in the policy prompt**: telling the RL policy the exact bar invites it to learn
+  to clear 4% rather than to paint.
+- The ondrej/php apt 403 in cloud setup is harmless.
+
+
+## Human ratings, batches 01-07 (245 paintings, rated blind to round)
+
+- **Love 9%, okay 24%, nope 67%.** Close to Surya's ~7%; the pilot's 25% (6/24)
+  was small-sample luck.
+- Revision helps modestly: love 6% -> 8% -> 13% across rounds 0/1/2.
+- Palette: "saturated and bold" 20% love; "warm light" 0% love / 85% nope.
+- **Flower type dominates.** Dahlia 58% love, clematis 50%, sunflower 50%, cosmos
+  33%, cherry blossom 33%. Iris, orchid, magnolia, morning glory 0% love / 100%
+  nope; rose 88% nope. Round, many-petalled flowers paint well with filled
+  blobs; flowers defined by complex silhouettes do not.
+- White flowers: 1 love in 46 (made before the white-flower prompt fix).
+- Coverage alone barely predicts taste (love vs nope AUC 0.59) -- the taste is
+  not "more paint".
+
+## Judge flaw: every reference is a hibiscus
+
+The pairwise judge compares each candidate against references from Paniego's
+pool, all hibiscus, and asked "which is the better painting of <candidate's
+subject>?". Against a hibiscus reference, any recognisable peony wins on subject
+alone. The judge now receives what EACH image is meant to show and judges each
+against its own subject (judge.score(..., candidate_subject, reference_subjects);
+reward.py passes the reference subjects). Longer term the references should come
+from the user's own love tier, across flowers.
+
+
+## Beyond flowers: batches 08-27 (240 prompts, 8 categories, 89 subjects)
+
+flowers 50, trees 28, landscapes 28, houses 28, people 28, sunsets 26, night
+skies 26, mountains 26 -- mixed within every batch, each with category-fitting
+compositions and palettes. This addresses the style monoculture at its root.
+
+Probe paintings run through the real gate before any session launched:
+
+| probe | old gate | why |
+|---|---|---|
+| full-canvas sunset | FAIL | "canvas flooded (0.981)" |
+| night sky, dark paper | FAIL | "too few distinct hues (1)" |
+| night sky, dark wash on cream | FAIL | too few hues; stars invisible |
+| house | pass | |
+
+Fixes:
+- **Paper = the colour the sketch passes to background()**, captured by wrapping
+  p5.prototype.background before p5 binds its globals. The border-median guess
+  reported the pink sky wash as "paper" on the sunset. Border stays as fallback.
+  Pool re-validation unchanged: 178/178, r = 0.953, bias -0.0095.
+- maxCoverage 1.01 (flood check off): full-canvas paintings are legitimate.
+- minDistinctHues 1: navy plus a few tiny stars is one hue by area.
+- **Light never covers dark, in this medium too**: stars painted on dark
+  background() paper show clearly; painted over a dark wash on cream they
+  vanish. Now a prompt rule, along with "small circles are fine" (the 15px rule
+  is about polygons smearing into fans).
+- Prompt, judge rubric and brief generalised away from flowers. The rubric also
+  says full-canvas and bare-paper paintings are equally valid.

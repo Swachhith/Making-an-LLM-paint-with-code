@@ -1,0 +1,86 @@
+[
+ {
+  "category": "flowers",
+  "subject": "a bronze chrysanthemum",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "warm light",
+  "id": "b18_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple aster",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b18_02"
+ },
+ {
+  "category": "night",
+  "subject": "a night sky full of stars over dark hills",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "cool teal and indigo",
+  "id": "b18_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a pale pink cherry blossom branch",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "cool light",
+  "id": "b18_04"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset behind rolling hills",
+  "composition": "a reflection on water in the lower half",
+  "palette": "saturated and bold",
+  "id": "b18_05"
+ },
+ {
+  "category": "night",
+  "subject": "fireflies over a dark meadow",
+  "composition": "the moon large and off-centre",
+  "palette": "deep blue and violet",
+  "id": "b18_06"
+ },
+ {
+  "category": "trees",
+  "subject": "the edge of a pine forest",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b18_07"
+ },
+ {
+  "category": "flowers",
+  "subject": "a burgundy dahlia",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "muted and earthy",
+  "id": "b18_08"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset through palm trees",
+  "composition": "silhouettes against the sky",
+  "palette": "high contrast with dark silhouettes",
+  "id": "b18_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "green rice terraces",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "id": "b18_10"
+ },
+ {
+  "category": "people",
+  "subject": "a person reading under a tree",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "cool light",
+  "id": "b18_11"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a stormy orange sunset with dark clouds",
+  "composition": "a reflection on water in the lower half",
+  "palette": "high contrast with dark silhouettes",
+  "id": "b18_12"
+ }
+]

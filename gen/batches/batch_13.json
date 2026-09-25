@@ -1,0 +1,86 @@
+[
+ {
+  "category": "night",
+  "subject": "a full moon over a dark sea",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "near-black with a few warm lights",
+  "id": "b13_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a lavender field in rows",
+  "composition": "a path or river leading into the distance",
+  "palette": "muted and earthy",
+  "id": "b13_02"
+ },
+ {
+  "category": "flowers",
+  "subject": "a red anemone",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b13_03"
+ },
+ {
+  "category": "trees",
+  "subject": "a lone oak tree in a field",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b13_04"
+ },
+ {
+  "category": "flowers",
+  "subject": "a red anemone",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b13_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a golden sunflower",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "warm light",
+  "id": "b13_06"
+ },
+ {
+  "category": "landscapes",
+  "subject": "desert sand dunes",
+  "composition": "a path or river leading into the distance",
+  "palette": "muted and earthy",
+  "id": "b13_07"
+ },
+ {
+  "category": "people",
+  "subject": "a person holding a red umbrella in the rain",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "id": "b13_08"
+ },
+ {
+  "category": "people",
+  "subject": "a dancer in a flowing dress",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "cool light",
+  "id": "b13_09"
+ },
+ {
+  "category": "flowers",
+  "subject": "a golden sunflower",
+  "composition": "one open bloom with a stem and two leaves",
+  "palette": "soft and pastel",
+  "id": "b13_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "a white and pink magnolia",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "soft and pastel",
+  "id": "b13_11"
+ },
+ {
+  "category": "night",
+  "subject": "a starry night over a small village with lit windows",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "deep blue and violet",
+  "id": "b13_12"
+ }
+]

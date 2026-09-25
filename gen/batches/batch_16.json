@@ -1,0 +1,86 @@
+[
+ {
+  "category": "mountains",
+  "subject": "a mountain valley in autumn",
+  "composition": "one peak large and off-centre",
+  "palette": "muted and earthy",
+  "id": "b16_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a lavender field in rows",
+  "composition": "a wide view with a high horizon",
+  "palette": "cool light",
+  "id": "b16_02"
+ },
+ {
+  "category": "flowers",
+  "subject": "a golden black-eyed susan",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "soft and pastel",
+  "id": "b16_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple orchid",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "warm light",
+  "id": "b16_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "layered blue mountain ridges",
+  "composition": "a reflection in the lower half",
+  "palette": "misty and soft, low contrast",
+  "id": "b16_05"
+ },
+ {
+  "category": "night",
+  "subject": "a crescent moon above pine trees",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "near-black with a few warm lights",
+  "id": "b16_06"
+ },
+ {
+  "category": "night",
+  "subject": "the milky way above mountains",
+  "composition": "the moon large and off-centre",
+  "palette": "limited palette: one dark blue plus one warm yellow",
+  "id": "b16_07"
+ },
+ {
+  "category": "night",
+  "subject": "a night sky full of stars over dark hills",
+  "composition": "a tall vertical composition",
+  "palette": "deep blue and violet",
+  "id": "b16_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a wheat field under a big sky",
+  "composition": "a wide view with a high horizon",
+  "palette": "warm light",
+  "id": "b16_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "rolling green hills under a cloudy sky",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "saturated and bold",
+  "id": "b16_10"
+ },
+ {
+  "category": "trees",
+  "subject": "a palm tree on a beach",
+  "composition": "a tall vertical composition",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b16_11"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a city skyline",
+  "composition": "silhouettes against the sky",
+  "palette": "soft and pastel",
+  "id": "b16_12"
+ }
+]

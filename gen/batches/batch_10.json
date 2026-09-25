@@ -1,0 +1,86 @@
+[
+ {
+  "category": "houses",
+  "subject": "a house with one lit window at dusk",
+  "composition": "the building small in a wide landscape",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b10_01"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset behind rolling hills",
+  "composition": "silhouettes against the sky",
+  "palette": "saturated and bold",
+  "id": "b10_02"
+ },
+ {
+  "category": "people",
+  "subject": "two people sitting on a park bench",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "muted and earthy",
+  "id": "b10_03"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunrise over a misty lake",
+  "composition": "a reflection on water in the lower half",
+  "palette": "limited palette: two warm colours plus one dark",
+  "id": "b10_04"
+ },
+ {
+  "category": "flowers",
+  "subject": "a tiger orange lily",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b10_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a coral peony",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b10_06"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a pink dusk sky over fields",
+  "composition": "silhouettes against the sky",
+  "palette": "saturated and bold",
+  "id": "b10_07"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunrise over a misty lake",
+  "composition": "the sun low and off-centre",
+  "palette": "soft and pastel",
+  "id": "b10_08"
+ },
+ {
+  "category": "night",
+  "subject": "a full moon over a dark sea",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "deep blue and violet",
+  "id": "b10_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a misty meadow at dawn",
+  "composition": "a tall vertical composition",
+  "palette": "cool light",
+  "id": "b10_10"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple orchid",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b10_11"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain lake with a reflection",
+  "composition": "a reflection in the lower half",
+  "palette": "saturated and bold",
+  "id": "b10_12"
+ }
+]

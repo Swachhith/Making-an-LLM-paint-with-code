@@ -1,0 +1,86 @@
+[
+ {
+  "category": "people",
+  "subject": "two people sitting on a park bench",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "id": "b23_01"
+ },
+ {
+  "category": "mountains",
+  "subject": "misty mountain peaks above clouds",
+  "composition": "a reflection in the lower half",
+  "palette": "misty and soft, low contrast",
+  "id": "b23_02"
+ },
+ {
+  "category": "landscapes",
+  "subject": "rolling green hills under a cloudy sky",
+  "composition": "a wide view with a high horizon",
+  "palette": "cool light",
+  "id": "b23_03"
+ },
+ {
+  "category": "trees",
+  "subject": "a grove of white birch trees",
+  "composition": "seen from far across a field",
+  "palette": "warm light",
+  "id": "b23_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a grove of white birch trees",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b23_05"
+ },
+ {
+  "category": "people",
+  "subject": "children playing in a meadow",
+  "composition": "the figure small in a wide scene",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "id": "b23_06"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset through palm trees",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "id": "b23_07"
+ },
+ {
+  "category": "flowers",
+  "subject": "a hot pink zinnia",
+  "composition": "one open bloom with a stem and two leaves",
+  "palette": "soft and pastel",
+  "id": "b23_08"
+ },
+ {
+  "category": "people",
+  "subject": "two people sitting on a park bench",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "limited palette: two colours plus one neutral",
+  "id": "b23_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a houseboat on a canal",
+  "composition": "the building small in a wide landscape",
+  "palette": "saturated and bold",
+  "id": "b23_10"
+ },
+ {
+  "category": "night",
+  "subject": "fireflies over a dark meadow",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "limited palette: one dark blue plus one warm yellow",
+  "id": "b23_11"
+ },
+ {
+  "category": "flowers",
+  "subject": "a pink cosmos",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "high contrast with deep shadowed centres",
+  "id": "b23_12"
+ }
+]
