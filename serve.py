@@ -59,6 +59,34 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def do_GET(self):
+        path, _, query = self.path.partition("?")
+        if posixpath.normpath(path) == "/api/paintings":
+            return self._reply(200, self._paintings(include_hidden="all=1" in query))
+        return super().do_GET()
+
+    def _paintings(self, include_hidden: bool) -> list:
+        """Every gate-passing render across gen/out/*/manifest.json.
+
+        Batches whose directory starts with "_" (self-tests) are skipped unless
+        ?all=1. Failed sketches are left out: there is no painting to rate.
+        """
+        out = []
+        gen_out = os.path.join(ROOT, "gen", "out")
+        if not os.path.isdir(gen_out):
+            return out
+        for batch in sorted(os.listdir(gen_out)):
+            man = os.path.join(gen_out, batch, "manifest.json")
+            if not os.path.isfile(man) or (batch.startswith("_") and not include_hidden):
+                continue
+            for stem, e in json.load(open(man, encoding="utf-8")).items():
+                png = os.path.join(gen_out, batch, stem + ".png")
+                if e.get("passed") and os.path.isfile(png):
+                    out.append({"key": f"{batch}/{stem}", "png": f"gen/out/{batch}/{stem}.png",
+                                "subject": e.get("subject"), "round": e.get("round"),
+                                "id": e.get("id")})
+        return out
+
     def do_POST(self):
         if posixpath.normpath(self.path.split("?")[0]) != "/save":
             return self._reply(404, {"ok": False, "error": "no such endpoint"})

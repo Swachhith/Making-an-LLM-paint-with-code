@@ -1,0 +1,167 @@
+{
+  "batch_01/b01_03_r1": {
+    "tier": "nope",
+    "subject": "a purple tulip",
+    "ts": "2026-09-25T14:02:10.451Z"
+  },
+  "batch_01/b01_08_r0": {
+    "tier": "nope",
+    "subject": "a dusty pink rose",
+    "ts": "2026-09-25T14:02:13.722Z"
+  },
+  "batch_01/b01_07_r2": {
+    "tier": "okay",
+    "subject": "a scarlet poppy",
+    "ts": "2026-09-25T14:02:17.938Z"
+  },
+  "batch_01/b01_09_r1": {
+    "tier": "okay",
+    "subject": "a red and yellow tulip",
+    "ts": "2026-09-25T14:02:20.498Z"
+  },
+  "batch_01/b01_10_r1": {
+    "tier": "okay",
+    "subject": "a blue hydrangea",
+    "ts": "2026-09-25T14:02:24.698Z"
+  },
+  "batch_01/b01_10_r2": {
+    "tier": "love",
+    "subject": "a blue hydrangea",
+    "ts": "2026-09-25T14:02:31.187Z"
+  },
+  "batch_01/b01_03_r2": {
+    "tier": "okay",
+    "subject": "a purple tulip",
+    "ts": "2026-09-25T14:02:37.499Z"
+  },
+  "batch_01/b01_06_r1": {
+    "tier": "okay",
+    "subject": "a blue and gold iris",
+    "ts": "2026-09-25T14:02:41.434Z"
+  },
+  "batch_01/b01_03_r0": {
+    "tier": "nope",
+    "subject": "a purple tulip",
+    "ts": "2026-09-25T14:02:43.290Z"
+  },
+  "batch_01/b01_04_r2": {
+    "tier": "love",
+    "subject": "a peach hibiscus",
+    "ts": "2026-09-25T14:02:45.570Z"
+  },
+  "batch_01/b01_11_r0": {
+    "tier": "nope",
+    "subject": "a orange poppy",
+    "ts": "2026-09-25T14:02:47.746Z"
+  },
+  "batch_01/b01_02_r0": {
+    "tier": "nope",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-09-25T14:02:53.314Z"
+  },
+  "batch_01/b01_11_r1": {
+    "tier": "okay",
+    "subject": "a orange poppy",
+    "ts": "2026-09-25T14:02:56.242Z"
+  },
+  "batch_01/b01_11_r2": {
+    "tier": "okay",
+    "subject": "a orange poppy",
+    "ts": "2026-09-25T14:02:59.410Z"
+  },
+  "batch_01/b01_04_r1": {
+    "tier": "love",
+    "subject": "a peach hibiscus",
+    "ts": "2026-09-25T14:03:02.434Z"
+  },
+  "batch_01/b01_12_r1": {
+    "tier": "nope",
+    "subject": "a blue morning glory",
+    "ts": "2026-09-25T14:03:04.634Z"
+  },
+  "batch_01/b01_02_r1": {
+    "tier": "love",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-09-25T14:03:07.338Z"
+  },
+  "batch_01/b01_08_r2": {
+    "tier": "nope",
+    "subject": "a dusty pink rose",
+    "ts": "2026-09-25T14:03:16.090Z"
+  },
+  "batch_01/b01_09_r2": {
+    "tier": "love",
+    "subject": "a red and yellow tulip",
+    "ts": "2026-09-25T14:03:18.722Z"
+  },
+  "batch_01/b01_05_r1": {
+    "tier": "okay",
+    "subject": "a violet iris",
+    "ts": "2026-09-25T14:03:20.706Z"
+  },
+  "batch_01/b01_01_r1": {
+    "tier": "nope",
+    "subject": "a purple orchid",
+    "ts": "2026-09-25T14:03:24.034Z"
+  },
+  "batch_01/b01_07_r1": {
+    "tier": "okay",
+    "subject": "a scarlet poppy",
+    "ts": "2026-09-25T14:03:25.978Z"
+  },
+  "batch_01/b01_04_r0": {
+    "tier": "nope",
+    "subject": "a peach hibiscus",
+    "ts": "2026-09-25T14:03:31.474Z"
+  },
+  "batch_01/b01_02_r2": {
+    "tier": "love",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-09-25T14:03:37.346Z"
+  },
+  "batch_01/b01_12_r2": {
+    "tier": "nope",
+    "subject": "a blue morning glory",
+    "ts": "2026-09-25T14:03:38.802Z"
+  },
+  "batch_01/b01_07_r0": {
+    "tier": "nope",
+    "subject": "a scarlet poppy",
+    "ts": "2026-09-25T14:03:40.530Z"
+  },
+  "batch_01/b01_06_r2": {
+    "tier": "nope",
+    "subject": "a blue and gold iris",
+    "ts": "2026-09-25T14:03:42.066Z"
+  },
+  "batch_01/b01_06_r0": {
+    "tier": "nope",
+    "subject": "a blue and gold iris",
+    "ts": "2026-09-25T14:03:43.338Z"
+  },
+  "batch_01/b01_05_r2": {
+    "tier": "nope",
+    "subject": "a violet iris",
+    "ts": "2026-09-25T14:03:44.682Z"
+  },
+  "batch_01/b01_08_r1": {
+    "tier": "okay",
+    "subject": "a dusty pink rose",
+    "ts": "2026-09-25T14:03:48.761Z"
+  },
+  "batch_01/b01_12_r0": {
+    "tier": "nope",
+    "subject": "a blue morning glory",
+    "ts": "2026-09-25T14:03:49.818Z"
+  },
+  "batch_01/b01_09_r0": {
+    "tier": "nope",
+    "subject": "a red and yellow tulip",
+    "ts": "2026-09-25T14:03:51.145Z"
+  },
+  "batch_01/b01_01_r2": {
+    "tier": "nope",
+    "subject": "a purple orchid",
+    "ts": "2026-09-25T14:03:58.402Z"
+  }
+}

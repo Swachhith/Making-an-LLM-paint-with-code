@@ -29,10 +29,10 @@ You may call exactly these brush methods and no others:
     brush.beginShape    brush.vertex    brush.endShape
     brush.circle
 
-Colours are hex strings with an opacity from 0 to 255: brush.fill("#c8204a", 90).
+Colours are hex strings with an opacity from 0 to 255: brush.fill("#c8204a", 200).
 Set fill, fillBleed and fillTexture before each shape. Shapes are drawn with
 brush.beginShape(curvature) then brush.vertex(x, y) repeatedly then
-brush.endShape(true), or with brush.circle(x, y, diameter, irregularity).
+brush.endShape(true), or with brush.circle(x, y, radius, irregularity).
 
 Any method not on that list does not exist. Do not invent one.
 
@@ -43,3 +43,5 @@ build smaller and more opaque shapes on top. Paint each petal two or three
 times — a big loose pass first, then a smaller, more opaque pass inside it.
 Leave some paper showing. Let colours overlap and pool where shapes meet.
 Vary the opacity between passes; flat even coverage looks printed, not painted.
+This paint is thin: most fills belong between 150 and 240 opacity. Below about
+120 it barely shows, and a painting made only of faint washes reads as blank paper.

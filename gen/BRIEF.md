@@ -49,6 +49,9 @@ one picture. So:
   flower sits on the canvas.
 - Follow the item's `palette` and `composition` literally; they are there to
   force difference.
+- Vary the paper: the `background()` colour may change to suit the palette
+  (warm cream, cool white, pale grey, soft tint). Batch 01 used one cream for
+  every painting, and the pool read as one style.
 
 ## Spend carefully -- this runs on limited credit
 
@@ -62,5 +65,7 @@ one picture. So:
 ## Hand-off
 
 Commit everything under `gen/out/<batch>/` (sketches, PNGs, contact sheets,
-`manifest.json`) on a branch named `gen/<batch>` and push it. Do not change any
-file outside `gen/out/<batch>/`.
+`manifest.json`) and push it to the branch this session was assigned -- cloud
+sessions can only push there, and that is fine; do not ask to push elsewhere.
+Do not change any file outside `gen/out/<batch>/`. End with a few lines: gate
+pass count per round and anything you found wrong with the tooling or prompt.

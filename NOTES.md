@@ -381,3 +381,45 @@ Kaggle 2x T4, 178 pool images, 2609s. Our deployment vs the dataset's `hpsv3_mu`
   rollouts/step that is ~50s/step of HPSv3 on Kaggle; an L4 should be far faster.
 - Seeded re-validation of the renderer: 178/178, pearson 0.953 (up from 0.946),
   bias -0.0095 -- removing render noise tightened agreement.
+
+
+## Data generation pilot (Claude cloud session, batch_01, 2026-09-25)
+
+- **$2 for 36 sketches** (12 prompts x 3 rounds) = ~$0.056/sketch, ~$0.17 per
+  painting with all three versions. All 84 prompts: ~$14.
+- Gate: round 0 9/12 (three near-blank), rounds 1 and 2 12/12. Coverage mean
+  0.064 -> 0.143 -> 0.151. The draft -> contact sheet -> revise loop works.
+- **Two bugs in env/prompt.md, both mine, both found by the agent's output:**
+  1. It said `brush.circle(x, y, diameter, ...)`. The argument is a **radius**
+     (the p5.brush README read on day one says so) -- every circle the policy
+     drew would have been twice the intended size.
+  2. Its only opacity example was `brush.fill("#c8204a", 90)`, and round-0
+     drafts clustered around it (median 120) -- too faint, three near-blank. After
+     revision the agent used median 235; the pool's love tier sits at 195-220.
+     Models anchor on example numbers. Example is now 200, with one sentence
+     giving the 150-240 range. This matters more for the 4B policy than for
+     data: the policy gets no revision round to recover from a pale first draft.
+- **Style monoculture is real, and it was the prompt:** all 12 paintings shared
+  the prompt's hardcoded `background("#f6efe1")` paper and a delicate, sparse,
+  single-specimen look. The brief now asks for varied paper per palette.
+- Cloud sessions can only push to their assigned branch (`claude/<name>`), not
+  `gen/<batch>`; the brief now says so. The agent stayed inside its folder.
+
+
+## First human ratings (batch_01, 33 paintings, rated blind to round)
+
+| round | love | okay | nope |
+|---|---|---|---|
+| 0 | 0 | 0 | 9 |
+| 1 | 2 | 7 | 3 |
+| 2 | 4 | 3 | 5 |
+
+- Every round-0 draft rated nope -- the faint-opacity prompt bug, confirmed by
+  taste. Round 1 (fixing the obvious problem the agent could see) is the big win.
+- Love rate across revised rounds: 6/24 = 25% (Surya's pool: 117/1664 ~ 7%).
+- **The second revision is a coin flip against human taste**: it raised three
+  items (both tulips, hydrangea) and lowered three (both irises, rose). Once the
+  obvious faults are fixed, the agent's self-critique stops tracking the rater.
+  Round 2 still produced 4 of the 6 loves, so it earns its cost -- but "later
+  round = better" is not a safe assumption for picking what to keep.
+- Coverage when rated: love 0.151, okay 0.144, nope 0.103.
