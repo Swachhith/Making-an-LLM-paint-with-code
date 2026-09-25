@@ -1,0 +1,74 @@
+[
+ {
+  "subject": "a purple tulip",
+  "composition": "a bloom seen from above",
+  "palette": "warm light",
+  "id": "b03_01"
+ },
+ {
+  "subject": "a apricot rose",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "warm light",
+  "id": "b03_02"
+ },
+ {
+  "subject": "a blush pink peony",
+  "composition": "a bloom seen from above",
+  "palette": "muted and earthy",
+  "id": "b03_03"
+ },
+ {
+  "subject": "a white and pink magnolia",
+  "composition": "two blooms at different angles",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b03_04"
+ },
+ {
+  "subject": "a violet clematis",
+  "composition": "two blooms at different angles",
+  "palette": "saturated and bold",
+  "id": "b03_05"
+ },
+ {
+  "subject": "a golden sunflower",
+  "composition": "a bloom seen from above",
+  "palette": "muted and earthy",
+  "id": "b03_06"
+ },
+ {
+  "subject": "a coral peony",
+  "composition": "two blooms at different angles",
+  "palette": "saturated and bold",
+  "id": "b03_07"
+ },
+ {
+  "subject": "a purple magnolia",
+  "composition": "a bloom seen from the side",
+  "palette": "cool light",
+  "id": "b03_08"
+ },
+ {
+  "subject": "a magenta hibiscus",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "muted and earthy",
+  "id": "b03_09"
+ },
+ {
+  "subject": "a peach ranunculus",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "saturated and bold",
+  "id": "b03_10"
+ },
+ {
+  "subject": "a violet clematis",
+  "composition": "two blooms at different angles",
+  "palette": "warm light",
+  "id": "b03_11"
+ },
+ {
+  "subject": "a white lotus",
+  "composition": "a bloom seen from above",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b03_12"
+ }
+]

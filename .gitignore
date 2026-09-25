@@ -1,0 +1,10 @@
+.env
+.env.*
+results/
+pool/renders/
+pool/sources/
+__pycache__/
+*.pyc
+gen/out/_selftest/
+gen/out/_selftest.json
+*.bak

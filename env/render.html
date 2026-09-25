@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Watercolour Render Harness</title>
+<style>
+  html,body{margin:0;background:#1a1a1a;display:grid;place-items:center;min-height:100vh}
+  canvas{box-shadow:0 8px 40px rgba(0,0,0,.5);max-width:92vw;height:auto}
+  #status{position:fixed;top:8px;left:8px;font:12px ui-monospace,monospace;color:#888}
+</style>
+</head>
+<body>
+<div id="status">harness: loading&hellip;</div>
+
+<!-- Libraries draw on Math.random while they LOAD (p5.brush bundles
+     simplex-noise, which builds its permutation tables at import). The renderer
+     opens a fresh page per image, so without this the paper texture changed on
+     every render even with the per-render seed applied. A constant seed here
+     fixes load-time state; paintSketch() then re-seeds per render. -->
+<script>
+(function () {
+  let a = 0x5eed;
+  Math.random = function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+})();
+</script>
+<!-- Vendored copies first: cloud agent sandboxes allowlist package registries
+     but not cdn.jsdelivr.net, and a training run should not depend on a CDN.
+     The CDN is only a fallback for a checkout that is missing env/vendor/. -->
+<script src="./vendor/p5.min.js"></script>
+<script>window.p5 || document.write('<script src="https://cdn.jsdelivr.net/npm/p5@2.2.0/lib/p5.min.js"><\/script>')</script>
+<script src="./vendor/p5.brush.js"></script>
+<script>window.brush || document.write('<script src="https://cdn.jsdelivr.net/npm/p5.brush@2.2.3/dist/p5.brush.js"><\/script>')</script>
+<script>
+/* ------------------------------------------------------------------
+   Watercolour render harness.
+   Turns a COMPLETE p5 sketch (its own setup() + draw()) into
+   (png, metrics). This matches the format of the reference corpus, so
+   the 178 hand-rated sketches run here unmodified.
+
+   Runs the sketch in p5 GLOBAL mode, which is how these sketches were
+   authored: setup/draw are picked up off window. p5.brush keeps
+   module-level state bound to the first p5 instance on a page, so the
+   driver loads a fresh page per render rather than reusing one.
+   ------------------------------------------------------------------ */
+
+const HARNESS = (() => {
+  let CONTRACT = null;
+
+  async function contract() {
+    if (!CONTRACT) CONTRACT = await fetch('./contract.json').then(r => r.json());
+    return CONTRACT;
+  }
+
+  // Seeded PRNG (mulberry32): with it, a seed fully determines a painting.
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  /* p5.brush composites bleeds and textures asynchronously over several
+     frames. Reading pixels immediately returns a blank or half-finished
+     painting -- a quiet failure that looks like a pale, low-scoring
+     artwork. Poll a 64x64 downsample until the checksum stops moving.
+     Timer-based on purpose: requestAnimationFrame is SUSPENDED in a hidden
+     or occluded tab, which is exactly the state a trainer renders in. */
+  function thumbHash(srcCanvas, scratch) {
+    const g = scratch.getContext('2d', { willReadFrequently: true });
+    g.clearRect(0, 0, 64, 64);
+    g.drawImage(srcCanvas, 0, 0, 64, 64);
+    const d = g.getImageData(0, 0, 64, 64).data;
+    let h = 2166136261 >>> 0;
+    for (let i = 0; i < d.length; i += 4) {
+      h = Math.imul(h ^ d[i], 16777619) >>> 0;
+      h = Math.imul(h ^ d[i + 1], 16777619) >>> 0;
+      h = Math.imul(h ^ d[i + 2], 16777619) >>> 0;
+    }
+    return h;
+  }
+
+  function waitForStable(cnvEl, deadlineMs, stableTicks, intervalMs) {
+    return new Promise((resolve) => {
+      const scratch = document.createElement('canvas');
+      scratch.width = scratch.height = 64;
+      const t0 = Date.now();
+      let last = null, repeats = 0, ticks = 0;
+      const tick = () => {
+        ticks++;
+        let h;
+        try { h = thumbHash(cnvEl, scratch); }
+        catch (e) { return resolve({ settled: false, reason: 'readback: ' + (e.message || e), ticks }); }
+        if (h === last) repeats++; else { repeats = 0; last = h; }
+        if (repeats >= stableTicks) return resolve({ settled: true, ticks, waitMs: Date.now() - t0 });
+        if (Date.now() - t0 > deadlineMs)
+          return resolve({ settled: false, reason: 'did not settle', ticks, waitMs: Date.now() - t0 });
+        setTimeout(tick, intervalMs);
+      };
+      setTimeout(tick, intervalMs);
+    });
+  }
+
+  /* The sketch paints its own background, and every sketch picks a different
+     paper colour, so paper has to be measured rather than assumed. The border
+     ring is the most reliable sample: bleeds rarely reach all four edges. */
+  function detectPaper(px, W, H) {
+    const samples = [];
+    const step = Math.max(1, Math.floor(W / 64));
+    for (let x = 0; x < W; x += step) {
+      for (const y of [0, 1, H - 2, H - 1]) {
+        const i = (y * W + x) * 4;
+        samples.push([px[i], px[i + 1], px[i + 2]]);
+      }
+    }
+    for (let y = 0; y < H; y += step) {
+      for (const x of [0, 1, W - 2, W - 1]) {
+        const i = (y * W + x) * 4;
+        samples.push([px[i], px[i + 1], px[i + 2]]);
+      }
+    }
+    const med = (k) => {
+      const v = samples.map((s) => s[k]).sort((a, b) => a - b);
+      return v[v.length >> 1];
+    };
+    return [med(0), med(1), med(2)];
+  }
+
+  function metricsFrom(px, W, H) {
+    const paper = detectPaper(px, W, H);
+    const pr = paper[0], pg = paper[1], pb = paper[2];
+    const hues = new Float64Array(16);
+    let painted = 0, inkSum = 0, satSum = 0, valSum = 0;
+    let minX = W, minY = H, maxX = -1, maxY = -1;
+
+    for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        const i = (y * W + x) * 4;
+        const r = px[i], g = px[i + 1], b = px[i + 2];
+        const dev = (Math.abs(r - pr) + Math.abs(g - pg) + Math.abs(b - pb)) / 3;
+        inkSum += dev;
+        if (dev <= 12) continue;
+        painted++;
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+        const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+        satSum += mx === 0 ? 0 : d / mx;
+        valSum += mx / 255;
+        if (d > 8) {
+          let h;
+          if (mx === r) h = ((g - b) / d) % 6;
+          else if (mx === g) h = (b - r) / d + 2;
+          else h = (r - g) / d + 4;
+          hues[Math.min(15, Math.floor((((h * 60) + 360) % 360) / 22.5))] += 1;
+        }
+      }
+    }
+
+    const total = W * H;
+    let distinctHues = 0;
+    if (painted) for (let i = 0; i < 16; i++) if (hues[i] / painted > 0.025) distinctHues++;
+
+    let gradSum = 0, gradN = 0;
+    for (let y = 1; y < H - 1; y += 2) {
+      for (let x = 1; x < W - 1; x += 2) {
+        const i = (y * W + x) * 4;
+        const r = px[i], g = px[i + 1], b = px[i + 2];
+        if ((Math.abs(r - pr) + Math.abs(g - pg) + Math.abs(b - pb)) / 3 <= 12) continue;
+        const j = (y * W + x + 1) * 4, k = ((y + 1) * W + x) * 4;
+        gradSum += (Math.abs(r - px[j]) + Math.abs(g - px[j + 1]) + Math.abs(b - px[j + 2]) +
+                    Math.abs(r - px[k]) + Math.abs(g - px[k + 1]) + Math.abs(b - px[k + 2])) / 6;
+        gradN++;
+      }
+    }
+
+    return {
+      paper: paper,
+      coverage: painted / total,
+      inkMass: inkSum / (total * 255),
+      meanSaturation: painted ? satSum / painted : 0,
+      meanValue: painted ? valSum / painted : 0,
+      distinctHues: distinctHues,
+      edgeGradient: gradN ? gradSum / gradN : 0,
+      bboxFill: maxX < 0 ? 0 : painted / (((maxX - minX) + 1) * ((maxY - minY) + 1))
+    };
+  }
+
+  /* Counts real brush calls by wrapping each allowlisted method. Runtime
+     counts beat parsing the source: they see what actually executed. */
+  function instrumentBrush(allowed, counts) {
+    const originals = {};
+    for (const name of allowed) {
+      if (typeof brush[name] !== 'function') continue;
+      originals[name] = brush[name];
+      brush[name] = function (...args) {
+        counts[name] = (counts[name] || 0) + 1;
+        if (++counts._total > 300000) throw new Error('brush call budget exceeded');
+        return originals[name].apply(this, args);
+      };
+    }
+    return () => { for (const n in originals) brush[n] = originals[n]; };
+  }
+
+  async function paintSketch(opts) {
+    opts = opts || {};
+    const source = opts.source || '';
+    const seed = opts.seed === undefined ? 1 : opts.seed;
+    const C = await contract();
+    const t0 = Date.now();
+    const counts = { _total: 0 };
+    let restore = null;
+
+    try {
+      restore = instrumentBrush(C.allowedBrushMethods, counts);
+
+      // Determinism. Unseeded, the same sketch rendered four times gave coverage
+      // 0.177-0.203 -- different pixels every time -- which puts luck straight
+      // into the reward. Two sources, both closed here (the page is recycled
+      // per render, so nothing needs restoring):
+      //   1. Math.random, used directly by some sketches and libraries;
+      //   2. p5's random()/noise(), which p5.brush v2 also draws from -- seeded
+      //      by wrapping setup() below, before the sketch's own code runs.
+      Math.random = mulberry32((seed >>> 0) || 1);
+      window.__seed = seed;
+
+      // Inject as a real <script> so `function setup()` / `function draw()`
+      // become globals -- which is what p5 global mode looks for. Wrapping in
+      // new Function() would scope them locally and p5 would never see them.
+      // Injected bare, NOT wrapped in try/catch: a `function setup()` inside a
+      // block is block-scoped, so wrapping would hide it from p5 global mode.
+      // Errors are caught with a window listener instead.
+      let loadErr = null;
+      const onErr = (ev) => { loadErr = ev.message || String(ev.error || 'script error'); };
+      window.addEventListener('error', onErr);
+      try {
+        const tag = document.createElement('script');
+        tag.textContent = source;
+        document.body.appendChild(tag);
+      } finally {
+        window.removeEventListener('error', onErr);
+      }
+
+      if (loadErr) return { ok: false, stage: 'compile', error: loadErr };
+      if (typeof window.setup !== 'function')
+        return { ok: false, stage: 'contract', error: 'sketch defines no global setup()' };
+
+      const userSetup = window.setup;
+      window.setup = function () {
+        randomSeed(seed);
+        noiseSeed(seed);
+        return userSetup.apply(this, arguments);
+      };
+
+      const result = await new Promise((resolve) => {
+        const timer = setTimeout(
+          () => resolve({ ok: false, stage: 'timeout', error: 'exceeded ' + C.limits.renderTimeoutMs + 'ms' }),
+          C.limits.renderTimeoutMs
+        );
+
+        // Bootstrap p5 global mode. p5 reads window.setup / window.draw.
+        let inst;
+        try { inst = new p5(); } catch (e) {
+          clearTimeout(timer);
+          return resolve({ ok: false, stage: 'init', error: String((e && e.message) || e) });
+        }
+
+        (async () => {
+          try {
+            // setup() is async in this corpus; wait for the canvas to exist.
+            const deadline = Date.now() + 10000;
+            let cnv = null;
+            while (Date.now() < deadline) {
+              cnv = document.querySelector('canvas');
+              if (cnv && cnv.width > 0) break;
+              await new Promise((r) => setTimeout(r, 30));
+            }
+            if (!cnv) throw new Error('sketch never created a canvas');
+
+            const settle = await waitForStable(
+              cnv,
+              Math.max(1000, C.limits.renderTimeoutMs - (Date.now() - t0) - 1500),
+              C.render.stableTicks, C.render.settleIntervalMs
+            );
+
+            const g = document.createElement('canvas');
+            g.width = cnv.width; g.height = cnv.height;
+            const ctx = g.getContext('2d', { willReadFrequently: true });
+            ctx.drawImage(cnv, 0, 0);
+            const px = ctx.getImageData(0, 0, g.width, g.height).data;
+
+            clearTimeout(timer);
+            resolve({
+              ok: true,
+              png: cnv.toDataURL('image/png'),
+              metrics: metricsFrom(px, g.width, g.height),
+              settle: settle,
+              canvas: { w: cnv.width, h: cnv.height }
+            });
+          } catch (e) {
+            clearTimeout(timer);
+            resolve({ ok: false, stage: 'runtime', error: String((e && e.message) || e) });
+          }
+        })();
+      });
+
+      const total = counts._total;
+      delete counts._total;
+      return Object.assign({}, result, {
+        callCounts: counts,
+        brushCalls: total,
+        shapes: (counts.beginShape || 0) + (counts.circle || 0),
+        timingMs: Date.now() - t0,
+        seed: seed
+      });
+    } catch (e) {
+      return { ok: false, stage: 'harness', error: String((e && e.message) || e) };
+    } finally {
+      if (restore) restore();
+    }
+  }
+
+  return { paintSketch: paintSketch, contract: contract };
+})();
+
+window.paintSketch = HARNESS.paintSketch;
+window.harnessReady = (async () => {
+  await HARNESS.contract();
+  const ok = typeof p5 === 'function' && typeof brush === 'object';
+  document.getElementById('status').textContent =
+    ok ? 'harness: ready' : 'harness: FAILED to load p5 / p5.brush';
+  if (!ok) throw new Error('p5 or p5.brush failed to load');
+  return true;
+})();
+</script>
+</body>
+</html>

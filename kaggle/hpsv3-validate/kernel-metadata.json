@@ -1,0 +1,15 @@
+{
+  "id": "swachhithb/hpsv3-pool-validation",
+  "title": "hpsv3-pool-validation",
+  "code_file": "hpsv3_validate.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaL4",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

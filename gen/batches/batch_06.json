@@ -1,0 +1,74 @@
+[
+ {
+  "subject": "a deep crimson peony",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b06_01"
+ },
+ {
+  "subject": "a burgundy dahlia",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b06_02"
+ },
+ {
+  "subject": "a white lily",
+  "composition": "a bloom seen from the side",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b06_03"
+ },
+ {
+  "subject": "a pale pink cherry blossom",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "cool light",
+  "id": "b06_04"
+ },
+ {
+  "subject": "a pink cosmos",
+  "composition": "a bloom seen from above",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b06_05"
+ },
+ {
+  "subject": "a white and pink magnolia",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "saturated and bold",
+  "id": "b06_06"
+ },
+ {
+  "subject": "a red camellia",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "soft and pastel, lots of white paper showing",
+  "id": "b06_07"
+ },
+ {
+  "subject": "a peach ranunculus",
+  "composition": "a bloom seen from the side",
+  "palette": "warm light",
+  "id": "b06_08"
+ },
+ {
+  "subject": "a white with a dark centre anemone",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "muted and earthy",
+  "id": "b06_09"
+ },
+ {
+  "subject": "a orange dahlia",
+  "composition": "a bloom seen from the side",
+  "palette": "saturated and bold",
+  "id": "b06_10"
+ },
+ {
+  "subject": "a dusty pink rose",
+  "composition": "two blooms at different angles",
+  "palette": "saturated and bold",
+  "id": "b06_11"
+ },
+ {
+  "subject": "a yellow hibiscus",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "muted and earthy",
+  "id": "b06_12"
+ }
+]
