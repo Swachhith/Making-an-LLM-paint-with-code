@@ -94,9 +94,24 @@ def main():
         return judge.score(c["png"], [r["png"] for r in refs], c["subject"],
                            [r["subject"] for r in refs])
 
+    # Progress is printed per candidate and each result is appended to a partial
+    # file as it lands: on a congested endpoint a run can take an hour, and the
+    # first version only reported at the very end, so a killed run kept nothing.
+    partial = os.path.join(ROOT, "results",
+                           "judge_vs_ratings_partial_" + args.spec.replace("/", "_").replace(":", "_") + ".jsonl")
+    results = [None] * len(cands)
     try:
         with concurrent.futures.ThreadPoolExecutor(max_workers=args.concurrency) as ex:
-            results = list(ex.map(run, cands))
+            futs = {ex.submit(run, c): i for i, c in enumerate(cands)}
+            for done, fut in enumerate(concurrent.futures.as_completed(futs), 1):
+                i = futs[fut]
+                results[i] = fut.result()
+                sc = results[i].get("score")
+                print(f"  [{done:3d}/{len(cands)}] {cands[i]['tier']:4s} "
+                      f"{'DROPPED' if sc is None else f'{sc:.2f}'}  "
+                      f"{cands[i]['subject'][:40]}  ({time.time() - t0:.0f}s)", flush=True)
+                with open(partial, "a", encoding="utf-8") as f:
+                    f.write(json.dumps({**cands[i], "score": sc}) + "\n")
     except JudgeUnavailable as e:
         print("UNAVAILABLE:", e)
         return

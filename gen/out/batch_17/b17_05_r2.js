@@ -1,0 +1,150 @@
+async function setup() {
+  createCanvas(600, 600, WEBGL);
+  brush.scaleBrushes(3);
+  angleMode(DEGREES);
+  noLoop();
+}
+
+function draw() {
+  translate(-width / 2, -height / 2);
+  background("#f2f5f8");
+  brush.noStroke();
+  // cool clear sky, deeper at top
+  brush.fill("#6f9fd0", 190);
+  brush.fillBleed(0.3);
+  brush.fillTexture(0.4, 0.4);
+  brush.beginShape(0.4);
+  brush.vertex(-20, -20);
+  brush.vertex(620, -20);
+  brush.vertex(620, 180);
+  brush.vertex(-20, 200);
+  brush.endShape(true);
+  brush.fill("#b8d0e8", 170);
+  brush.fillBleed(0.3);
+  brush.beginShape(0.6);
+  brush.vertex(-20, 150);
+  brush.vertex(620, 130);
+  brush.vertex(620, 450);
+  brush.vertex(-20, 450);
+  brush.endShape(true);
+  // distant mesa line, pale violet
+  brush.fill("#9c93c4", 200);
+  brush.fillBleed(0.2);
+  brush.fillTexture(0.4, 0.4);
+  brush.beginShape(0.05);
+  brush.vertex(-20, 455);
+  brush.vertex(-20, 400);
+  brush.vertex(30, 398);
+  brush.vertex(48, 372);
+  brush.vertex(140, 368);
+  brush.vertex(158, 398);
+  brush.vertex(250, 402);
+  brush.vertex(262, 388);
+  brush.vertex(300, 386);
+  brush.vertex(312, 404);
+  brush.vertex(620, 410);
+  brush.vertex(620, 455);
+  brush.endShape(true);
+  // main jagged mesa: flat top, stepped cliffs, talus
+  brush.fill("#d7968a", 220);
+  brush.fillBleed(0.2);
+  brush.fillTexture(0.5, 0.5);
+  brush.beginShape(0.03);
+  brush.vertex(250, 460);
+  brush.vertex(290, 410);
+  brush.vertex(310, 370);
+  brush.vertex(322, 300);
+  brush.vertex(340, 292);
+  brush.vertex(348, 250);
+  brush.vertex(372, 244);
+  brush.vertex(380, 225);
+  brush.vertex(505, 222);
+  brush.vertex(512, 246);
+  brush.vertex(530, 250);
+  brush.vertex(540, 300);
+  brush.vertex(560, 310);
+  brush.vertex(580, 380);
+  brush.vertex(620, 420);
+  brush.vertex(620, 460);
+  brush.endShape(true);
+  brush.fill("#cf8577", 180);
+  brush.beginShape(0.03);
+  brush.vertex(322, 300);
+  brush.vertex(560, 310);
+  brush.vertex(565, 330);
+  brush.vertex(318, 322);
+  brush.endShape(true);
+  // cool violet shadow on the right faces
+  brush.fill("#6e6aa8", 200);
+  brush.fillBleed(0.2);
+  brush.beginShape(0.03);
+  brush.vertex(505, 222);
+  brush.vertex(512, 246);
+  brush.vertex(530, 250);
+  brush.vertex(540, 300);
+  brush.vertex(560, 310);
+  brush.vertex(580, 380);
+  brush.vertex(620, 420);
+  brush.vertex(620, 460);
+  brush.vertex(470, 460);
+  brush.vertex(475, 330);
+  brush.vertex(490, 240);
+  brush.endShape(true);
+  // spire butte on the left
+  brush.fill("#cf9486", 215);
+  brush.fillBleed(0.2);
+  brush.beginShape(0.03);
+  brush.vertex(40, 460);
+  brush.vertex(70, 410);
+  brush.vertex(82, 320);
+  brush.vertex(96, 300);
+  brush.vertex(118, 302);
+  brush.vertex(128, 330);
+  brush.vertex(140, 410);
+  brush.vertex(180, 460);
+  brush.endShape(true);
+  brush.fill("#6e6aa8", 190);
+  brush.beginShape(0.03);
+  brush.vertex(118, 302);
+  brush.vertex(128, 330);
+  brush.vertex(140, 410);
+  brush.vertex(180, 460);
+  brush.vertex(120, 460);
+  brush.vertex(110, 340);
+  brush.endShape(true);
+  // desert floor
+  brush.fill("#d9bfae", 215);
+  brush.fillBleed(0.25);
+  brush.fillTexture(0.5, 0.5);
+  brush.beginShape(0.5);
+  brush.vertex(-20, 452);
+  brush.vertex(620, 452);
+  brush.vertex(620, 620);
+  brush.vertex(-20, 620);
+  brush.endShape(true);
+  brush.fill("#8ea4c4", 170);
+  brush.fillBleed(0.3);
+  brush.beginShape(0.7);
+  brush.vertex(-20, 520);
+  brush.vertex(250, 498);
+  brush.vertex(620, 525);
+  brush.vertex(620, 620);
+  brush.vertex(-20, 620);
+  brush.endShape(true);
+  brush.fill("#7a8fb2", 160);
+  brush.beginShape(0.7);
+  brush.vertex(-20, 575);
+  brush.vertex(300, 565);
+  brush.vertex(620, 585);
+  brush.vertex(620, 620);
+  brush.vertex(-20, 620);
+  brush.endShape(true);
+  // sage scrub dots on the flat
+  randomSeed(55);
+  for (let i = 0; i < 26; i++) {
+    let y = random(470, 590);
+    brush.fill("#7e9a94", 200);
+    brush.fillBleed(0.15);
+    brush.circle(random(0, 600), y, map(y, 470, 590, 3, 10), 0.4);
+  }
+}

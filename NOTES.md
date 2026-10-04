@@ -511,3 +511,90 @@ Fixes:
   is about polygons smearing into fans).
 - Prompt, judge rubric and brief generalised away from flowers. The rubric also
   says full-canvas and bare-paper paintings are equally valid.
+
+
+## Reward model trained on the ratings beats the Gemma judge (2026-10-04)
+
+965 blind ratings (love 110 / okay 377 / nope 478, 324 prompts, 8 categories).
+CLIP ViT-B/32 image embeddings + two balanced logistic regressions (tier>=okay,
+tier==love), C chosen inside each training fold. train/reward_model_exp.py.
+
+Validation that does not leak: all three rounds of a prompt are near-duplicates,
+so they are always held out together (GroupKFold on prompt id).
+
+| on the 64 paintings Gemma scored (same labels) | love/nope | love/okay | okay/nope | spearman |
+|---|---|---|---|---|
+| Gemma 4 31B judge | 0.875 | 0.629 | 0.789 | 0.573 |
+| CLIP + linear, trained on ratings | **0.971** | **0.802** | **0.879** | **0.689** |
+
+| all 965, CLIP + linear | love/nope | love/okay | okay/nope | spearman |
+|---|---|---|---|---|
+| held out by prompt | 0.893 | 0.737 | 0.745 | 0.519 |
+| held out by whole category | 0.765 | 0.641 | 0.620 | 0.295 |
+| coverage alone (baseline) | 0.525 | 0.524 | 0.503 | 0.020 |
+
+- The judge's weakness was love vs okay (references so weak that loves and
+  okays both scored ~0.9). The learned model fixes exactly that: 0.80 vs 0.63.
+- **It does not transfer to unseen subject types.** Held-out category AUCs:
+  sunsets 0.79, flowers 0.78, people 0.77, trees 0.72, houses 0.68, mountains
+  0.56, **night 0.46** -- below chance on night skies when it never saw one.
+  So it must be trained on every subject type the policy paints; new types need
+  ratings first.
+- **Rater drift:** between the Gemma run and now, 16 of its 69 labels changed,
+  almost all love -> okay (21 loves became 13). The bar rose after seeing 720
+  more paintings. Early ratings deserve less trust; re-rating is cheap.
+- Gemma's earlier 0.805 / 0.558 were correct for the labels at the time; on
+  current labels it scores 0.875 / 0.629. The head-to-head uses current labels
+  for both.
+- Risk not measured here: a linear head on CLIP is a small, exploitable target
+  for an RL policy whose outputs drift off the rated distribution.
+
+
+## Encoder sweep for the taste model (train/encoder_sweep.py)
+
+Same protocol (held out by prompt; and by whole category), linear probes:
+
+| encoder | love/nope | love/okay | spearman | unseen-category love/okay | unseen night |
+|---|---|---|---|---|---|
+| CLIP B/32 | 0.893 | 0.737 | 0.519 | 0.641 | 0.460 |
+| CLIP L/14 | 0.904 | 0.747 | 0.537 | 0.655 | 0.490 |
+| SigLIP base | 0.906 | 0.746 | 0.562 | 0.663 | 0.485 |
+| DINOv2 base (CLS + mean patch) | 0.923 | 0.749 | 0.549 | 0.679 | 0.574 |
+| **DINOv2 + SigLIP** | **0.938** | **0.765** | **0.597** | **0.699** | 0.517 |
+
+- **Choice: DINOv2 base + SigLIP base, concatenated (2304-d).** Beats CLIP B/32 on
+  love/okay by +0.028, 95% CI [-0.007, +0.065], ahead in 94% of paired
+  bootstrap resamples over prompts -- very likely better, not certainly.
+- Scale is not the lever: CLIP L/14 (5x B/32) gained only +0.010.
+- DINOv2, trained on images alone, generalises best to unseen categories and is
+  the only encoder above chance on unseen night skies -- consistent with the
+  ratings tracking *how* things are painted (contrast, saturation) more than
+  *what* is depicted.
+- Cost: ~0.26 s/painting for both encoders on this laptop's CPU.
+- Probable ceiling is the rater: 16 of 69 labels (23%) changed between two
+  rating sessions, mostly love<->okay. Re-rating early batches is likely the
+  next real gain.
+- Memory: CLIP L/14 via CLIPModel loads the text tower too (~4.3 GB committed
+  on CPU); with ~2.7 GB available it swapped and ran ~3x slower until Chrome
+  was closed. Use the vision-only model class for big encoders.
+
+
+## Taste model wired in as the 0.60 term (2026-10-04)
+
+- `train/taste_model.py fit` -> `env/taste_model.npz` (21 KB): DINOv2-base +
+  SigLIP-base embeddings, two balanced logistic heads (C = 3.0, 1.0), score =
+  mean of P(>=okay) and P(love). Held out by prompt: love/nope 0.938, love/okay
+  0.765, spearman 0.597. In-sample means: nope 0.24, okay 0.53, love 0.79.
+- **Verified the live embedder reproduces the cached training embeddings**:
+  cosine 1.000000 on every checked painting, max diff 1.2e-7; base64 input (what
+  the renderer hands over) identical to file input. Without this check, a
+  preprocessing mismatch would have made the reward silently wrong.
+- reward.py default terms are now gate, length, hpsv3, taste. The pairwise judge
+  stays available as the "pairwise" term. A taste-model failure is infra
+  (imputed), never a 0.
+- test_reward.py runs offline on real rated sketches: love 0.80 > okay 0.37 >
+  nope 0.14 taste, all five checks pass -- on local re-renders (Playwright
+  chromium), not the cloud renders that were rated, so the ranking survives a
+  browser change.
+- Refit whenever ratings change: the weights file records a digest of the
+  ratings it was trained on.

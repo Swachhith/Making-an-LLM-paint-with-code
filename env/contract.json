@@ -65,7 +65,8 @@
       "gate": 0.05,
       "length": 0.05,
       "hpsv3": 0.3,
-      "pairwise": 0.6
+      "pairwise": 0.6,
+      "taste": 0.6
     },
     "pairwise": {
       "referencesPerRollout": 2,

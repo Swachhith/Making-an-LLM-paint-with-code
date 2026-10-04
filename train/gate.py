@@ -54,16 +54,80 @@ def strip_noncode(code: str) -> str:
     return _STRINGS.sub('""', _COMMENTS.sub(" ", code))
 
 
+_NAME = re.compile(r"[A-Za-z_$][\w$]*")
+# A declaration statement: from const/let/var to the end of the statement
+# (a semicolon, a newline, or the `of`/`in` of a for-loop header).
+_DECL_STMT = re.compile(r"\b(?:const|let|var)\s+(.+?)(?=;|\n|\)\s*\{|\s+of\s|\s+in\s|$)")
+_ARROW_PARAMS = re.compile(r"\(([^()]*)\)\s*=>|([A-Za-z_$][\w$]*)\s*=>")
+
+
+def _binding_names(decl: str) -> set:
+    """Names bound by one declaration's text, e.g. `x = p[0], w = p[1], top = p[2]`
+    or `[x, y, top, bot]`. Walks it at bracket depth: at depth 0, a name that
+    starts a declarator is bound (a default value after `=` is not); inside a
+    destructuring pattern, every name is bound except object-pattern keys
+    followed by `:`."""
+    names, depth, i, expecting = set(), 0, 0, True
+    in_init = False
+    while i < len(decl):
+        ch = decl[i]
+        if ch in "[{(":
+            depth += 1
+            if depth == 1 and ch in "[{" and expecting:
+                end, d = i, 0
+                while end < len(decl):
+                    d += decl[end] in "[{("; d -= decl[end] in "]})"
+                    if d == 0:
+                        break
+                    end += 1
+                pattern = decl[i + 1:end]
+                for m in _NAME.finditer(pattern):
+                    rest = pattern[m.end():].lstrip()
+                    if not rest.startswith(":"):
+                        names.add(m.group())
+                depth -= 1
+                i = end + 1
+                expecting = False
+                continue
+        elif ch in "]})":
+            depth -= 1
+        elif depth == 0 and ch == "=":
+            in_init, expecting = True, False
+        elif depth == 0 and ch == ",":
+            in_init, expecting = False, True
+        elif depth == 0 and expecting and not in_init:
+            m = _NAME.match(decl, i)
+            if m:
+                names.add(m.group())
+                i = m.end()
+                expecting = False
+                continue
+        i += 1
+    return names
+
+
 def _declared_names(code: str) -> set[str]:
+    """Every name the sketch binds itself, so banned words used as the sketch's
+    own variables are not flagged. Handles single and multi-declarator
+    statements, destructuring (including `for (const [x, top] of ...)`),
+    function and arrow parameters. Missing any of these rejected legitimate
+    sketches: 5 of 720 in batches 08-27, all for a local named `top`."""
     names: set[str] = set()
     for groups in _DECL.findall(code):
         names.update(g for g in groups if g)
-    # Destructuring and multi-declarator forms: const a = 1, top = 2
-    for chunk in re.findall(r"\b(?:const|let|var)\s+([^;=\n]+?)=", code):
-        names.update(re.findall(r"[A-Za-z_$][\w$]*", chunk))
+    for stmt in _DECL_STMT.findall(code):
+        names |= _binding_names(stmt)
     for plist in _PARAMS.findall(code):
-        names.update(re.findall(r"[A-Za-z_$][\w$]*", plist))
+        names.update(_NAME.findall(plist))
+    for a, b in _ARROW_PARAMS.findall(code):
+        names.update(_NAME.findall(a or b))
     return names
+
+
+def _object_keys_removed(scan: str) -> str:
+    """Blank out object-literal keys (`{ top: 70 }`, `, top: 70`): a key is a
+    property name, not a reference to the global of the same name."""
+    return re.sub(r"(?<=[{,])(\s*)([A-Za-z_$][\w$]*)(\s*):", r"\1\3:", scan)
 
 
 def extract_code(completion: str) -> str:
@@ -118,7 +182,7 @@ def check_source(code: str) -> tuple[list[str], dict[str, Any]]:
 
     # Cheats and escapes. Checked on identifiers, so `brush.fill` and a local
     # named `textWidth` don't trip the `text` rule.
-    idents = set(_IDENT.findall(scan))
+    idents = set(_IDENT.findall(_object_keys_removed(scan)))
     hits = sorted((idents & BANNED) - _declared_names(scan))
     facts["banned_identifiers"] = hits
     if hits:

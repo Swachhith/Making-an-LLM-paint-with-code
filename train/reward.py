@@ -1,6 +1,12 @@
 """The reward: Surya's four-signal rubric, plus the diagnostics that saved him.
 
-    gate 0.05 . length 0.05 . HPSv3 0.30 . pairwise judge 0.60
+    gate 0.05 . length 0.05 . HPSv3 0.30 . taste 0.60
+
+The 0.60 term was Surya's pairwise VLM judge. Here it is a taste model learned
+from the rater's own ratings (train/taste_model.py): on the same paintings and
+labels it beat the Gemma 4 31B judge on every measure (love vs okay 0.80 vs
+0.63), costs nothing per call and needs no API. The pairwise judge remains
+available as the "pairwise" term, e.g. as an independent cross-check.
 
 Soup loads this file with `training.reward_fn: ./train/reward.py` and calls
 `reward_fn(completions, **kwargs)`, which must return one finite float per
@@ -37,8 +43,9 @@ Design decisions that are load-bearing:
 
 Configuration is by environment variable so the same file serves every phase:
 
-    WC_REWARD_TERMS    gate,length,hpsv3,pairwise   (phase 1: gate,length)
-    WC_JUDGE           nvidia:google/gemma-4-31b-it
+    WC_REWARD_TERMS    gate,length,hpsv3,taste   (phase 1: gate,length)
+    WC_TASTE_MODEL     env/taste_model.npz       (refit: python train/taste_model.py fit)
+    WC_JUDGE           nvidia:google/gemma-4-31b-it   (only if "pairwise" is enabled)
     WC_FALLBACK_JUDGE  openrouter:z-ai/glm-5.3-flash
     WC_REWARD_LOG      results/reward_log.jsonl
 """
@@ -63,7 +70,8 @@ from train.gate import check_render, check_source, extract_code, length_score  #
 
 CONTRACT = json.load(open(os.path.join(ROOT, "env", "contract.json"), encoding="utf-8"))
 WEIGHTS = CONTRACT["reward"]["weights"]
-ALL_TERMS = ("gate", "length", "hpsv3", "pairwise")
+ALL_TERMS = ("gate", "length", "hpsv3", "taste", "pairwise")
+DEFAULT_TERMS = ("gate", "length", "hpsv3", "taste")
 
 # One seed for every rollout: the reward is then a deterministic function of the
 # code, so two rollouts that wrote the same sketch score the same.
@@ -126,9 +134,9 @@ def local_render_fn(codes: list) -> list:
 # ---------------------------------------------------------------------------
 class Reward:
     def __init__(self, terms=None, render_fn: Callable | None = None,
-                 hps_fn: Callable | None = None, judge=None,
+                 hps_fn: Callable | None = None, judge=None, taste=None,
                  log_path: str | None = None):
-        terms = terms or os.environ.get("WC_REWARD_TERMS", ",".join(ALL_TERMS)).split(",")
+        terms = terms or os.environ.get("WC_REWARD_TERMS", ",".join(DEFAULT_TERMS)).split(",")
         self.terms = tuple(t.strip() for t in terms if t.strip())
         unknown = set(self.terms) - set(ALL_TERMS)
         if unknown:
@@ -143,6 +151,15 @@ class Reward:
             raise ValueError("hpsv3 is enabled but no hps_fn was given -- "
                              "deploy the HPSv3 scorer or drop the term")
         self.hps_norm = _hps_normaliser() if "hpsv3" in self.terms else None
+
+        self.taste = taste
+        if "taste" in self.terms and taste is None:
+            from train.taste_model import TasteModel, WEIGHTS as TASTE_WEIGHTS
+            path = os.environ.get("WC_TASTE_MODEL", TASTE_WEIGHTS)
+            if not os.path.exists(path):
+                raise ValueError(f"taste is enabled but {path} does not exist -- "
+                                 "run `python train/taste_model.py fit`")
+            self.taste = TasteModel(path)   # encoders load lazily, on first use
 
         self.judge = judge
         if "pairwise" in self.terms and judge is None:
@@ -237,7 +254,24 @@ class Reward:
                     rows[i]["hpsv3_mu"] = mu
                     rows[i]["terms"]["hpsv3"] = self.hps_norm(mu)
 
-        # 5. pairwise judge -- one reference pair and one judge per group
+        # 5. taste model -- an absolute score per painting, learned from ratings.
+        #    A failure here (model load, OOM) is infrastructure, never a 0.
+        if "taste" in self.terms:
+            idx = [i for i in good if not infra[i]]
+            if idx:
+                try:
+                    scores = self.taste.score([renders[i]["png_b64"] for i in idx])
+                except Exception as e:
+                    scores = [None] * len(idx)
+                    for i in idx:
+                        rows[i]["failures"].append(f"INFRA: taste model: {type(e).__name__}: {e}")
+                for i, s in zip(idx, scores):
+                    if s is None:
+                        infra[i] = True
+                    else:
+                        rows[i]["terms"]["taste"] = s
+
+        # 6. pairwise judge -- one reference pair and one judge per group
         if "pairwise" in self.terms and good:
             for g in dict.fromkeys(groups[i] for i in good):
                 idx = [i for i in good if groups[i] == g and not infra[i]]
@@ -258,7 +292,7 @@ class Reward:
                     else:
                         rows[i]["terms"]["pairwise"] = s
 
-        # 6. combine; gate failures score 0, infra failures are imputed
+        # 7. combine; gate failures score 0, infra failures are imputed
         totals: list = [None] * n
         for i in range(n):
             if infra[i]:
@@ -278,7 +312,7 @@ class Reward:
                     totals[i] = fill
                     rows[i]["imputed"] = True
 
-        # 7. log
+        # 8. log
         dt = time.time() - t0
         with open(self.log_path, "a", encoding="utf-8") as f:
             for i in range(n):
