@@ -1,0 +1,135 @@
+async function setup() {
+  createCanvas(600, 600, WEBGL);
+  brush.scaleBrushes(3);
+  angleMode(DEGREES);
+  noLoop();
+}
+
+function draw() {
+  translate(-width / 2, -height / 2);
+  background("#f4e8d0");
+  brush.noStroke();
+  // sky: three graded passes
+  brush.fill("#f08010", 235); brush.fillBleed(0.3); brush.fillTexture(0.4, 0.4);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 455); brush.vertex(-10, 455);
+  brush.endShape(true);
+  brush.fill("#d01c28", 225);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 250); brush.vertex(300, 300); brush.vertex(-10, 230);
+  brush.endShape(true);
+  brush.fill("#40125a", 225);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 95); brush.vertex(300, 120); brush.vertex(-10, 125);
+  brush.endShape(true);
+  brush.fill("#40125a", 215);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 95); brush.vertex(300, 120); brush.vertex(-10, 125);
+  brush.endShape(true);
+  brush.fill("#f8b020", 215);
+  brush.beginShape(0.5);
+  brush.vertex(-10, 350); brush.vertex(610, 345); brush.vertex(610, 455); brush.vertex(-10, 455);
+  brush.endShape(true);
+  // cloud bars
+  brush.fill("#50123e", 215);
+  brush.beginShape(0.7);
+  brush.vertex(20, 285); brush.vertex(200, 258); brush.vertex(340, 285); brush.vertex(180, 312);
+  brush.endShape(true);
+  brush.fill("#50123e", 205);
+  brush.beginShape(0.7);
+  brush.vertex(20, 285); brush.vertex(200, 258); brush.vertex(340, 285); brush.vertex(180, 312);
+  brush.endShape(true);
+  brush.beginShape(0.7);
+  brush.vertex(380, 335); brush.vertex(520, 312); brush.vertex(600, 338); brush.vertex(480, 360);
+  brush.endShape(true);
+  brush.fill("#50123e", 205);
+  brush.beginShape(0.7);
+  brush.vertex(380, 335); brush.vertex(520, 312); brush.vertex(600, 338); brush.vertex(480, 360);
+  brush.endShape(true);
+  // sun
+  brush.fill("#ffe070", 245);
+  brush.circle(180, 405, 36, 0.3);
+  // sea
+  brush.fill("#5a1038", 235); brush.fillBleed(0.25);
+  brush.beginShape(0.4);
+  brush.vertex(-10, 455); brush.vertex(610, 455); brush.vertex(610, 610); brush.vertex(-10, 610);
+  brush.endShape(true);
+  brush.fill("#5a1038", 225);
+  brush.beginShape(0.4);
+  brush.vertex(-10, 455); brush.vertex(610, 455); brush.vertex(610, 610); brush.vertex(-10, 610);
+  brush.endShape(true);
+  brush.fill("#f08010", 220);
+  brush.beginShape(0.5);
+  brush.vertex(120, 460); brush.vertex(240, 460); brush.vertex(265, 605); brush.vertex(95, 605);
+  brush.endShape(true);
+  brush.fill("#2a0a28", 210);
+  brush.beginShape(0.3);
+  brush.vertex(20, 505); brush.vertex(300, 498); brush.vertex(300, 522); brush.vertex(30, 530);
+  brush.endShape(true);
+  brush.fill("#2a0a28", 200);
+  brush.beginShape(0.3);
+  brush.vertex(20, 505); brush.vertex(300, 498); brush.vertex(300, 522); brush.vertex(30, 530);
+  brush.endShape(true);
+  // rocks and lighthouse, deep shadow
+  brush.fill("#10061a", 250); brush.fillBleed(0.12);
+  brush.beginShape(0.3);
+  brush.vertex(390, 462); brush.vertex(425, 440); brush.vertex(465, 446); brush.vertex(520, 428); brush.vertex(610, 450); brush.vertex(610, 540); brush.vertex(390, 525);
+  brush.endShape(true);
+  brush.fill("#10061a", 240);
+  brush.beginShape(0.3);
+  brush.vertex(390, 462); brush.vertex(425, 440); brush.vertex(465, 446); brush.vertex(520, 428); brush.vertex(610, 450); brush.vertex(610, 540); brush.vertex(390, 525);
+  brush.endShape(true);
+  brush.beginShape(0.1);
+  brush.vertex(452, 446); brush.vertex(468, 250); brush.vertex(502, 250); brush.vertex(518, 446);
+  brush.endShape(true);
+  brush.fill("#10061a", 240);
+  brush.beginShape(0.1);
+  brush.vertex(452, 446); brush.vertex(468, 250); brush.vertex(502, 250); brush.vertex(518, 446);
+  brush.endShape(true);
+  brush.beginShape(0.1);
+  brush.vertex(462, 250); brush.vertex(462, 212); brush.vertex(510, 212); brush.vertex(510, 250);
+  brush.endShape(true);
+  brush.fill("#10061a", 240);
+  brush.beginShape(0.1);
+  brush.vertex(462, 250); brush.vertex(462, 212); brush.vertex(510, 212); brush.vertex(510, 250);
+  brush.endShape(true);
+  brush.beginShape(0.1);
+  brush.vertex(458, 212); brush.vertex(486, 175); brush.vertex(514, 212);
+  brush.endShape(true);
+  brush.fill("#10061a", 240);
+  brush.beginShape(0.1);
+  brush.vertex(458, 212); brush.vertex(486, 175); brush.vertex(514, 212);
+  brush.endShape(true);
+  brush.beginShape(0.1);
+  brush.vertex(452, 446); brush.vertex(468, 250); brush.vertex(502, 250); brush.vertex(518, 446);
+  brush.endShape(true);
+  brush.fill("#10061a", 240);
+  brush.beginShape(0.1);
+  brush.vertex(452, 446); brush.vertex(468, 250); brush.vertex(502, 250); brush.vertex(518, 446);
+  brush.endShape(true);
+  // lit lantern room + red band
+  brush.fill("#ffe070", 250);
+  brush.beginShape(0.2);
+  brush.vertex(472, 245); brush.vertex(472, 221); brush.vertex(500, 221); brush.vertex(500, 245);
+  brush.endShape(true);
+  brush.fill("#d01c28", 205);
+  brush.beginShape(0.1);
+  brush.vertex(458, 370); brush.vertex(512, 370); brush.vertex(515, 405); brush.vertex(455, 405);
+  brush.endShape(true);
+  // birds
+  brush.fill("#10061a", 235);
+  brush.beginShape(0.4);
+  brush.vertex(300, 180); brush.vertex(322, 166); brush.vertex(344, 182); brush.vertex(322, 176);
+  brush.endShape(true);
+  brush.fill("#10061a", 225);
+  brush.beginShape(0.4);
+  brush.vertex(300, 180); brush.vertex(322, 166); brush.vertex(344, 182); brush.vertex(322, 176);
+  brush.endShape(true);
+  brush.beginShape(0.4);
+  brush.vertex(250, 215); brush.vertex(268, 205); brush.vertex(286, 217); brush.vertex(268, 213);
+  brush.endShape(true);
+  brush.fill("#10061a", 225);
+  brush.beginShape(0.4);
+  brush.vertex(250, 215); brush.vertex(268, 205); brush.vertex(286, 217); brush.vertex(268, 213);
+  brush.endShape(true);
+}

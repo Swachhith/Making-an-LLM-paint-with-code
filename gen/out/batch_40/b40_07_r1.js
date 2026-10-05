@@ -1,0 +1,85 @@
+async function setup() {
+  createCanvas(600, 600, WEBGL);
+  brush.scaleBrushes(3);
+  angleMode(DEGREES);
+  noLoop();
+}
+
+function draw() {
+  translate(-width / 2, -height / 2);
+  background("#e4eeec");
+  brush.noStroke();
+  // sky: teal low, indigo high
+  brush.fill("#0e8a8e", 230); brush.fillBleed(0.3); brush.fillTexture(0.4, 0.4);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 450); brush.vertex(-10, 450);
+  brush.endShape(true);
+  brush.fill("#20207a", 225);
+  brush.beginShape(0.5);
+  brush.vertex(-10, -10); brush.vertex(610, -10); brush.vertex(610, 200); brush.vertex(300, 240); brush.vertex(-10, 180);
+  brush.endShape(true);
+  brush.fill("#3a3ab0", 190);
+  brush.beginShape(0.5);
+  brush.vertex(-10, 150); brush.vertex(610, 170); brush.vertex(610, 280); brush.vertex(-10, 270);
+  brush.endShape(true);
+  brush.fill("#8ae0d8", 200);
+  brush.beginShape(0.5);
+  brush.vertex(-10, 340); brush.vertex(610, 330); brush.vertex(610, 455); brush.vertex(-10, 455);
+  brush.endShape(true);
+  // clouds
+  brush.fill("#2a2a9a", 190);
+  brush.beginShape(0.7);
+  brush.vertex(40, 250); brush.vertex(180, 222); brush.vertex(330, 250); brush.vertex(200, 285); brush.vertex(80, 282);
+  brush.endShape(true);
+  brush.beginShape(0.7);
+  brush.vertex(380, 295); brush.vertex(490, 268); brush.vertex(590, 298); brush.vertex(480, 322);
+  brush.endShape(true);
+  // pale sun
+  brush.fill("#c8f4e0", 235);
+  brush.circle(300, 400, 28, 0.3);
+  // marsh water
+  brush.fill("#08505e", 225); brush.fillBleed(0.25);
+  brush.beginShape(0.5);
+  brush.vertex(-10, 450); brush.vertex(610, 445); brush.vertex(610, 610); brush.vertex(-10, 610);
+  brush.endShape(true);
+  brush.fill("#40c0b8", 190);
+  brush.beginShape(0.5);
+  brush.vertex(200, 455); brush.vertex(400, 455); brush.vertex(440, 530); brush.vertex(160, 530);
+  brush.endShape(true);
+  brush.fill("#1a2a6a", 190);
+  brush.beginShape(0.4);
+  brush.vertex(-10, 540); brush.vertex(200, 525); brush.vertex(340, 560); brush.vertex(-10, 575);
+  brush.endShape(true);
+  // reed banks
+  brush.fill("#101c4a", 240);
+  brush.beginShape(0.5);
+  brush.vertex(-10, 450); brush.vertex(100, 432); brush.vertex(240, 446); brush.vertex(340, 452); brush.vertex(340, 485); brush.vertex(-10, 505);
+  brush.endShape(true);
+  brush.beginShape(0.5);
+  brush.vertex(390, 455); brush.vertex(520, 428); brush.vertex(610, 438); brush.vertex(610, 525); brush.vertex(430, 490);
+  brush.endShape(true);
+  brush.fill("#0a1236", 225);
+  brush.beginShape(0.2);
+  brush.vertex(30, 440); brush.vertex(46, 365); brush.vertex(70, 440);
+  brush.endShape(true);
+  brush.beginShape(0.2);
+  brush.vertex(80, 440); brush.vertex(92, 395); brush.vertex(112, 440);
+  brush.endShape(true);
+  brush.beginShape(0.2);
+  brush.vertex(535, 435); brush.vertex(552, 360); brush.vertex(578, 435);
+  brush.endShape(true);
+  // birds in flight
+  brush.fill("#0a1236", 245);
+  brush.beginShape(0.4);
+  brush.vertex(235, 150); brush.vertex(262, 134); brush.vertex(286, 152); brush.vertex(262, 146);
+  brush.endShape(true);
+  brush.beginShape(0.4);
+  brush.vertex(318, 195); brush.vertex(342, 180); brush.vertex(362, 198); brush.vertex(342, 192);
+  brush.endShape(true);
+  brush.beginShape(0.4);
+  brush.vertex(180, 205); brush.vertex(200, 194); brush.vertex(218, 207); brush.vertex(200, 203);
+  brush.endShape(true);
+  brush.beginShape(0.4);
+  brush.vertex(400, 130); brush.vertex(416, 120); brush.vertex(432, 132); brush.vertex(416, 128);
+  brush.endShape(true);
+}
