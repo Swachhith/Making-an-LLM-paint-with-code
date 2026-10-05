@@ -1,0 +1,44 @@
+async function setup() {
+  createCanvas(600, 600, WEBGL);
+  brush.scaleBrushes(3);
+  angleMode(DEGREES);
+  noLoop();
+}
+
+function draw() {
+  translate(-width / 2, -height / 2);
+  background("#d8d4ec");
+  brush.noStroke();
+  brush.fillBleed(0.3); brush.fillTexture(0.4, 0.4);
+  brush.fill("#a8a0d8", 200);
+  brush.beginShape(0.5); [[0,0],[600,0],[600,480],[0,480]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  brush.fill("#c8a8d8", 190);
+  brush.beginShape(0.5); [[0,250],[600,230],[600,480],[0,480]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  brush.fill("#f0b8c0", 180);
+  brush.beginShape(0.5); [[0,400],[600,390],[600,490],[0,490]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  // cloud puffs
+  brush.fill("#8a84c4", 170);
+  brush.beginShape(0.9); [[60,120],[160,90],[260,120],[200,160],[100,160]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  brush.beginShape(0.9); [[330,60],[460,40],[540,90],[470,120],[360,110]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  // ground
+  brush.fill("#6a5a9a", 215);
+  brush.beginShape(0.4); [[0,490],[600,490],[600,600],[0,600]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+  // stalls
+  const S=[[30,100],[170,120],[330,110],[470,100]];
+  for (const [x,w] of S){
+    brush.fill("#5a4a8c", 220);
+    brush.beginShape(0.3); [[x,470],[x+w,470],[x+w,520],[x,520]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+    brush.fill("#e87a8a", 210);
+    brush.beginShape(0.3); [[x-6,440],[x+w+6,440],[x+w,470],[x,470]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+    brush.fill("#f8d890", 200);
+    brush.circle(x+w/2,495,12,0.3);
+  }
+  // lanterns strung
+  for (let i=0;i<12;i++){
+    const x=20+i*52, y=330+Math.sin(i*0.8)*20;
+    brush.fill("#f08060", 200); brush.circle(x,y,15,0.4);
+    brush.fill("#f8d070", 210); brush.circle(x,y,7,0.3);
+  }
+  brush.fill("#e8a0b0", 150);
+  brush.beginShape(0.5); [[0,545],[600,545],[600,600],[0,600]].forEach(p=>brush.vertex(...p)); brush.endShape(true);
+}
