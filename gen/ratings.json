@@ -1227,12 +1227,12 @@
   "batch_11/b11_04_r2": {
     "tier": "okay",
     "subject": "a row of colourful townhouses",
-    "ts": "2026-09-26T07:28:49.379Z"
+    "ts": "2026-10-05T07:50:02.132Z"
   },
   "batch_26/b26_11_r1": {
     "tier": "love",
     "subject": "a violet clematis",
-    "ts": "2026-09-26T07:28:51.035Z"
+    "ts": "2026-10-05T07:50:08.180Z"
   },
   "batch_20/b20_04_r1": {
     "tier": "love",
@@ -4823,5 +4823,3235 @@
     "tier": "okay",
     "subject": "an autumn maple in red and orange",
     "ts": "2026-09-26T07:57:12.989Z"
+  },
+  "batch_42/b42_02_r0": {
+    "tier": "okay",
+    "subject": "a gondolier on a canal",
+    "ts": "2026-10-05T05:48:03.884Z"
+  },
+  "sft_v7/b23_03_s1": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-05T05:48:10.395Z"
+  },
+  "batch_39/b39_09_r0": {
+    "tier": "nope",
+    "subject": "a sunset over a snowy field",
+    "ts": "2026-10-05T05:48:13.851Z"
+  },
+  "batch_34/b34_05_r1": {
+    "tier": "okay",
+    "subject": "a gardener kneeling among flowers",
+    "ts": "2026-10-05T05:48:17.283Z"
+  },
+  "batch_37/b37_10_r2": {
+    "tier": "okay",
+    "subject": "a red amaryllis",
+    "ts": "2026-10-05T05:48:19.219Z"
+  },
+  "batch_30/b30_03_r0": {
+    "tier": "okay",
+    "subject": "a greenhouse full of plants",
+    "ts": "2026-10-05T05:48:22.955Z"
+  },
+  "batch_40/b40_11_r1": {
+    "tier": "okay",
+    "subject": "a water mill by a stream",
+    "ts": "2026-10-05T05:48:31.468Z"
+  },
+  "batch_43/b43_11_r2": {
+    "tier": "nope",
+    "subject": "a horse rider on a beach",
+    "ts": "2026-10-05T05:48:35.547Z"
+  },
+  "batch_30/b30_11_r1": {
+    "tier": "nope",
+    "subject": "a blue-domed church by the sea",
+    "ts": "2026-10-05T05:48:38.923Z"
+  },
+  "batch_34/b34_06_r1": {
+    "tier": "okay",
+    "subject": "a bird of paradise flower",
+    "ts": "2026-10-05T05:48:47.963Z"
+  },
+  "batch_33/b33_10_r0": {
+    "tier": "love",
+    "subject": "a lemon tree in a terracotta pot",
+    "ts": "2026-10-05T05:48:55.219Z"
+  },
+  "sft_v7/b04_03_s1": {
+    "tier": "nope",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-05T05:48:57.427Z"
+  },
+  "batch_40/b40_07_r2": {
+    "tier": "love",
+    "subject": "a sunset over a marsh with birds",
+    "ts": "2026-10-05T05:49:04.003Z"
+  },
+  "batch_33/b33_11_r0": {
+    "tier": "nope",
+    "subject": "a jazz trumpeter in a smoky club",
+    "ts": "2026-10-05T05:49:09.435Z"
+  },
+  "batch_29/b29_04_r1": {
+    "tier": "love",
+    "subject": "a beach hut in a row",
+    "ts": "2026-10-05T05:49:14.771Z"
+  },
+  "sft_v7/b24_03_s0": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-05T05:49:16.939Z"
+  },
+  "batch_32/b32_01_r2": {
+    "tier": "nope",
+    "subject": "a river delta from above",
+    "ts": "2026-10-05T05:49:19.203Z"
+  },
+  "batch_29/b29_01_r0": {
+    "tier": "nope",
+    "subject": "a sycamore with peeling bark",
+    "ts": "2026-10-05T05:49:20.963Z"
+  },
+  "batch_29/b29_10_r1": {
+    "tier": "love",
+    "subject": "a narrow alley of old houses",
+    "ts": "2026-10-05T05:49:23.395Z"
+  },
+  "batch_29/b29_08_r2": {
+    "tier": "love",
+    "subject": "a person stargazing on a hill",
+    "ts": "2026-10-05T05:49:26.411Z"
+  },
+  "batch_40/b40_10_r1": {
+    "tier": "love",
+    "subject": "a castle on a rocky island",
+    "ts": "2026-10-05T05:49:28.971Z"
+  },
+  "batch_38/b38_12_r0": {
+    "tier": "okay",
+    "subject": "an iceberg floating in dark water",
+    "ts": "2026-10-05T05:49:32.804Z"
+  },
+  "sft_v7/b26_02_s0": {
+    "tier": "nope",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-05T05:49:35.187Z"
+  },
+  "batch_34/b34_04_r0": {
+    "tier": "nope",
+    "subject": "a steep green karst peak",
+    "ts": "2026-10-05T05:49:36.715Z"
+  },
+  "batch_40/b40_09_r0": {
+    "tier": "nope",
+    "subject": "a sunrise lighting one peak",
+    "ts": "2026-10-05T05:49:41.683Z"
+  },
+  "batch_30/b30_04_r0": {
+    "tier": "okay",
+    "subject": "a bell tower at dusk",
+    "ts": "2026-10-05T05:49:45.763Z"
+  },
+  "batch_38/b38_11_r0": {
+    "tier": "okay",
+    "subject": "a prairie with a lone windpump",
+    "ts": "2026-10-05T05:49:50.395Z"
+  },
+  "batch_29/b29_07_r2": {
+    "tier": "okay",
+    "subject": "a market seller under an awning",
+    "ts": "2026-10-05T05:49:54.475Z"
+  },
+  "batch_36/b36_06_r0": {
+    "tier": "okay",
+    "subject": "a sunset over the savanna with an acacia",
+    "ts": "2026-10-05T05:49:57.675Z"
+  },
+  "batch_39/b39_01_r2": {
+    "tier": "okay",
+    "subject": "a desert adobe house",
+    "ts": "2026-10-05T05:50:02.443Z"
+  },
+  "batch_39/b39_06_r2": {
+    "tier": "love",
+    "subject": "a bonsai pine on a rock",
+    "ts": "2026-10-05T05:50:05.747Z"
+  },
+  "batch_31/b31_07_r1": {
+    "tier": "okay",
+    "subject": "a lighthouse keeper's cottage",
+    "ts": "2026-10-05T05:50:10.427Z"
+  },
+  "batch_33/b33_12_r2": {
+    "tier": "okay",
+    "subject": "a red maple by a stream",
+    "ts": "2026-10-05T05:50:12.355Z"
+  },
+  "batch_41/b41_12_r2": {
+    "tier": "love",
+    "subject": "a city skyline at night with lit windows",
+    "ts": "2026-10-05T05:50:16.491Z"
+  },
+  "batch_29/b29_07_r1": {
+    "tier": "love",
+    "subject": "a market seller under an awning",
+    "ts": "2026-10-05T05:50:21.283Z"
+  },
+  "batch_34/b34_01_r2": {
+    "tier": "okay",
+    "subject": "a couple dancing under a streetlight",
+    "ts": "2026-10-05T05:50:26.259Z"
+  },
+  "batch_41/b41_11_r2": {
+    "tier": "okay",
+    "subject": "a copper beech in summer",
+    "ts": "2026-10-05T05:50:28.659Z"
+  },
+  "batch_37/b37_08_r0": {
+    "tier": "okay",
+    "subject": "a lighthouse beam at night",
+    "ts": "2026-10-05T05:50:32.571Z"
+  },
+  "batch_40/b40_01_r2": {
+    "tier": "okay",
+    "subject": "a sunset over a frozen lake",
+    "ts": "2026-10-05T05:50:36.971Z"
+  },
+  "batch_35/b35_11_r2": {
+    "tier": "okay",
+    "subject": "a sunset over mountains with alpenglow",
+    "ts": "2026-10-05T05:50:41.890Z"
+  },
+  "batch_33/b33_10_r2": {
+    "tier": "love",
+    "subject": "a lemon tree in a terracotta pot",
+    "ts": "2026-10-05T05:50:45.299Z"
+  },
+  "batch_35/b35_04_r1": {
+    "tier": "love",
+    "subject": "a mountain monastery",
+    "ts": "2026-10-05T05:50:48.027Z"
+  },
+  "batch_38/b38_07_r2": {
+    "tier": "love",
+    "subject": "a cloud-wrapped summit",
+    "ts": "2026-10-05T05:50:51.154Z"
+  },
+  "batch_38/b38_09_r2": {
+    "tier": "love",
+    "subject": "a surfer carrying a board at dusk",
+    "ts": "2026-10-05T05:50:54.307Z"
+  },
+  "batch_43/b43_07_r1": {
+    "tier": "okay",
+    "subject": "a mountain range under a full moon",
+    "ts": "2026-10-05T05:50:57.811Z"
+  },
+  "sft_v7/b02_03_s1": {
+    "tier": "nope",
+    "subject": "a deep red rose",
+    "ts": "2026-10-05T05:50:59.907Z"
+  },
+  "batch_39/b39_11_r1": {
+    "tier": "okay",
+    "subject": "a moonlit forest path",
+    "ts": "2026-10-05T05:51:16.914Z"
+  },
+  "batch_31/b31_02_r0": {
+    "tier": "okay",
+    "subject": "a dark volcano with glowing lava",
+    "ts": "2026-10-05T05:51:19.291Z"
+  },
+  "batch_36/b36_01_r2": {
+    "tier": "okay",
+    "subject": "a ballerina on a dark stage",
+    "ts": "2026-10-05T05:51:21.667Z"
+  },
+  "batch_37/b37_03_r2": {
+    "tier": "nope",
+    "subject": "a mountain pass with a winding road",
+    "ts": "2026-10-05T05:51:23.978Z"
+  },
+  "batch_33/b33_06_r2": {
+    "tier": "okay",
+    "subject": "a giant redwood trunk",
+    "ts": "2026-10-05T05:51:26.403Z"
+  },
+  "batch_41/b41_05_r1": {
+    "tier": "okay",
+    "subject": "a glacier in a valley",
+    "ts": "2026-10-05T05:51:28.419Z"
+  },
+  "batch_30/b30_09_r2": {
+    "tier": "nope",
+    "subject": "a street musician playing a violin",
+    "ts": "2026-10-05T05:51:31.763Z"
+  },
+  "batch_33/b33_09_r0": {
+    "tier": "nope",
+    "subject": "a tower house in fog",
+    "ts": "2026-10-05T05:51:33.306Z"
+  },
+  "batch_42/b42_06_r2": {
+    "tier": "love",
+    "subject": "a Japanese temple among trees",
+    "ts": "2026-10-05T05:51:36.443Z"
+  },
+  "batch_39/b39_03_r1": {
+    "tier": "love",
+    "subject": "an owl on a branch under the moon",
+    "ts": "2026-10-05T05:51:40.394Z"
+  },
+  "batch_42/b42_08_r1": {
+    "tier": "okay",
+    "subject": "a harbour at night",
+    "ts": "2026-10-05T05:51:43.482Z"
+  },
+  "batch_37/b37_07_r0": {
+    "tier": "nope",
+    "subject": "a snow-laden fir tree",
+    "ts": "2026-10-05T05:51:46.203Z"
+  },
+  "batch_32/b32_05_r1": {
+    "tier": "okay",
+    "subject": "a rowan tree with red berries",
+    "ts": "2026-10-05T05:51:48.523Z"
+  },
+  "batch_28/b28_01_r1": {
+    "tier": "okay",
+    "subject": "a row of poplars along a road",
+    "ts": "2026-10-05T05:52:00.779Z"
+  },
+  "batch_35/b35_04_r2": {
+    "tier": "okay",
+    "subject": "a mountain monastery",
+    "ts": "2026-10-05T05:52:02.202Z"
+  },
+  "batch_29/b29_11_r1": {
+    "tier": "okay",
+    "subject": "a mountain village with terraces",
+    "ts": "2026-10-05T05:52:04.731Z"
+  },
+  "sft_v7/b18_09_s0": {
+    "tier": "okay",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-05T05:52:07.003Z"
+  },
+  "batch_35/b35_06_r1": {
+    "tier": "okay",
+    "subject": "a frozen waterfall",
+    "ts": "2026-10-05T05:52:09.131Z"
+  },
+  "sft_v7/b02_06_s0": {
+    "tier": "okay",
+    "subject": "a white poppy",
+    "ts": "2026-10-05T05:52:10.626Z"
+  },
+  "sft_v7/b25_11_s0": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-05T05:52:12.955Z"
+  },
+  "batch_30/b30_10_r1": {
+    "tier": "okay",
+    "subject": "a yellow daffodil",
+    "ts": "2026-10-05T05:52:14.722Z"
+  },
+  "batch_42/b42_08_r0": {
+    "tier": "okay",
+    "subject": "a harbour at night",
+    "ts": "2026-10-05T05:52:18.674Z"
+  },
+  "batch_29/b29_11_r2": {
+    "tier": "okay",
+    "subject": "a mountain village with terraces",
+    "ts": "2026-10-05T05:52:23.538Z"
+  },
+  "batch_38/b38_02_r2": {
+    "tier": "okay",
+    "subject": "a blue delphinium spike",
+    "ts": "2026-10-05T05:52:25.115Z"
+  },
+  "sft_v7/b26_02_s1": {
+    "tier": "okay",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-05T05:52:27.171Z"
+  },
+  "batch_31/b31_07_r2": {
+    "tier": "okay",
+    "subject": "a lighthouse keeper's cottage",
+    "ts": "2026-10-05T05:52:29.219Z"
+  },
+  "batch_31/b31_12_r1": {
+    "tier": "nope",
+    "subject": "a glacier meeting the sea",
+    "ts": "2026-10-05T05:52:34.066Z"
+  },
+  "batch_42/b42_03_r0": {
+    "tier": "nope",
+    "subject": "a lightning-struck oak",
+    "ts": "2026-10-05T05:52:35.642Z"
+  },
+  "batch_40/b40_07_r0": {
+    "tier": "nope",
+    "subject": "a sunset over a marsh with birds",
+    "ts": "2026-10-05T05:52:40.202Z"
+  },
+  "batch_28/b28_05_r1": {
+    "tier": "nope",
+    "subject": "rocky pinnacles in mist",
+    "ts": "2026-10-05T05:52:43.410Z"
+  },
+  "batch_41/b41_05_r2": {
+    "tier": "okay",
+    "subject": "a glacier in a valley",
+    "ts": "2026-10-05T05:52:46.051Z"
+  },
+  "sft_v7/b05_12_s1": {
+    "tier": "okay",
+    "subject": "a coral peony",
+    "ts": "2026-10-05T05:52:47.754Z"
+  },
+  "batch_34/b34_05_r0": {
+    "tier": "nope",
+    "subject": "a gardener kneeling among flowers",
+    "ts": "2026-10-05T05:52:50.363Z"
+  },
+  "batch_39/b39_12_r0": {
+    "tier": "nope",
+    "subject": "a bog with a wooden walkway",
+    "ts": "2026-10-05T05:52:54.162Z"
+  },
+  "batch_38/b38_07_r1": {
+    "tier": "love",
+    "subject": "a cloud-wrapped summit",
+    "ts": "2026-10-05T05:52:56.002Z"
+  },
+  "batch_43/b43_12_r2": {
+    "tier": "love",
+    "subject": "a fisherman casting a net at dawn",
+    "ts": "2026-10-05T05:53:00.690Z"
+  },
+  "batch_41/b41_12_r1": {
+    "tier": "love",
+    "subject": "a city skyline at night with lit windows",
+    "ts": "2026-10-05T05:53:02.139Z"
+  },
+  "batch_40/b40_02_r2": {
+    "tier": "nope",
+    "subject": "a fjord between steep cliffs",
+    "ts": "2026-10-05T05:53:05.962Z"
+  },
+  "batch_40/b40_12_r1": {
+    "tier": "love",
+    "subject": "a sunset behind a lighthouse",
+    "ts": "2026-10-05T05:53:07.787Z"
+  },
+  "batch_37/b37_12_r2": {
+    "tier": "okay",
+    "subject": "a storm over the mountains",
+    "ts": "2026-10-05T05:53:15.162Z"
+  },
+  "batch_36/b36_11_r1": {
+    "tier": "okay",
+    "subject": "two children chasing bubbles",
+    "ts": "2026-10-05T05:53:18.866Z"
+  },
+  "batch_42/b42_03_r1": {
+    "tier": "okay",
+    "subject": "a lightning-struck oak",
+    "ts": "2026-10-05T05:53:22.906Z"
+  },
+  "batch_43/b43_10_r0": {
+    "tier": "okay",
+    "subject": "a pagoda reflected in a pond",
+    "ts": "2026-10-05T05:53:29.514Z"
+  },
+  "batch_41/b41_05_r0": {
+    "tier": "love",
+    "subject": "a glacier in a valley",
+    "ts": "2026-10-05T05:53:32.082Z"
+  },
+  "batch_32/b32_11_r0": {
+    "tier": "love",
+    "subject": "a night market with lanterns",
+    "ts": "2026-10-05T05:53:35.666Z"
+  },
+  "batch_33/b33_08_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a harbour with boats",
+    "ts": "2026-10-05T05:53:38.250Z"
+  },
+  "batch_34/b34_08_r2": {
+    "tier": "love",
+    "subject": "a farmhouse with a glowing porch",
+    "ts": "2026-10-05T05:53:41.692Z"
+  },
+  "batch_37/b37_04_r0": {
+    "tier": "okay",
+    "subject": "a waterfall in a green gorge",
+    "ts": "2026-10-05T05:53:43.794Z"
+  },
+  "batch_29/b29_02_r0": {
+    "tier": "nope",
+    "subject": "a salt flat with a mirror sky",
+    "ts": "2026-10-05T05:53:46.122Z"
+  },
+  "batch_32/b32_09_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a wheat field",
+    "ts": "2026-10-05T05:53:49.962Z"
+  },
+  "batch_43/b43_04_r0": {
+    "tier": "okay",
+    "subject": "a magnolia tree in early spring",
+    "ts": "2026-10-05T05:53:52.050Z"
+  },
+  "batch_38/b38_04_r2": {
+    "tier": "okay",
+    "subject": "a scarlet geranium",
+    "ts": "2026-10-05T05:53:54.530Z"
+  },
+  "batch_35/b35_01_r1": {
+    "tier": "nope",
+    "subject": "a holly tree in winter",
+    "ts": "2026-10-05T05:53:59.082Z"
+  },
+  "batch_36/b36_07_r0": {
+    "tier": "love",
+    "subject": "a tent glowing under the milky way",
+    "ts": "2026-10-05T05:54:02.866Z"
+  },
+  "batch_36/b36_05_r2": {
+    "tier": "love",
+    "subject": "a kite seller with colourful kites",
+    "ts": "2026-10-05T05:54:05.194Z"
+  },
+  "batch_28/b28_07_r1": {
+    "tier": "okay",
+    "subject": "a mother carrying a child",
+    "ts": "2026-10-05T05:54:08.114Z"
+  },
+  "batch_39/b39_04_r2": {
+    "tier": "love",
+    "subject": "a castle under a starry sky",
+    "ts": "2026-10-05T05:54:11.539Z"
+  },
+  "batch_30/b30_04_r2": {
+    "tier": "nope",
+    "subject": "a bell tower at dusk",
+    "ts": "2026-10-05T05:54:13.283Z"
+  },
+  "batch_39/b39_02_r1": {
+    "tier": "nope",
+    "subject": "a purple foxglove",
+    "ts": "2026-10-05T05:54:15.538Z"
+  },
+  "batch_42/b42_06_r1": {
+    "tier": "love",
+    "subject": "a Japanese temple among trees",
+    "ts": "2026-10-05T05:54:17.442Z"
+  },
+  "batch_39/b39_06_r1": {
+    "tier": "love",
+    "subject": "a bonsai pine on a rock",
+    "ts": "2026-10-05T05:54:18.802Z"
+  },
+  "batch_30/b30_04_r1": {
+    "tier": "okay",
+    "subject": "a bell tower at dusk",
+    "ts": "2026-10-05T05:54:20.066Z"
+  },
+  "batch_34/b34_11_r0": {
+    "tier": "love",
+    "subject": "a girl on a swing",
+    "ts": "2026-10-05T05:54:22.826Z"
+  },
+  "batch_41/b41_09_r0": {
+    "tier": "love",
+    "subject": "a lotus on dark water",
+    "ts": "2026-10-05T05:54:24.541Z"
+  },
+  "batch_32/b32_08_r0": {
+    "tier": "nope",
+    "subject": "a mangrove at the water's edge",
+    "ts": "2026-10-05T05:54:28.194Z"
+  },
+  "batch_33/b33_12_r0": {
+    "tier": "okay",
+    "subject": "a red maple by a stream",
+    "ts": "2026-10-05T05:54:30.106Z"
+  },
+  "batch_35/b35_07_r2": {
+    "tier": "love",
+    "subject": "a jacaranda in purple bloom",
+    "ts": "2026-10-05T05:54:33.434Z"
+  },
+  "batch_42/b42_09_r2": {
+    "tier": "okay",
+    "subject": "a yellow ginkgo in autumn",
+    "ts": "2026-10-05T05:54:38.170Z"
+  },
+  "batch_39/b39_10_r1": {
+    "tier": "nope",
+    "subject": "a wind-bent cypress by the sea",
+    "ts": "2026-10-05T05:54:41.138Z"
+  },
+  "batch_28/b28_11_r0": {
+    "tier": "love",
+    "subject": "a red sun sinking into haze",
+    "ts": "2026-10-05T05:54:45.818Z"
+  },
+  "batch_33/b33_08_r2": {
+    "tier": "okay",
+    "subject": "a sunset over a harbour with boats",
+    "ts": "2026-10-05T05:54:50.858Z"
+  },
+  "batch_34/b34_07_r2": {
+    "tier": "okay",
+    "subject": "a man rowing across a lake",
+    "ts": "2026-10-05T05:54:54.258Z"
+  },
+  "sft_v7/b08_12_s1": {
+    "tier": "nope",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-05T05:54:56.762Z"
+  },
+  "batch_35/b35_02_r2": {
+    "tier": "nope",
+    "subject": "a canyon with red rock walls",
+    "ts": "2026-10-05T05:55:00.930Z"
+  },
+  "batch_34/b34_12_r2": {
+    "tier": "nope",
+    "subject": "a dead tree on a moor",
+    "ts": "2026-10-05T05:55:10.282Z"
+  },
+  "sft_v7/b02_06_s1": {
+    "tier": "nope",
+    "subject": "a white poppy",
+    "ts": "2026-10-05T05:55:11.882Z"
+  },
+  "batch_42/b42_12_r1": {
+    "tier": "nope",
+    "subject": "a snowy ridge with climbers",
+    "ts": "2026-10-05T05:55:14.674Z"
+  },
+  "batch_36/b36_03_r0": {
+    "tier": "okay",
+    "subject": "a skater on a frozen lake",
+    "ts": "2026-10-05T05:55:18.378Z"
+  },
+  "batch_36/b36_06_r2": {
+    "tier": "okay",
+    "subject": "a sunset over the savanna with an acacia",
+    "ts": "2026-10-05T05:55:21.794Z"
+  },
+  "batch_33/b33_09_r1": {
+    "tier": "okay",
+    "subject": "a tower house in fog",
+    "ts": "2026-10-05T05:55:25.074Z"
+  },
+  "batch_43/b43_01_r1": {
+    "tier": "okay",
+    "subject": "an oasis in the desert",
+    "ts": "2026-10-05T05:55:27.610Z"
+  },
+  "sft_v7/b16_06_s0": {
+    "tier": "okay",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-05T05:55:30.658Z"
+  },
+  "batch_31/b31_04_r0": {
+    "tier": "nope",
+    "subject": "a lone streetlamp in the rain",
+    "ts": "2026-10-05T05:55:34.802Z"
+  },
+  "batch_28/b28_04_r2": {
+    "tier": "okay",
+    "subject": "a campfire under the stars",
+    "ts": "2026-10-05T05:55:39.666Z"
+  },
+  "batch_28/b28_08_r2": {
+    "tier": "okay",
+    "subject": "a vineyard on rolling hills",
+    "ts": "2026-10-05T05:55:41.746Z"
+  },
+  "batch_33/b33_06_r0": {
+    "tier": "okay",
+    "subject": "a giant redwood trunk",
+    "ts": "2026-10-05T05:55:43.386Z"
+  },
+  "batch_29/b29_09_r2": {
+    "tier": "okay",
+    "subject": "a twisted juniper on a mountain",
+    "ts": "2026-10-05T05:55:46.858Z"
+  },
+  "batch_28/b28_01_r0": {
+    "tier": "okay",
+    "subject": "a row of poplars along a road",
+    "ts": "2026-10-05T05:55:50.170Z"
+  },
+  "batch_43/b43_11_r1": {
+    "tier": "okay",
+    "subject": "a horse rider on a beach",
+    "ts": "2026-10-05T05:55:52.658Z"
+  },
+  "batch_38/b38_01_r2": {
+    "tier": "love",
+    "subject": "a shepherd with sheep on a hillside",
+    "ts": "2026-10-05T05:55:58.850Z"
+  },
+  "batch_36/b36_08_r2": {
+    "tier": "love",
+    "subject": "a bridge with houses on it",
+    "ts": "2026-10-05T05:56:02.042Z"
+  },
+  "batch_34/b34_11_r2": {
+    "tier": "love",
+    "subject": "a girl on a swing",
+    "ts": "2026-10-05T05:56:03.514Z"
+  },
+  "batch_28/b28_10_r1": {
+    "tier": "nope",
+    "subject": "a sunset over an island",
+    "ts": "2026-10-05T05:56:06.410Z"
+  },
+  "batch_43/b43_12_r0": {
+    "tier": "nope",
+    "subject": "a fisherman casting a net at dawn",
+    "ts": "2026-10-05T05:56:08.690Z"
+  },
+  "batch_37/b37_03_r0": {
+    "tier": "nope",
+    "subject": "a mountain pass with a winding road",
+    "ts": "2026-10-05T05:56:10.994Z"
+  },
+  "batch_30/b30_12_r1": {
+    "tier": "okay",
+    "subject": "a forest of aspens in gold",
+    "ts": "2026-10-05T05:56:13.522Z"
+  },
+  "sft_v7/b09_07_s1": {
+    "tier": "okay",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-05T05:56:15.802Z"
+  },
+  "batch_34/b34_05_r2": {
+    "tier": "okay",
+    "subject": "a gardener kneeling among flowers",
+    "ts": "2026-10-05T05:56:19.522Z"
+  },
+  "batch_41/b41_02_r0": {
+    "tier": "love",
+    "subject": "a marsh with tall grass",
+    "ts": "2026-10-05T05:56:22.754Z"
+  },
+  "batch_30/b30_11_r2": {
+    "tier": "okay",
+    "subject": "a blue-domed church by the sea",
+    "ts": "2026-10-05T05:56:25.947Z"
+  },
+  "batch_31/b31_08_r0": {
+    "tier": "okay",
+    "subject": "a cellist playing alone",
+    "ts": "2026-10-05T05:56:32.794Z"
+  },
+  "batch_41/b41_04_r1": {
+    "tier": "okay",
+    "subject": "a mountain lake of turquoise",
+    "ts": "2026-10-05T05:56:36.306Z"
+  },
+  "batch_32/b32_10_r0": {
+    "tier": "okay",
+    "subject": "a bamboo forest path",
+    "ts": "2026-10-05T05:56:39.458Z"
+  },
+  "batch_35/b35_10_r1": {
+    "tier": "okay",
+    "subject": "a dark red dahlia",
+    "ts": "2026-10-05T05:56:42.649Z"
+  },
+  "batch_38/b38_12_r1": {
+    "tier": "love",
+    "subject": "an iceberg floating in dark water",
+    "ts": "2026-10-05T05:56:45.817Z"
+  },
+  "batch_41/b41_04_r2": {
+    "tier": "love",
+    "subject": "a mountain lake of turquoise",
+    "ts": "2026-10-05T05:56:48.017Z"
+  },
+  "batch_42/b42_07_r2": {
+    "tier": "okay",
+    "subject": "a field of bluebells in a wood",
+    "ts": "2026-10-05T05:56:51.649Z"
+  },
+  "sft_v7/b12_02_s0": {
+    "tier": "nope",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-05T05:56:55.682Z"
+  },
+  "batch_31/b31_02_r1": {
+    "tier": "nope",
+    "subject": "a dark volcano with glowing lava",
+    "ts": "2026-10-05T05:56:58.401Z"
+  },
+  "batch_43/b43_04_r1": {
+    "tier": "okay",
+    "subject": "a magnolia tree in early spring",
+    "ts": "2026-10-05T05:57:00.226Z"
+  },
+  "batch_35/b35_12_r2": {
+    "tier": "okay",
+    "subject": "a lone traveller with a suitcase at a station",
+    "ts": "2026-10-05T05:57:04.178Z"
+  },
+  "batch_34/b34_08_r1": {
+    "tier": "love",
+    "subject": "a farmhouse with a glowing porch",
+    "ts": "2026-10-05T05:57:06.234Z"
+  },
+  "batch_31/b31_08_r1": {
+    "tier": "okay",
+    "subject": "a cellist playing alone",
+    "ts": "2026-10-05T05:57:08.089Z"
+  },
+  "batch_39/b39_08_r0": {
+    "tier": "okay",
+    "subject": "a eucalyptus grove",
+    "ts": "2026-10-05T05:57:10.914Z"
+  },
+  "batch_30/b30_08_r2": {
+    "tier": "nope",
+    "subject": "a log cabin by a lake",
+    "ts": "2026-10-05T05:57:14.770Z"
+  },
+  "batch_31/b31_11_r2": {
+    "tier": "love",
+    "subject": "a cable car over a valley",
+    "ts": "2026-10-05T05:57:18.218Z"
+  },
+  "batch_35/b35_05_r1": {
+    "tier": "love",
+    "subject": "a ski slope at dusk",
+    "ts": "2026-10-05T05:57:20.402Z"
+  },
+  "batch_38/b38_09_r1": {
+    "tier": "love",
+    "subject": "a surfer carrying a board at dusk",
+    "ts": "2026-10-05T05:57:22.994Z"
+  },
+  "sft_v7/b13_06_s1": {
+    "tier": "okay",
+    "subject": "a golden sunflower",
+    "ts": "2026-10-05T05:57:25.889Z"
+  },
+  "batch_40/b40_09_r1": {
+    "tier": "love",
+    "subject": "a sunrise lighting one peak",
+    "ts": "2026-10-05T05:57:29.418Z"
+  },
+  "batch_38/b38_02_r1": {
+    "tier": "okay",
+    "subject": "a blue delphinium spike",
+    "ts": "2026-10-05T05:57:31.577Z"
+  },
+  "batch_29/b29_06_r0": {
+    "tier": "nope",
+    "subject": "a desert mountain at sunset",
+    "ts": "2026-10-05T05:57:33.369Z"
+  },
+  "sft_v7/b25_11_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-05T05:57:34.297Z"
+  },
+  "sft_v7/b09_07_s0": {
+    "tier": "nope",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-05T05:57:35.929Z"
+  },
+  "batch_28/b28_05_r0": {
+    "tier": "okay",
+    "subject": "rocky pinnacles in mist",
+    "ts": "2026-10-05T05:57:37.578Z"
+  },
+  "sft_v7/b06_02_s1": {
+    "tier": "nope",
+    "subject": "a burgundy dahlia",
+    "ts": "2026-10-05T05:57:39.833Z"
+  },
+  "batch_35/b35_02_r0": {
+    "tier": "nope",
+    "subject": "a canyon with red rock walls",
+    "ts": "2026-10-05T05:57:42.401Z"
+  },
+  "sft_v7/b27_12_s1": {
+    "tier": "nope",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-05T05:57:44.393Z"
+  },
+  "batch_37/b37_01_r2": {
+    "tier": "okay",
+    "subject": "a moorland with heather",
+    "ts": "2026-10-05T05:57:47.401Z"
+  },
+  "batch_39/b39_09_r1": {
+    "tier": "love",
+    "subject": "a sunset over a snowy field",
+    "ts": "2026-10-05T05:57:50.281Z"
+  },
+  "batch_36/b36_08_r1": {
+    "tier": "okay",
+    "subject": "a bridge with houses on it",
+    "ts": "2026-10-05T05:57:52.153Z"
+  },
+  "batch_37/b37_12_r1": {
+    "tier": "okay",
+    "subject": "a storm over the mountains",
+    "ts": "2026-10-05T05:57:57.273Z"
+  },
+  "batch_37/b37_10_r1": {
+    "tier": "okay",
+    "subject": "a red amaryllis",
+    "ts": "2026-10-05T05:57:58.489Z"
+  },
+  "batch_34/b34_03_r2": {
+    "tier": "okay",
+    "subject": "a woman painting at an easel outdoors",
+    "ts": "2026-10-05T05:58:04.041Z"
+  },
+  "batch_34/b34_10_r2": {
+    "tier": "okay",
+    "subject": "a white gardenia",
+    "ts": "2026-10-05T05:58:05.042Z"
+  },
+  "batch_33/b33_05_r1": {
+    "tier": "love",
+    "subject": "a bamboo grove",
+    "ts": "2026-10-05T05:58:08.370Z"
+  },
+  "batch_30/b30_01_r0": {
+    "tier": "okay",
+    "subject": "a treehouse in an oak",
+    "ts": "2026-10-05T05:58:12.889Z"
+  },
+  "batch_28/b28_02_r1": {
+    "tier": "okay",
+    "subject": "a mossy boulder field",
+    "ts": "2026-10-05T05:58:15.938Z"
+  },
+  "batch_43/b43_01_r0": {
+    "tier": "okay",
+    "subject": "an oasis in the desert",
+    "ts": "2026-10-05T05:58:17.442Z"
+  },
+  "batch_41/b41_08_r0": {
+    "tier": "love",
+    "subject": "an orange marigold",
+    "ts": "2026-10-05T05:58:18.913Z"
+  },
+  "sft_v7/b23_03_s0": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-05T05:58:21.633Z"
+  },
+  "batch_40/b40_05_r2": {
+    "tier": "okay",
+    "subject": "a ruined abbey",
+    "ts": "2026-10-05T05:58:24.177Z"
+  },
+  "batch_42/b42_09_r0": {
+    "tier": "okay",
+    "subject": "a yellow ginkgo in autumn",
+    "ts": "2026-10-05T05:58:27.009Z"
+  },
+  "batch_40/b40_03_r1": {
+    "tier": "okay",
+    "subject": "a woman with a lantern on a dark path",
+    "ts": "2026-10-05T05:58:31.721Z"
+  },
+  "batch_29/b29_04_r2": {
+    "tier": "okay",
+    "subject": "a beach hut in a row",
+    "ts": "2026-10-05T05:58:34.241Z"
+  },
+  "batch_39/b39_07_r2": {
+    "tier": "nope",
+    "subject": "an elm silhouetted at twilight",
+    "ts": "2026-10-05T05:58:36.953Z"
+  },
+  "batch_36/b36_09_r0": {
+    "tier": "okay",
+    "subject": "a grandmother knitting by a window",
+    "ts": "2026-10-05T05:58:40.457Z"
+  },
+  "batch_31/b31_11_r0": {
+    "tier": "nope",
+    "subject": "a cable car over a valley",
+    "ts": "2026-10-05T05:58:42.929Z"
+  },
+  "batch_30/b30_07_r0": {
+    "tier": "love",
+    "subject": "a night train crossing a bridge",
+    "ts": "2026-10-05T05:58:47.137Z"
+  },
+  "batch_34/b34_02_r2": {
+    "tier": "love",
+    "subject": "a high plateau with scattered rocks",
+    "ts": "2026-10-05T05:58:50.393Z"
+  },
+  "batch_32/b32_02_r1": {
+    "tier": "okay",
+    "subject": "a red hibiscus at night",
+    "ts": "2026-10-05T05:58:54.121Z"
+  },
+  "batch_38/b38_10_r0": {
+    "tier": "okay",
+    "subject": "a tea plantation on steep hills",
+    "ts": "2026-10-05T05:58:56.721Z"
+  },
+  "sft_v7/b01_02_s1": {
+    "tier": "okay",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-05T05:59:08.273Z"
+  },
+  "batch_38/b38_06_r1": {
+    "tier": "okay",
+    "subject": "a farmer with a scythe in a field",
+    "ts": "2026-10-05T05:59:11.537Z"
+  },
+  "batch_35/b35_09_r0": {
+    "tier": "okay",
+    "subject": "a mountain silhouette against a red sky",
+    "ts": "2026-10-05T05:59:15.409Z"
+  },
+  "batch_35/b35_01_r2": {
+    "tier": "okay",
+    "subject": "a holly tree in winter",
+    "ts": "2026-10-05T05:59:17.937Z"
+  },
+  "batch_33/b33_08_r0": {
+    "tier": "okay",
+    "subject": "a sunset over a harbour with boats",
+    "ts": "2026-10-05T05:59:23.337Z"
+  },
+  "batch_31/b31_08_r2": {
+    "tier": "okay",
+    "subject": "a cellist playing alone",
+    "ts": "2026-10-05T05:59:26.049Z"
+  },
+  "batch_29/b29_02_r1": {
+    "tier": "love",
+    "subject": "a salt flat with a mirror sky",
+    "ts": "2026-10-05T05:59:30.577Z"
+  },
+  "batch_30/b30_07_r1": {
+    "tier": "love",
+    "subject": "a night train crossing a bridge",
+    "ts": "2026-10-05T05:59:32.641Z"
+  },
+  "batch_41/b41_09_r2": {
+    "tier": "love",
+    "subject": "a lotus on dark water",
+    "ts": "2026-10-05T05:59:36.761Z"
+  },
+  "batch_42/b42_08_r2": {
+    "tier": "love",
+    "subject": "a harbour at night",
+    "ts": "2026-10-05T05:59:41.593Z"
+  },
+  "batch_39/b39_10_r2": {
+    "tier": "nope",
+    "subject": "a wind-bent cypress by the sea",
+    "ts": "2026-10-05T05:59:46.753Z"
+  },
+  "batch_41/b41_10_r2": {
+    "tier": "love",
+    "subject": "a boy fishing from a pier",
+    "ts": "2026-10-05T05:59:48.817Z"
+  },
+  "batch_37/b37_06_r2": {
+    "tier": "okay",
+    "subject": "a woman reading on a train",
+    "ts": "2026-10-05T05:59:52.561Z"
+  },
+  "batch_34/b34_04_r2": {
+    "tier": "nope",
+    "subject": "a steep green karst peak",
+    "ts": "2026-10-05T05:59:57.777Z"
+  },
+  "batch_28/b28_09_r2": {
+    "tier": "okay",
+    "subject": "a cornfield at harvest",
+    "ts": "2026-10-05T06:00:00.649Z"
+  },
+  "batch_42/b42_04_r0": {
+    "tier": "okay",
+    "subject": "a white water lily",
+    "ts": "2026-10-05T06:00:02.353Z"
+  },
+  "batch_33/b33_03_r1": {
+    "tier": "love",
+    "subject": "a stilt house over water",
+    "ts": "2026-10-05T06:00:05.345Z"
+  },
+  "batch_38/b38_10_r1": {
+    "tier": "okay",
+    "subject": "a tea plantation on steep hills",
+    "ts": "2026-10-05T06:00:07.601Z"
+  },
+  "batch_38/b38_11_r2": {
+    "tier": "okay",
+    "subject": "a prairie with a lone windpump",
+    "ts": "2026-10-05T06:00:08.953Z"
+  },
+  "batch_41/b41_03_r2": {
+    "tier": "nope",
+    "subject": "an avenue of plane trees",
+    "ts": "2026-10-05T06:00:11.425Z"
+  },
+  "sft_v7/b07_10_s0": {
+    "tier": "okay",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-05T06:00:13.305Z"
+  },
+  "batch_28/b28_12_r0": {
+    "tier": "okay",
+    "subject": "a woman in a kimono with a paper umbrella",
+    "ts": "2026-10-05T06:00:16.489Z"
+  },
+  "batch_32/b32_07_r0": {
+    "tier": "love",
+    "subject": "a coconut grove at dusk",
+    "ts": "2026-10-05T06:00:18.521Z"
+  },
+  "batch_36/b36_02_r2": {
+    "tier": "okay",
+    "subject": "a lone acacia on the savanna",
+    "ts": "2026-10-05T06:00:20.313Z"
+  },
+  "sft_v7/b14_04_s1": {
+    "tier": "nope",
+    "subject": "an old windmill",
+    "ts": "2026-10-05T06:00:23.401Z"
+  },
+  "batch_30/b30_01_r2": {
+    "tier": "nope",
+    "subject": "a treehouse in an oak",
+    "ts": "2026-10-05T06:00:25.361Z"
+  },
+  "batch_34/b34_03_r1": {
+    "tier": "nope",
+    "subject": "a woman painting at an easel outdoors",
+    "ts": "2026-10-05T06:00:28.185Z"
+  },
+  "batch_33/b33_01_r0": {
+    "tier": "okay",
+    "subject": "a mountain covered in autumn forest",
+    "ts": "2026-10-05T06:00:31.033Z"
+  },
+  "batch_37/b37_02_r1": {
+    "tier": "nope",
+    "subject": "a sandy cove with turquoise water",
+    "ts": "2026-10-05T06:00:33.097Z"
+  },
+  "batch_32/b32_06_r0": {
+    "tier": "okay",
+    "subject": "a solitary pine on a cliff edge",
+    "ts": "2026-10-05T06:00:35.105Z"
+  },
+  "batch_29/b29_03_r0": {
+    "tier": "love",
+    "subject": "a flamenco dancer in a red dress",
+    "ts": "2026-10-05T06:00:37.881Z"
+  },
+  "batch_32/b32_03_r1": {
+    "tier": "okay",
+    "subject": "a figure in a doorway lit from behind",
+    "ts": "2026-10-05T06:00:42.289Z"
+  },
+  "batch_37/b37_04_r1": {
+    "tier": "nope",
+    "subject": "a waterfall in a green gorge",
+    "ts": "2026-10-05T06:00:43.801Z"
+  },
+  "sft_v7/b27_12_s0": {
+    "tier": "nope",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-05T06:00:45.969Z"
+  },
+  "batch_40/b40_05_r0": {
+    "tier": "nope",
+    "subject": "a ruined abbey",
+    "ts": "2026-10-05T06:00:47.545Z"
+  },
+  "batch_36/b36_02_r1": {
+    "tier": "okay",
+    "subject": "a lone acacia on the savanna",
+    "ts": "2026-10-05T06:00:49.025Z"
+  },
+  "batch_37/b37_01_r0": {
+    "tier": "nope",
+    "subject": "a moorland with heather",
+    "ts": "2026-10-05T06:00:50.704Z"
+  },
+  "sft_v7/b22_04_s0": {
+    "tier": "okay",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-05T06:00:53.393Z"
+  },
+  "sft_v7/b06_09_s0": {
+    "tier": "okay",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-05T06:00:56.777Z"
+  },
+  "batch_28/b28_09_r1": {
+    "tier": "okay",
+    "subject": "a cornfield at harvest",
+    "ts": "2026-10-05T06:00:57.953Z"
+  },
+  "batch_36/b36_07_r2": {
+    "tier": "love",
+    "subject": "a tent glowing under the milky way",
+    "ts": "2026-10-05T06:01:01.313Z"
+  },
+  "batch_33/b33_11_r2": {
+    "tier": "okay",
+    "subject": "a jazz trumpeter in a smoky club",
+    "ts": "2026-10-05T06:01:04.057Z"
+  },
+  "batch_37/b37_08_r1": {
+    "tier": "okay",
+    "subject": "a lighthouse beam at night",
+    "ts": "2026-10-05T06:01:09.065Z"
+  },
+  "batch_36/b36_01_r0": {
+    "tier": "okay",
+    "subject": "a ballerina on a dark stage",
+    "ts": "2026-10-05T06:01:12.649Z"
+  },
+  "batch_36/b36_11_r2": {
+    "tier": "love",
+    "subject": "two children chasing bubbles",
+    "ts": "2026-10-05T06:01:15.737Z"
+  },
+  "batch_38/b38_11_r1": {
+    "tier": "okay",
+    "subject": "a prairie with a lone windpump",
+    "ts": "2026-10-05T06:01:17.248Z"
+  },
+  "sft_v7/b12_02_s1": {
+    "tier": "okay",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-05T06:01:19.849Z"
+  },
+  "batch_29/b29_05_r1": {
+    "tier": "okay",
+    "subject": "a cliff face with a waterfall",
+    "ts": "2026-10-05T06:01:25.817Z"
+  },
+  "batch_41/b41_06_r0": {
+    "tier": "love",
+    "subject": "a sunflower field under a storm",
+    "ts": "2026-10-05T06:01:31.169Z"
+  },
+  "sft_v7/b22_08_s1": {
+    "tier": "nope",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-05T06:01:33.065Z"
+  },
+  "batch_36/b36_01_r1": {
+    "tier": "love",
+    "subject": "a ballerina on a dark stage",
+    "ts": "2026-10-05T06:01:35.561Z"
+  },
+  "batch_33/b33_10_r1": {
+    "tier": "okay",
+    "subject": "a lemon tree in a terracotta pot",
+    "ts": "2026-10-05T06:01:37.384Z"
+  },
+  "sft_v7/b23_07_s0": {
+    "tier": "okay",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-05T06:01:44.001Z"
+  },
+  "sft_v7/b13_06_s0": {
+    "tier": "okay",
+    "subject": "a golden sunflower",
+    "ts": "2026-10-05T06:01:45.401Z"
+  },
+  "batch_39/b39_01_r0": {
+    "tier": "okay",
+    "subject": "a desert adobe house",
+    "ts": "2026-10-05T06:01:46.473Z"
+  },
+  "batch_28/b28_07_r0": {
+    "tier": "nope",
+    "subject": "a mother carrying a child",
+    "ts": "2026-10-05T06:01:49.097Z"
+  },
+  "batch_40/b40_06_r2": {
+    "tier": "love",
+    "subject": "a moonrise over the sea",
+    "ts": "2026-10-05T06:01:52.777Z"
+  },
+  "batch_35/b35_08_r0": {
+    "tier": "nope",
+    "subject": "a sunset over a river with a bridge",
+    "ts": "2026-10-05T06:01:56.041Z"
+  },
+  "batch_40/b40_11_r2": {
+    "tier": "okay",
+    "subject": "a water mill by a stream",
+    "ts": "2026-10-05T06:01:59.193Z"
+  },
+  "batch_34/b34_10_r1": {
+    "tier": "okay",
+    "subject": "a white gardenia",
+    "ts": "2026-10-05T06:02:00.729Z"
+  },
+  "batch_35/b35_08_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a river with a bridge",
+    "ts": "2026-10-05T06:02:05.569Z"
+  },
+  "batch_36/b36_10_r2": {
+    "tier": "okay",
+    "subject": "a lagoon with a sandbar",
+    "ts": "2026-10-05T06:02:07.273Z"
+  },
+  "sft_v7/b12_08_s1": {
+    "tier": "nope",
+    "subject": "snow-capped mountains",
+    "ts": "2026-10-05T06:02:09.736Z"
+  },
+  "batch_42/b42_10_r0": {
+    "tier": "nope",
+    "subject": "a black sand beach",
+    "ts": "2026-10-05T06:02:12.136Z"
+  },
+  "batch_36/b36_06_r1": {
+    "tier": "okay",
+    "subject": "a sunset over the savanna with an acacia",
+    "ts": "2026-10-05T06:02:13.945Z"
+  },
+  "batch_40/b40_01_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a frozen lake",
+    "ts": "2026-10-05T06:02:18.329Z"
+  },
+  "batch_43/b43_06_r2": {
+    "tier": "nope",
+    "subject": "a stone cottage with smoke from the chimney",
+    "ts": "2026-10-05T06:02:21.185Z"
+  },
+  "batch_30/b30_11_r0": {
+    "tier": "okay",
+    "subject": "a blue-domed church by the sea",
+    "ts": "2026-10-05T06:02:23.224Z"
+  },
+  "batch_35/b35_04_r0": {
+    "tier": "okay",
+    "subject": "a mountain monastery",
+    "ts": "2026-10-05T06:02:25.161Z"
+  },
+  "batch_31/b31_05_r0": {
+    "tier": "okay",
+    "subject": "a runner on a beach at sunrise",
+    "ts": "2026-10-05T06:02:31.960Z"
+  },
+  "batch_42/b42_02_r1": {
+    "tier": "nope",
+    "subject": "a gondolier on a canal",
+    "ts": "2026-10-05T06:02:33.921Z"
+  },
+  "batch_41/b41_02_r1": {
+    "tier": "love",
+    "subject": "a marsh with tall grass",
+    "ts": "2026-10-05T06:02:37.504Z"
+  },
+  "batch_31/b31_10_r2": {
+    "tier": "love",
+    "subject": "a cave mouth opening onto the sea",
+    "ts": "2026-10-05T06:02:42.744Z"
+  },
+  "batch_37/b37_12_r0": {
+    "tier": "okay",
+    "subject": "a storm over the mountains",
+    "ts": "2026-10-05T06:02:46.792Z"
+  },
+  "batch_41/b41_07_r0": {
+    "tier": "love",
+    "subject": "an old man feeding pigeons",
+    "ts": "2026-10-05T06:02:49.984Z"
+  },
+  "batch_32/b32_02_r2": {
+    "tier": "okay",
+    "subject": "a red hibiscus at night",
+    "ts": "2026-10-05T06:02:52.849Z"
+  },
+  "batch_28/b28_12_r1": {
+    "tier": "okay",
+    "subject": "a woman in a kimono with a paper umbrella",
+    "ts": "2026-10-05T06:02:55.616Z"
+  },
+  "sft_v7/b11_03_s1": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-05T06:02:58.784Z"
+  },
+  "batch_30/b30_08_r0": {
+    "tier": "nope",
+    "subject": "a log cabin by a lake",
+    "ts": "2026-10-05T06:03:00.104Z"
+  },
+  "batch_39/b39_01_r1": {
+    "tier": "nope",
+    "subject": "a desert adobe house",
+    "ts": "2026-10-05T06:03:01.689Z"
+  },
+  "batch_32/b32_04_r1": {
+    "tier": "okay",
+    "subject": "a lantern-lit street at night",
+    "ts": "2026-10-05T06:03:04.800Z"
+  },
+  "batch_35/b35_03_r2": {
+    "tier": "okay",
+    "subject": "a full moon over a snowy field",
+    "ts": "2026-10-05T06:03:07.208Z"
+  },
+  "batch_41/b41_07_r2": {
+    "tier": "love",
+    "subject": "an old man feeding pigeons",
+    "ts": "2026-10-05T06:03:10.328Z"
+  },
+  "batch_34/b34_04_r1": {
+    "tier": "okay",
+    "subject": "a steep green karst peak",
+    "ts": "2026-10-05T06:03:11.720Z"
+  },
+  "batch_35/b35_05_r0": {
+    "tier": "okay",
+    "subject": "a ski slope at dusk",
+    "ts": "2026-10-05T06:03:13.993Z"
+  },
+  "batch_37/b37_09_r1": {
+    "tier": "love",
+    "subject": "a tulip field in stripes",
+    "ts": "2026-10-05T06:03:19.152Z"
+  },
+  "batch_30/b30_07_r2": {
+    "tier": "love",
+    "subject": "a night train crossing a bridge",
+    "ts": "2026-10-05T06:03:20.944Z"
+  },
+  "batch_42/b42_01_r0": {
+    "tier": "love",
+    "subject": "a farmhouse in a snowstorm",
+    "ts": "2026-10-05T06:03:23.841Z"
+  },
+  "sft_v7/b08_06_s1": {
+    "tier": "okay",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-05T06:03:29.048Z"
+  },
+  "batch_38/b38_03_r1": {
+    "tier": "okay",
+    "subject": "a steppe with wild horses",
+    "ts": "2026-10-05T06:03:31.896Z"
+  },
+  "batch_31/b31_11_r1": {
+    "tier": "love",
+    "subject": "a cable car over a valley",
+    "ts": "2026-10-05T06:03:34.305Z"
+  },
+  "batch_40/b40_12_r0": {
+    "tier": "love",
+    "subject": "a sunset behind a lighthouse",
+    "ts": "2026-10-05T06:03:36.760Z"
+  },
+  "sft_v7/b10_03_s1": {
+    "tier": "nope",
+    "subject": "two people sitting on a park bench",
+    "ts": "2026-10-05T06:03:39.681Z"
+  },
+  "batch_36/b36_12_r2": {
+    "tier": "nope",
+    "subject": "a banyan tree with hanging roots",
+    "ts": "2026-10-05T06:03:43.008Z"
+  },
+  "batch_28/b28_11_r2": {
+    "tier": "okay",
+    "subject": "a red sun sinking into haze",
+    "ts": "2026-10-05T06:03:45.769Z"
+  },
+  "batch_31/b31_07_r0": {
+    "tier": "okay",
+    "subject": "a lighthouse keeper's cottage",
+    "ts": "2026-10-05T06:03:52.400Z"
+  },
+  "batch_39/b39_11_r0": {
+    "tier": "nope",
+    "subject": "a moonlit forest path",
+    "ts": "2026-10-05T06:03:56.664Z"
+  },
+  "batch_32/b32_07_r2": {
+    "tier": "love",
+    "subject": "a coconut grove at dusk",
+    "ts": "2026-10-05T06:03:58.392Z"
+  },
+  "batch_34/b34_01_r0": {
+    "tier": "okay",
+    "subject": "a couple dancing under a streetlight",
+    "ts": "2026-10-05T06:04:02.488Z"
+  },
+  "batch_34/b34_07_r0": {
+    "tier": "okay",
+    "subject": "a man rowing across a lake",
+    "ts": "2026-10-05T06:04:05.776Z"
+  },
+  "batch_36/b36_04_r1": {
+    "tier": "okay",
+    "subject": "a mountain hut in deep snow",
+    "ts": "2026-10-05T06:04:08.784Z"
+  },
+  "batch_37/b37_07_r1": {
+    "tier": "okay",
+    "subject": "a snow-laden fir tree",
+    "ts": "2026-10-05T06:04:11.048Z"
+  },
+  "batch_28/b28_06_r0": {
+    "tier": "okay",
+    "subject": "a sunset over sand dunes",
+    "ts": "2026-10-05T06:04:14.889Z"
+  },
+  "batch_32/b32_07_r1": {
+    "tier": "love",
+    "subject": "a coconut grove at dusk",
+    "ts": "2026-10-05T06:04:17.424Z"
+  },
+  "batch_39/b39_12_r1": {
+    "tier": "love",
+    "subject": "a bog with a wooden walkway",
+    "ts": "2026-10-05T06:04:20.832Z"
+  },
+  "batch_42/b42_05_r0": {
+    "tier": "love",
+    "subject": "a monk in orange robes walking",
+    "ts": "2026-10-05T06:04:25.312Z"
+  },
+  "batch_30/b30_01_r1": {
+    "tier": "nope",
+    "subject": "a treehouse in an oak",
+    "ts": "2026-10-05T06:04:28.144Z"
+  },
+  "batch_28/b28_04_r1": {
+    "tier": "love",
+    "subject": "a campfire under the stars",
+    "ts": "2026-10-05T06:04:32.088Z"
+  },
+  "batch_43/b43_05_r0": {
+    "tier": "okay",
+    "subject": "a fallen log in a forest",
+    "ts": "2026-10-05T06:04:37.432Z"
+  },
+  "batch_41/b41_01_r0": {
+    "tier": "okay",
+    "subject": "a coastal cliff path",
+    "ts": "2026-10-05T06:04:42.496Z"
+  },
+  "batch_39/b39_05_r0": {
+    "tier": "nope",
+    "subject": "a dense jungle canopy",
+    "ts": "2026-10-05T06:04:44.648Z"
+  },
+  "batch_34/b34_07_r1": {
+    "tier": "okay",
+    "subject": "a man rowing across a lake",
+    "ts": "2026-10-05T06:04:48.712Z"
+  },
+  "sft_v7/b02_03_s0": {
+    "tier": "nope",
+    "subject": "a deep red rose",
+    "ts": "2026-10-05T06:04:51.616Z"
+  },
+  "batch_30/b30_05_r0": {
+    "tier": "okay",
+    "subject": "a woman in a red coat crossing a bridge",
+    "ts": "2026-10-05T06:04:55.216Z"
+  },
+  "batch_36/b36_08_r0": {
+    "tier": "okay",
+    "subject": "a bridge with houses on it",
+    "ts": "2026-10-05T06:04:57.488Z"
+  },
+  "batch_31/b31_01_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a desert road",
+    "ts": "2026-10-05T06:05:00.800Z"
+  },
+  "batch_42/b42_05_r2": {
+    "tier": "love",
+    "subject": "a monk in orange robes walking",
+    "ts": "2026-10-05T06:05:02.784Z"
+  },
+  "batch_43/b43_02_r2": {
+    "tier": "okay",
+    "subject": "a terraced vineyard by a river",
+    "ts": "2026-10-05T06:05:08.712Z"
+  },
+  "batch_42/b42_10_r2": {
+    "tier": "nope",
+    "subject": "a black sand beach",
+    "ts": "2026-10-05T06:05:14.320Z"
+  },
+  "batch_35/b35_12_r1": {
+    "tier": "okay",
+    "subject": "a lone traveller with a suitcase at a station",
+    "ts": "2026-10-05T06:05:17.248Z"
+  },
+  "batch_43/b43_08_r0": {
+    "tier": "okay",
+    "subject": "a corner caf\u00e9 with an awning",
+    "ts": "2026-10-05T06:05:20.200Z"
+  },
+  "sft_v7/b14_04_s0": {
+    "tier": "nope",
+    "subject": "an old windmill",
+    "ts": "2026-10-05T06:05:22.328Z"
+  },
+  "batch_43/b43_09_r1": {
+    "tier": "love",
+    "subject": "the northern lights over a lake",
+    "ts": "2026-10-05T06:05:26.376Z"
+  },
+  "batch_38/b38_06_r2": {
+    "tier": "love",
+    "subject": "a farmer with a scythe in a field",
+    "ts": "2026-10-05T06:05:29.848Z"
+  },
+  "batch_35/b35_06_r2": {
+    "tier": "love",
+    "subject": "a frozen waterfall",
+    "ts": "2026-10-05T06:05:31.808Z"
+  },
+  "batch_43/b43_03_r1": {
+    "tier": "love",
+    "subject": "a crimson protea",
+    "ts": "2026-10-05T06:05:32.872Z"
+  },
+  "batch_43/b43_09_r2": {
+    "tier": "love",
+    "subject": "the northern lights over a lake",
+    "ts": "2026-10-05T06:05:35.080Z"
+  },
+  "batch_37/b37_05_r1": {
+    "tier": "okay",
+    "subject": "a passion flower",
+    "ts": "2026-10-05T06:05:36.752Z"
+  },
+  "batch_33/b33_03_r0": {
+    "tier": "love",
+    "subject": "a stilt house over water",
+    "ts": "2026-10-05T06:05:42.928Z"
+  },
+  "batch_36/b36_02_r0": {
+    "tier": "okay",
+    "subject": "a lone acacia on the savanna",
+    "ts": "2026-10-05T06:05:44.304Z"
+  },
+  "batch_31/b31_05_r2": {
+    "tier": "love",
+    "subject": "a runner on a beach at sunrise",
+    "ts": "2026-10-05T06:05:46.544Z"
+  },
+  "batch_40/b40_10_r0": {
+    "tier": "okay",
+    "subject": "a castle on a rocky island",
+    "ts": "2026-10-05T06:05:49.192Z"
+  },
+  "batch_33/b33_09_r2": {
+    "tier": "okay",
+    "subject": "a tower house in fog",
+    "ts": "2026-10-05T06:05:50.536Z"
+  },
+  "batch_32/b32_09_r2": {
+    "tier": "okay",
+    "subject": "a sunset over a wheat field",
+    "ts": "2026-10-05T06:05:53.576Z"
+  },
+  "batch_28/b28_11_r1": {
+    "tier": "okay",
+    "subject": "a red sun sinking into haze",
+    "ts": "2026-10-05T06:05:56.984Z"
+  },
+  "batch_34/b34_06_r0": {
+    "tier": "okay",
+    "subject": "a bird of paradise flower",
+    "ts": "2026-10-05T06:07:17.976Z"
+  },
+  "batch_29/b29_01_r2": {
+    "tier": "okay",
+    "subject": "a sycamore with peeling bark",
+    "ts": "2026-10-05T06:07:24.064Z"
+  },
+  "batch_41/b41_03_r1": {
+    "tier": "okay",
+    "subject": "an avenue of plane trees",
+    "ts": "2026-10-05T06:07:50.840Z"
+  },
+  "batch_38/b38_02_r0": {
+    "tier": "love",
+    "subject": "a blue delphinium spike",
+    "ts": "2026-10-05T06:07:52.264Z"
+  },
+  "batch_41/b41_07_r1": {
+    "tier": "love",
+    "subject": "an old man feeding pigeons",
+    "ts": "2026-10-05T06:08:06.208Z"
+  },
+  "sft_v7/b08_04_s1": {
+    "tier": "okay",
+    "subject": "a figure walking alone along a beach",
+    "ts": "2026-10-05T06:08:36.815Z"
+  },
+  "batch_29/b29_03_r2": {
+    "tier": "okay",
+    "subject": "a flamenco dancer in a red dress",
+    "ts": "2026-10-05T06:08:44.311Z"
+  },
+  "batch_40/b40_11_r0": {
+    "tier": "okay",
+    "subject": "a water mill by a stream",
+    "ts": "2026-10-05T06:08:45.831Z"
+  },
+  "batch_39/b39_06_r0": {
+    "tier": "okay",
+    "subject": "a bonsai pine on a rock",
+    "ts": "2026-10-05T06:08:59.399Z"
+  },
+  "batch_32/b32_12_r0": {
+    "tier": "okay",
+    "subject": "a gnarled olive tree",
+    "ts": "2026-10-05T06:09:49.783Z"
+  },
+  "batch_33/b33_03_r2": {
+    "tier": "love",
+    "subject": "a stilt house over water",
+    "ts": "2026-10-05T06:09:51.624Z"
+  },
+  "batch_28/b28_12_r2": {
+    "tier": "okay",
+    "subject": "a woman in a kimono with a paper umbrella",
+    "ts": "2026-10-05T06:09:54.959Z"
+  },
+  "sft_v7/b08_06_s0": {
+    "tier": "okay",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-05T06:09:57.079Z"
+  },
+  "batch_38/b38_05_r1": {
+    "tier": "okay",
+    "subject": "a hot spring steaming in snow",
+    "ts": "2026-10-05T06:10:00.191Z"
+  },
+  "batch_34/b34_02_r1": {
+    "tier": "love",
+    "subject": "a high plateau with scattered rocks",
+    "ts": "2026-10-05T06:10:07.815Z"
+  },
+  "batch_35/b35_08_r2": {
+    "tier": "love",
+    "subject": "a sunset over a river with a bridge",
+    "ts": "2026-10-05T06:10:16.055Z"
+  },
+  "batch_37/b37_07_r2": {
+    "tier": "okay",
+    "subject": "a snow-laden fir tree",
+    "ts": "2026-10-05T06:10:18.887Z"
+  },
+  "batch_28/b28_02_r2": {
+    "tier": "okay",
+    "subject": "a mossy boulder field",
+    "ts": "2026-10-05T06:10:21.295Z"
+  },
+  "batch_34/b34_10_r0": {
+    "tier": "okay",
+    "subject": "a white gardenia",
+    "ts": "2026-10-05T06:10:22.615Z"
+  },
+  "batch_36/b36_03_r2": {
+    "tier": "love",
+    "subject": "a skater on a frozen lake",
+    "ts": "2026-10-05T06:10:26.255Z"
+  },
+  "batch_29/b29_10_r2": {
+    "tier": "okay",
+    "subject": "a narrow alley of old houses",
+    "ts": "2026-10-05T06:10:27.855Z"
+  },
+  "batch_30/b30_05_r1": {
+    "tier": "okay",
+    "subject": "a woman in a red coat crossing a bridge",
+    "ts": "2026-10-05T06:10:32.775Z"
+  },
+  "batch_38/b38_04_r0": {
+    "tier": "love",
+    "subject": "a scarlet geranium",
+    "ts": "2026-10-05T06:10:34.207Z"
+  },
+  "batch_40/b40_07_r1": {
+    "tier": "okay",
+    "subject": "a sunset over a marsh with birds",
+    "ts": "2026-10-05T06:10:38.087Z"
+  },
+  "batch_36/b36_10_r0": {
+    "tier": "okay",
+    "subject": "a lagoon with a sandbar",
+    "ts": "2026-10-05T06:10:40.759Z"
+  },
+  "sft_v7/b08_04_s0": {
+    "tier": "nope",
+    "subject": "a figure walking alone along a beach",
+    "ts": "2026-10-05T06:10:43.879Z"
+  },
+  "batch_35/b35_03_r1": {
+    "tier": "love",
+    "subject": "a full moon over a snowy field",
+    "ts": "2026-10-05T06:10:46.327Z"
+  },
+  "batch_32/b32_09_r0": {
+    "tier": "love",
+    "subject": "a sunset over a wheat field",
+    "ts": "2026-10-05T06:10:49.119Z"
+  },
+  "sft_v7/b20_07_s1": {
+    "tier": "nope",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-05T06:10:51.199Z"
+  },
+  "batch_43/b43_04_r2": {
+    "tier": "okay",
+    "subject": "a magnolia tree in early spring",
+    "ts": "2026-10-05T06:10:52.559Z"
+  },
+  "batch_37/b37_06_r1": {
+    "tier": "okay",
+    "subject": "a woman reading on a train",
+    "ts": "2026-10-05T06:10:57.863Z"
+  },
+  "batch_35/b35_07_r1": {
+    "tier": "love",
+    "subject": "a jacaranda in purple bloom",
+    "ts": "2026-10-05T06:11:00.703Z"
+  },
+  "batch_29/b29_12_r1": {
+    "tier": "okay",
+    "subject": "a black tulip",
+    "ts": "2026-10-05T06:11:02.343Z"
+  },
+  "batch_40/b40_06_r1": {
+    "tier": "okay",
+    "subject": "a moonrise over the sea",
+    "ts": "2026-10-05T06:11:04.807Z"
+  },
+  "batch_32/b32_12_r1": {
+    "tier": "okay",
+    "subject": "a gnarled olive tree",
+    "ts": "2026-10-05T06:11:13.103Z"
+  },
+  "batch_31/b31_09_r0": {
+    "tier": "nope",
+    "subject": "a tea picker on a green hillside",
+    "ts": "2026-10-05T06:11:16.471Z"
+  },
+  "batch_36/b36_07_r1": {
+    "tier": "love",
+    "subject": "a tent glowing under the milky way",
+    "ts": "2026-10-05T06:11:18.975Z"
+  },
+  "batch_40/b40_05_r1": {
+    "tier": "nope",
+    "subject": "a ruined abbey",
+    "ts": "2026-10-05T06:11:25.287Z"
+  },
+  "batch_37/b37_08_r2": {
+    "tier": "okay",
+    "subject": "a lighthouse beam at night",
+    "ts": "2026-10-05T06:11:29.095Z"
+  },
+  "batch_29/b29_12_r2": {
+    "tier": "love",
+    "subject": "a black tulip",
+    "ts": "2026-10-05T06:11:30.519Z"
+  },
+  "batch_38/b38_10_r2": {
+    "tier": "nope",
+    "subject": "a tea plantation on steep hills",
+    "ts": "2026-10-05T06:11:33.031Z"
+  },
+  "sft_v7/b05_12_s0": {
+    "tier": "okay",
+    "subject": "a coral peony",
+    "ts": "2026-10-05T06:11:34.119Z"
+  },
+  "batch_28/b28_05_r2": {
+    "tier": "nope",
+    "subject": "rocky pinnacles in mist",
+    "ts": "2026-10-05T06:11:36.087Z"
+  },
+  "batch_43/b43_06_r0": {
+    "tier": "okay",
+    "subject": "a stone cottage with smoke from the chimney",
+    "ts": "2026-10-05T06:11:38.822Z"
+  },
+  "batch_35/b35_07_r0": {
+    "tier": "okay",
+    "subject": "a jacaranda in purple bloom",
+    "ts": "2026-10-05T06:11:40.231Z"
+  },
+  "batch_35/b35_11_r1": {
+    "tier": "okay",
+    "subject": "a sunset over mountains with alpenglow",
+    "ts": "2026-10-05T06:11:42.078Z"
+  },
+  "batch_29/b29_11_r0": {
+    "tier": "okay",
+    "subject": "a mountain village with terraces",
+    "ts": "2026-10-05T06:11:44.231Z"
+  },
+  "batch_33/b33_04_r1": {
+    "tier": "okay",
+    "subject": "a geyser erupting",
+    "ts": "2026-10-05T06:11:48.263Z"
+  },
+  "batch_43/b43_07_r0": {
+    "tier": "nope",
+    "subject": "a mountain range under a full moon",
+    "ts": "2026-10-05T06:11:51.623Z"
+  },
+  "batch_29/b29_09_r1": {
+    "tier": "okay",
+    "subject": "a twisted juniper on a mountain",
+    "ts": "2026-10-05T06:11:54.016Z"
+  },
+  "batch_43/b43_05_r2": {
+    "tier": "nope",
+    "subject": "a fallen log in a forest",
+    "ts": "2026-10-05T06:11:59.151Z"
+  },
+  "batch_29/b29_06_r2": {
+    "tier": "okay",
+    "subject": "a desert mountain at sunset",
+    "ts": "2026-10-05T06:12:01.207Z"
+  },
+  "batch_34/b34_09_r1": {
+    "tier": "okay",
+    "subject": "a bunch of sweet peas",
+    "ts": "2026-10-05T06:12:04.455Z"
+  },
+  "batch_32/b32_02_r0": {
+    "tier": "okay",
+    "subject": "a red hibiscus at night",
+    "ts": "2026-10-05T06:12:07.815Z"
+  },
+  "batch_39/b39_02_r0": {
+    "tier": "nope",
+    "subject": "a purple foxglove",
+    "ts": "2026-10-05T06:12:10.047Z"
+  },
+  "batch_38/b38_09_r0": {
+    "tier": "nope",
+    "subject": "a surfer carrying a board at dusk",
+    "ts": "2026-10-05T06:12:13.183Z"
+  },
+  "batch_34/b34_11_r1": {
+    "tier": "love",
+    "subject": "a girl on a swing",
+    "ts": "2026-10-05T06:12:14.783Z"
+  },
+  "batch_35/b35_12_r0": {
+    "tier": "okay",
+    "subject": "a lone traveller with a suitcase at a station",
+    "ts": "2026-10-05T06:12:18.519Z"
+  },
+  "batch_37/b37_06_r0": {
+    "tier": "okay",
+    "subject": "a woman reading on a train",
+    "ts": "2026-10-05T06:12:21.054Z"
+  },
+  "batch_30/b30_03_r1": {
+    "tier": "love",
+    "subject": "a greenhouse full of plants",
+    "ts": "2026-10-05T06:12:23.391Z"
+  },
+  "batch_33/b33_05_r2": {
+    "tier": "okay",
+    "subject": "a bamboo grove",
+    "ts": "2026-10-05T06:12:26.303Z"
+  },
+  "batch_38/b38_05_r2": {
+    "tier": "okay",
+    "subject": "a hot spring steaming in snow",
+    "ts": "2026-10-05T06:12:28.223Z"
+  },
+  "sft_v7/b23_07_s1": {
+    "tier": "okay",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-05T06:12:33.759Z"
+  },
+  "batch_42/b42_01_r1": {
+    "tier": "okay",
+    "subject": "a farmhouse in a snowstorm",
+    "ts": "2026-10-05T06:12:37.119Z"
+  },
+  "batch_31/b31_04_r2": {
+    "tier": "love",
+    "subject": "a lone streetlamp in the rain",
+    "ts": "2026-10-05T06:12:40.727Z"
+  },
+  "batch_31/b31_06_r1": {
+    "tier": "love",
+    "subject": "a cluster of forget-me-nots",
+    "ts": "2026-10-05T06:12:46.591Z"
+  },
+  "batch_32/b32_01_r1": {
+    "tier": "love",
+    "subject": "a river delta from above",
+    "ts": "2026-10-05T06:12:50.807Z"
+  },
+  "batch_39/b39_02_r2": {
+    "tier": "okay",
+    "subject": "a purple foxglove",
+    "ts": "2026-10-05T06:12:52.751Z"
+  },
+  "batch_31/b31_03_r1": {
+    "tier": "okay",
+    "subject": "an orchard of flowering almond trees",
+    "ts": "2026-10-05T06:12:55.639Z"
+  },
+  "batch_30/b30_12_r0": {
+    "tier": "okay",
+    "subject": "a forest of aspens in gold",
+    "ts": "2026-10-05T06:12:57.550Z"
+  },
+  "sft_v7/b01_06_s1": {
+    "tier": "love",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-05T06:12:59.247Z"
+  },
+  "sft_v7/b22_05_s1": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-05T06:13:01.623Z"
+  },
+  "batch_29/b29_05_r2": {
+    "tier": "okay",
+    "subject": "a cliff face with a waterfall",
+    "ts": "2026-10-05T06:13:08.199Z"
+  },
+  "batch_33/b33_07_r2": {
+    "tier": "nope",
+    "subject": "a sunset after rain with puddles",
+    "ts": "2026-10-05T06:13:14.519Z"
+  },
+  "batch_39/b39_04_r1": {
+    "tier": "love",
+    "subject": "a castle under a starry sky",
+    "ts": "2026-10-05T06:13:17.326Z"
+  },
+  "batch_29/b29_07_r0": {
+    "tier": "nope",
+    "subject": "a market seller under an awning",
+    "ts": "2026-10-05T06:17:03.150Z"
+  },
+  "sft_v7/b01_02_s0": {
+    "tier": "okay",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-05T06:17:17.758Z"
+  },
+  "batch_28/b28_09_r0": {
+    "tier": "okay",
+    "subject": "a cornfield at harvest",
+    "ts": "2026-10-05T06:17:20.542Z"
+  },
+  "sft_v7/b12_08_s0": {
+    "tier": "okay",
+    "subject": "snow-capped mountains",
+    "ts": "2026-10-05T06:17:22.078Z"
+  },
+  "batch_38/b38_01_r0": {
+    "tier": "okay",
+    "subject": "a shepherd with sheep on a hillside",
+    "ts": "2026-10-05T06:17:24.566Z"
+  },
+  "batch_31/b31_03_r2": {
+    "tier": "okay",
+    "subject": "an orchard of flowering almond trees",
+    "ts": "2026-10-05T06:17:25.782Z"
+  },
+  "batch_43/b43_08_r1": {
+    "tier": "nope",
+    "subject": "a corner caf\u00e9 with an awning",
+    "ts": "2026-10-05T06:17:27.806Z"
+  },
+  "batch_43/b43_10_r2": {
+    "tier": "love",
+    "subject": "a pagoda reflected in a pond",
+    "ts": "2026-10-05T06:17:30.654Z"
+  },
+  "batch_39/b39_11_r2": {
+    "tier": "love",
+    "subject": "a moonlit forest path",
+    "ts": "2026-10-05T06:17:35.333Z"
+  },
+  "batch_32/b32_05_r2": {
+    "tier": "okay",
+    "subject": "a rowan tree with red berries",
+    "ts": "2026-10-05T06:17:37.406Z"
+  },
+  "batch_42/b42_10_r1": {
+    "tier": "nope",
+    "subject": "a black sand beach",
+    "ts": "2026-10-05T06:17:39.590Z"
+  },
+  "batch_39/b39_08_r2": {
+    "tier": "nope",
+    "subject": "a eucalyptus grove",
+    "ts": "2026-10-05T06:17:42.606Z"
+  },
+  "sft_v7/b16_06_s1": {
+    "tier": "love",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-05T06:17:46.622Z"
+  },
+  "batch_43/b43_03_r2": {
+    "tier": "love",
+    "subject": "a crimson protea",
+    "ts": "2026-10-05T06:17:47.717Z"
+  },
+  "batch_34/b34_02_r0": {
+    "tier": "love",
+    "subject": "a high plateau with scattered rocks",
+    "ts": "2026-10-05T06:17:49.606Z"
+  },
+  "sft_v7/b06_07_s1": {
+    "tier": "love",
+    "subject": "a red camellia",
+    "ts": "2026-10-05T06:17:51.118Z"
+  },
+  "batch_36/b36_04_r0": {
+    "tier": "love",
+    "subject": "a mountain hut in deep snow",
+    "ts": "2026-10-05T06:17:52.830Z"
+  },
+  "batch_42/b42_01_r2": {
+    "tier": "okay",
+    "subject": "a farmhouse in a snowstorm",
+    "ts": "2026-10-05T06:17:54.230Z"
+  },
+  "batch_31/b31_04_r1": {
+    "tier": "love",
+    "subject": "a lone streetlamp in the rain",
+    "ts": "2026-10-05T06:17:55.782Z"
+  },
+  "batch_34/b34_03_r0": {
+    "tier": "okay",
+    "subject": "a woman painting at an easel outdoors",
+    "ts": "2026-10-05T06:17:58.646Z"
+  },
+  "sft_v7/b10_03_s0": {
+    "tier": "nope",
+    "subject": "two people sitting on a park bench",
+    "ts": "2026-10-05T06:18:03.181Z"
+  },
+  "batch_34/b34_08_r0": {
+    "tier": "okay",
+    "subject": "a farmhouse with a glowing porch",
+    "ts": "2026-10-05T06:18:05.494Z"
+  },
+  "batch_43/b43_08_r2": {
+    "tier": "nope",
+    "subject": "a corner caf\u00e9 with an awning",
+    "ts": "2026-10-05T06:18:07.030Z"
+  },
+  "sft_v7/b11_03_s0": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-05T06:18:09.126Z"
+  },
+  "batch_30/b30_10_r0": {
+    "tier": "okay",
+    "subject": "a yellow daffodil",
+    "ts": "2026-10-05T06:18:10.389Z"
+  },
+  "batch_40/b40_02_r1": {
+    "tier": "love",
+    "subject": "a fjord between steep cliffs",
+    "ts": "2026-10-05T06:18:13.742Z"
+  },
+  "sft_v7/b01_06_s0": {
+    "tier": "okay",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-05T06:18:17.078Z"
+  },
+  "batch_29/b29_10_r0": {
+    "tier": "okay",
+    "subject": "a narrow alley of old houses",
+    "ts": "2026-10-05T06:18:19.054Z"
+  },
+  "batch_40/b40_10_r2": {
+    "tier": "love",
+    "subject": "a castle on a rocky island",
+    "ts": "2026-10-05T06:18:20.861Z"
+  },
+  "batch_31/b31_10_r0": {
+    "tier": "okay",
+    "subject": "a cave mouth opening onto the sea",
+    "ts": "2026-10-05T06:18:23.038Z"
+  },
+  "batch_39/b39_04_r0": {
+    "tier": "okay",
+    "subject": "a castle under a starry sky",
+    "ts": "2026-10-05T06:18:26.062Z"
+  },
+  "batch_32/b32_06_r2": {
+    "tier": "okay",
+    "subject": "a solitary pine on a cliff edge",
+    "ts": "2026-10-05T06:18:28.478Z"
+  },
+  "batch_35/b35_11_r0": {
+    "tier": "okay",
+    "subject": "a sunset over mountains with alpenglow",
+    "ts": "2026-10-05T06:18:30.997Z"
+  },
+  "batch_41/b41_04_r0": {
+    "tier": "okay",
+    "subject": "a mountain lake of turquoise",
+    "ts": "2026-10-05T06:18:33.237Z"
+  },
+  "batch_32/b32_08_r1": {
+    "tier": "nope",
+    "subject": "a mangrove at the water's edge",
+    "ts": "2026-10-05T06:18:35.158Z"
+  },
+  "batch_38/b38_12_r2": {
+    "tier": "love",
+    "subject": "an iceberg floating in dark water",
+    "ts": "2026-10-05T06:18:37.590Z"
+  },
+  "batch_35/b35_09_r2": {
+    "tier": "love",
+    "subject": "a mountain silhouette against a red sky",
+    "ts": "2026-10-05T06:18:40.206Z"
+  },
+  "batch_42/b42_03_r2": {
+    "tier": "okay",
+    "subject": "a lightning-struck oak",
+    "ts": "2026-10-05T06:18:44.694Z"
+  },
+  "batch_31/b31_01_r2": {
+    "tier": "okay",
+    "subject": "a sunset over a desert road",
+    "ts": "2026-10-05T06:18:47.398Z"
+  },
+  "batch_35/b35_09_r1": {
+    "tier": "okay",
+    "subject": "a mountain silhouette against a red sky",
+    "ts": "2026-10-05T06:18:50.677Z"
+  },
+  "batch_37/b37_02_r2": {
+    "tier": "nope",
+    "subject": "a sandy cove with turquoise water",
+    "ts": "2026-10-05T06:18:52.918Z"
+  },
+  "batch_37/b37_09_r0": {
+    "tier": "okay",
+    "subject": "a tulip field in stripes",
+    "ts": "2026-10-05T06:18:54.734Z"
+  },
+  "batch_41/b41_01_r2": {
+    "tier": "love",
+    "subject": "a coastal cliff path",
+    "ts": "2026-10-05T06:19:00.389Z"
+  },
+  "batch_39/b39_03_r2": {
+    "tier": "love",
+    "subject": "an owl on a branch under the moon",
+    "ts": "2026-10-05T06:19:02.222Z"
+  },
+  "sft_v7/b04_08_s0": {
+    "tier": "love",
+    "subject": "a blue anemone",
+    "ts": "2026-10-05T06:19:04.054Z"
+  },
+  "batch_28/b28_02_r0": {
+    "tier": "love",
+    "subject": "a mossy boulder field",
+    "ts": "2026-10-05T06:19:06.197Z"
+  },
+  "batch_35/b35_01_r0": {
+    "tier": "okay",
+    "subject": "a holly tree in winter",
+    "ts": "2026-10-05T06:19:08.918Z"
+  },
+  "batch_30/b30_08_r1": {
+    "tier": "nope",
+    "subject": "a log cabin by a lake",
+    "ts": "2026-10-05T06:19:11.638Z"
+  },
+  "sft_v7/b07_10_s1": {
+    "tier": "nope",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-05T06:19:12.926Z"
+  },
+  "batch_28/b28_06_r2": {
+    "tier": "okay",
+    "subject": "a sunset over sand dunes",
+    "ts": "2026-10-05T06:19:15.269Z"
+  },
+  "batch_30/b30_10_r2": {
+    "tier": "okay",
+    "subject": "a yellow daffodil",
+    "ts": "2026-10-05T06:19:16.245Z"
+  },
+  "batch_29/b29_01_r1": {
+    "tier": "okay",
+    "subject": "a sycamore with peeling bark",
+    "ts": "2026-10-05T06:19:17.973Z"
+  },
+  "batch_29/b29_12_r0": {
+    "tier": "okay",
+    "subject": "a black tulip",
+    "ts": "2026-10-05T06:19:19.598Z"
+  },
+  "batch_43/b43_09_r0": {
+    "tier": "nope",
+    "subject": "the northern lights over a lake",
+    "ts": "2026-10-05T06:19:23.566Z"
+  },
+  "batch_39/b39_03_r0": {
+    "tier": "okay",
+    "subject": "an owl on a branch under the moon",
+    "ts": "2026-10-05T06:19:25.158Z"
+  },
+  "batch_33/b33_12_r1": {
+    "tier": "nope",
+    "subject": "a red maple by a stream",
+    "ts": "2026-10-05T06:19:27.438Z"
+  },
+  "batch_37/b37_10_r0": {
+    "tier": "okay",
+    "subject": "a red amaryllis",
+    "ts": "2026-10-05T06:19:28.694Z"
+  },
+  "batch_38/b38_08_r0": {
+    "tier": "okay",
+    "subject": "a sunset through a forest",
+    "ts": "2026-10-05T06:19:31.013Z"
+  },
+  "batch_40/b40_04_r0": {
+    "tier": "nope",
+    "subject": "a stone wall winding over hills",
+    "ts": "2026-10-05T06:19:33.045Z"
+  },
+  "batch_33/b33_02_r1": {
+    "tier": "love",
+    "subject": "a meteor shower over a desert",
+    "ts": "2026-10-05T06:19:37.085Z"
+  },
+  "batch_32/b32_10_r1": {
+    "tier": "okay",
+    "subject": "a bamboo forest path",
+    "ts": "2026-10-05T06:19:38.613Z"
+  },
+  "batch_31/b31_09_r1": {
+    "tier": "okay",
+    "subject": "a tea picker on a green hillside",
+    "ts": "2026-10-05T06:19:40.917Z"
+  },
+  "batch_42/b42_11_r0": {
+    "tier": "love",
+    "subject": "a single conical peak at dawn",
+    "ts": "2026-10-05T06:19:43.814Z"
+  },
+  "batch_40/b40_04_r2": {
+    "tier": "nope",
+    "subject": "a stone wall winding over hills",
+    "ts": "2026-10-05T06:19:46.198Z"
+  },
+  "batch_35/b35_10_r0": {
+    "tier": "okay",
+    "subject": "a dark red dahlia",
+    "ts": "2026-10-05T06:19:47.550Z"
+  },
+  "batch_30/b30_09_r1": {
+    "tier": "okay",
+    "subject": "a street musician playing a violin",
+    "ts": "2026-10-05T06:19:52.373Z"
+  },
+  "batch_42/b42_12_r0": {
+    "tier": "okay",
+    "subject": "a snowy ridge with climbers",
+    "ts": "2026-10-05T06:19:55.357Z"
+  },
+  "batch_38/b38_01_r1": {
+    "tier": "okay",
+    "subject": "a shepherd with sheep on a hillside",
+    "ts": "2026-10-05T06:19:57.406Z"
+  },
+  "batch_41/b41_11_r1": {
+    "tier": "nope",
+    "subject": "a copper beech in summer",
+    "ts": "2026-10-05T06:19:59.166Z"
+  },
+  "batch_42/b42_07_r0": {
+    "tier": "nope",
+    "subject": "a field of bluebells in a wood",
+    "ts": "2026-10-05T06:20:00.373Z"
+  },
+  "batch_38/b38_05_r0": {
+    "tier": "okay",
+    "subject": "a hot spring steaming in snow",
+    "ts": "2026-10-05T06:20:03.445Z"
+  },
+  "batch_39/b39_05_r2": {
+    "tier": "nope",
+    "subject": "a dense jungle canopy",
+    "ts": "2026-10-05T06:20:05.598Z"
+  },
+  "batch_37/b37_11_r0": {
+    "tier": "okay",
+    "subject": "a fig tree in a courtyard",
+    "ts": "2026-10-05T06:20:07.845Z"
+  },
+  "batch_37/b37_11_r1": {
+    "tier": "okay",
+    "subject": "a fig tree in a courtyard",
+    "ts": "2026-10-05T06:20:09.341Z"
+  },
+  "batch_36/b36_04_r2": {
+    "tier": "okay",
+    "subject": "a mountain hut in deep snow",
+    "ts": "2026-10-05T06:20:10.718Z"
+  },
+  "batch_40/b40_04_r1": {
+    "tier": "okay",
+    "subject": "a stone wall winding over hills",
+    "ts": "2026-10-05T06:20:13.854Z"
+  },
+  "batch_41/b41_10_r1": {
+    "tier": "love",
+    "subject": "a boy fishing from a pier",
+    "ts": "2026-10-05T06:20:15.366Z"
+  },
+  "batch_37/b37_03_r1": {
+    "tier": "okay",
+    "subject": "a mountain pass with a winding road",
+    "ts": "2026-10-05T06:20:21.525Z"
+  },
+  "batch_31/b31_06_r2": {
+    "tier": "love",
+    "subject": "a cluster of forget-me-nots",
+    "ts": "2026-10-05T06:20:23.021Z"
+  },
+  "batch_28/b28_03_r2": {
+    "tier": "love",
+    "subject": "a deep purple lilac",
+    "ts": "2026-10-05T06:20:27.701Z"
+  },
+  "batch_43/b43_10_r1": {
+    "tier": "love",
+    "subject": "a pagoda reflected in a pond",
+    "ts": "2026-10-05T06:20:28.638Z"
+  },
+  "batch_40/b40_09_r2": {
+    "tier": "love",
+    "subject": "a sunrise lighting one peak",
+    "ts": "2026-10-05T06:20:29.974Z"
+  },
+  "batch_35/b35_10_r2": {
+    "tier": "okay",
+    "subject": "a dark red dahlia",
+    "ts": "2026-10-05T06:20:31.573Z"
+  },
+  "batch_43/b43_03_r0": {
+    "tier": "love",
+    "subject": "a crimson protea",
+    "ts": "2026-10-05T06:20:32.606Z"
+  },
+  "batch_40/b40_08_r1": {
+    "tier": "love",
+    "subject": "a frozen lake with snowy banks",
+    "ts": "2026-10-05T06:20:37.901Z"
+  },
+  "batch_32/b32_03_r2": {
+    "tier": "love",
+    "subject": "a figure in a doorway lit from behind",
+    "ts": "2026-10-05T06:20:39.525Z"
+  },
+  "batch_40/b40_08_r0": {
+    "tier": "okay",
+    "subject": "a frozen lake with snowy banks",
+    "ts": "2026-10-05T06:20:41.653Z"
+  },
+  "batch_34/b34_09_r2": {
+    "tier": "okay",
+    "subject": "a bunch of sweet peas",
+    "ts": "2026-10-05T06:20:44.109Z"
+  },
+  "batch_28/b28_06_r1": {
+    "tier": "love",
+    "subject": "a sunset over sand dunes",
+    "ts": "2026-10-05T06:20:45.941Z"
+  },
+  "batch_37/b37_04_r2": {
+    "tier": "love",
+    "subject": "a waterfall in a green gorge",
+    "ts": "2026-10-05T06:20:48.614Z"
+  },
+  "sft_v7/b24_03_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-05T06:20:50.733Z"
+  },
+  "batch_28/b28_08_r1": {
+    "tier": "okay",
+    "subject": "a vineyard on rolling hills",
+    "ts": "2026-10-05T06:20:53.397Z"
+  },
+  "batch_38/b38_03_r0": {
+    "tier": "love",
+    "subject": "a steppe with wild horses",
+    "ts": "2026-10-05T06:20:55.749Z"
+  },
+  "batch_31/b31_12_r2": {
+    "tier": "nope",
+    "subject": "a glacier meeting the sea",
+    "ts": "2026-10-05T06:20:58.565Z"
+  },
+  "batch_30/b30_06_r1": {
+    "tier": "okay",
+    "subject": "a mountain reflected in a still tarn",
+    "ts": "2026-10-05T06:21:00.685Z"
+  },
+  "batch_32/b32_11_r1": {
+    "tier": "love",
+    "subject": "a night market with lanterns",
+    "ts": "2026-10-05T06:21:02.933Z"
+  },
+  "batch_28/b28_10_r2": {
+    "tier": "nope",
+    "subject": "a sunset over an island",
+    "ts": "2026-10-05T06:21:05.509Z"
+  },
+  "batch_31/b31_12_r0": {
+    "tier": "nope",
+    "subject": "a glacier meeting the sea",
+    "ts": "2026-10-05T06:21:06.998Z"
+  },
+  "batch_36/b36_12_r1": {
+    "tier": "okay",
+    "subject": "a banyan tree with hanging roots",
+    "ts": "2026-10-05T06:21:09.324Z"
+  },
+  "batch_40/b40_08_r2": {
+    "tier": "love",
+    "subject": "a frozen lake with snowy banks",
+    "ts": "2026-10-05T06:21:10.717Z"
+  },
+  "batch_42/b42_06_r0": {
+    "tier": "okay",
+    "subject": "a Japanese temple among trees",
+    "ts": "2026-10-05T06:21:12.277Z"
+  },
+  "batch_32/b32_08_r2": {
+    "tier": "nope",
+    "subject": "a mangrove at the water's edge",
+    "ts": "2026-10-05T06:21:13.741Z"
+  },
+  "batch_32/b32_06_r1": {
+    "tier": "okay",
+    "subject": "a solitary pine on a cliff edge",
+    "ts": "2026-10-05T06:21:15.325Z"
+  },
+  "batch_31/b31_03_r0": {
+    "tier": "okay",
+    "subject": "an orchard of flowering almond trees",
+    "ts": "2026-10-05T06:21:16.582Z"
+  },
+  "batch_29/b29_02_r2": {
+    "tier": "okay",
+    "subject": "a salt flat with a mirror sky",
+    "ts": "2026-10-05T06:21:20.173Z"
+  },
+  "batch_43/b43_06_r1": {
+    "tier": "nope",
+    "subject": "a stone cottage with smoke from the chimney",
+    "ts": "2026-10-05T06:21:22.309Z"
+  },
+  "batch_32/b32_11_r2": {
+    "tier": "okay",
+    "subject": "a night market with lanterns",
+    "ts": "2026-10-05T06:21:24.045Z"
+  },
+  "batch_40/b40_01_r0": {
+    "tier": "nope",
+    "subject": "a sunset over a frozen lake",
+    "ts": "2026-10-05T06:21:26.573Z"
+  },
+  "batch_33/b33_01_r1": {
+    "tier": "okay",
+    "subject": "a mountain covered in autumn forest",
+    "ts": "2026-10-05T06:21:30.869Z"
+  },
+  "batch_30/b30_09_r0": {
+    "tier": "nope",
+    "subject": "a street musician playing a violin",
+    "ts": "2026-10-05T06:21:32.685Z"
+  },
+  "batch_31/b31_05_r1": {
+    "tier": "love",
+    "subject": "a runner on a beach at sunrise",
+    "ts": "2026-10-05T06:21:34.661Z"
+  },
+  "batch_28/b28_04_r0": {
+    "tier": "love",
+    "subject": "a campfire under the stars",
+    "ts": "2026-10-05T06:21:36.653Z"
+  },
+  "batch_34/b34_09_r0": {
+    "tier": "okay",
+    "subject": "a bunch of sweet peas",
+    "ts": "2026-10-05T06:21:39.021Z"
+  },
+  "batch_28/b28_01_r2": {
+    "tier": "okay",
+    "subject": "a row of poplars along a road",
+    "ts": "2026-10-05T06:21:41.013Z"
+  },
+  "batch_31/b31_09_r2": {
+    "tier": "okay",
+    "subject": "a tea picker on a green hillside",
+    "ts": "2026-10-05T06:21:43.197Z"
+  },
+  "batch_36/b36_12_r0": {
+    "tier": "okay",
+    "subject": "a banyan tree with hanging roots",
+    "ts": "2026-10-05T06:21:44.437Z"
+  },
+  "batch_40/b40_06_r0": {
+    "tier": "nope",
+    "subject": "a moonrise over the sea",
+    "ts": "2026-10-05T06:21:47.005Z"
+  },
+  "batch_33/b33_06_r1": {
+    "tier": "okay",
+    "subject": "a giant redwood trunk",
+    "ts": "2026-10-05T06:21:49.085Z"
+  },
+  "batch_41/b41_09_r1": {
+    "tier": "love",
+    "subject": "a lotus on dark water",
+    "ts": "2026-10-05T06:21:50.893Z"
+  },
+  "batch_33/b33_02_r0": {
+    "tier": "love",
+    "subject": "a meteor shower over a desert",
+    "ts": "2026-10-05T06:21:52.261Z"
+  },
+  "sft_v7/b23_05_s1": {
+    "tier": "nope",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-05T06:21:53.757Z"
+  },
+  "batch_29/b29_08_r1": {
+    "tier": "love",
+    "subject": "a person stargazing on a hill",
+    "ts": "2026-10-05T06:21:56.309Z"
+  },
+  "batch_40/b40_03_r2": {
+    "tier": "love",
+    "subject": "a woman with a lantern on a dark path",
+    "ts": "2026-10-05T06:21:59.173Z"
+  },
+  "batch_39/b39_05_r1": {
+    "tier": "nope",
+    "subject": "a dense jungle canopy",
+    "ts": "2026-10-05T06:22:00.845Z"
+  },
+  "batch_36/b36_11_r0": {
+    "tier": "okay",
+    "subject": "two children chasing bubbles",
+    "ts": "2026-10-05T06:22:02.349Z"
+  },
+  "batch_36/b36_03_r1": {
+    "tier": "okay",
+    "subject": "a skater on a frozen lake",
+    "ts": "2026-10-05T06:22:04.341Z"
+  },
+  "batch_38/b38_03_r2": {
+    "tier": "okay",
+    "subject": "a steppe with wild horses",
+    "ts": "2026-10-05T06:22:06.253Z"
+  },
+  "batch_36/b36_05_r0": {
+    "tier": "love",
+    "subject": "a kite seller with colourful kites",
+    "ts": "2026-10-05T06:22:07.965Z"
+  },
+  "batch_33/b33_04_r0": {
+    "tier": "nope",
+    "subject": "a geyser erupting",
+    "ts": "2026-10-05T06:22:09.709Z"
+  },
+  "batch_43/b43_02_r0": {
+    "tier": "nope",
+    "subject": "a terraced vineyard by a river",
+    "ts": "2026-10-05T06:22:14.909Z"
+  },
+  "batch_42/b42_05_r1": {
+    "tier": "okay",
+    "subject": "a monk in orange robes walking",
+    "ts": "2026-10-05T06:22:16.789Z"
+  },
+  "batch_33/b33_11_r1": {
+    "tier": "nope",
+    "subject": "a jazz trumpeter in a smoky club",
+    "ts": "2026-10-05T06:22:22.509Z"
+  },
+  "batch_32/b32_12_r2": {
+    "tier": "okay",
+    "subject": "a gnarled olive tree",
+    "ts": "2026-10-05T06:22:24.805Z"
+  },
+  "batch_41/b41_01_r1": {
+    "tier": "love",
+    "subject": "a coastal cliff path",
+    "ts": "2026-10-05T06:22:26.965Z"
+  },
+  "batch_43/b43_05_r1": {
+    "tier": "okay",
+    "subject": "a fallen log in a forest",
+    "ts": "2026-10-05T06:22:28.837Z"
+  },
+  "batch_42/b42_04_r1": {
+    "tier": "nope",
+    "subject": "a white water lily",
+    "ts": "2026-10-05T06:22:32.205Z"
+  },
+  "batch_30/b30_06_r0": {
+    "tier": "okay",
+    "subject": "a mountain reflected in a still tarn",
+    "ts": "2026-10-05T06:22:33.861Z"
+  },
+  "batch_37/b37_11_r2": {
+    "tier": "okay",
+    "subject": "a fig tree in a courtyard",
+    "ts": "2026-10-05T06:22:35.005Z"
+  },
+  "batch_42/b42_02_r2": {
+    "tier": "okay",
+    "subject": "a gondolier on a canal",
+    "ts": "2026-10-05T06:22:36.669Z"
+  },
+  "batch_33/b33_02_r2": {
+    "tier": "love",
+    "subject": "a meteor shower over a desert",
+    "ts": "2026-10-05T06:22:38.221Z"
+  },
+  "sft_v7/b08_12_s0": {
+    "tier": "okay",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-05T06:22:40.957Z"
+  },
+  "batch_34/b34_01_r1": {
+    "tier": "love",
+    "subject": "a couple dancing under a streetlight",
+    "ts": "2026-10-05T06:22:43.605Z"
+  },
+  "batch_42/b42_12_r2": {
+    "tier": "okay",
+    "subject": "a snowy ridge with climbers",
+    "ts": "2026-10-05T06:22:47.501Z"
+  },
+  "batch_30/b30_02_r1": {
+    "tier": "love",
+    "subject": "a sunset seen through a window",
+    "ts": "2026-10-05T06:22:50.621Z"
+  },
+  "batch_36/b36_09_r1": {
+    "tier": "okay",
+    "subject": "a grandmother knitting by a window",
+    "ts": "2026-10-05T06:22:55.797Z"
+  },
+  "batch_34/b34_12_r1": {
+    "tier": "okay",
+    "subject": "a dead tree on a moor",
+    "ts": "2026-10-05T06:22:58.253Z"
+  },
+  "batch_41/b41_10_r0": {
+    "tier": "okay",
+    "subject": "a boy fishing from a pier",
+    "ts": "2026-10-05T06:22:59.925Z"
+  },
+  "batch_39/b39_07_r0": {
+    "tier": "nope",
+    "subject": "an elm silhouetted at twilight",
+    "ts": "2026-10-05T06:23:01.917Z"
+  },
+  "batch_33/b33_07_r1": {
+    "tier": "okay",
+    "subject": "a sunset after rain with puddles",
+    "ts": "2026-10-05T06:23:07.125Z"
+  },
+  "sft_v7/b22_04_s1": {
+    "tier": "okay",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-05T06:23:08.621Z"
+  },
+  "batch_28/b28_07_r2": {
+    "tier": "okay",
+    "subject": "a mother carrying a child",
+    "ts": "2026-10-05T06:23:11.733Z"
+  },
+  "batch_40/b40_03_r0": {
+    "tier": "nope",
+    "subject": "a woman with a lantern on a dark path",
+    "ts": "2026-10-05T06:23:14.013Z"
+  },
+  "sft_v7/b17_09_s1": {
+    "tier": "okay",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-05T06:23:16.061Z"
+  },
+  "sft_v7/b12_04_s1": {
+    "tier": "okay",
+    "subject": "a violet iris",
+    "ts": "2026-10-05T06:23:17.437Z"
+  },
+  "sft_v7/b17_09_s0": {
+    "tier": "nope",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-05T06:23:19.709Z"
+  },
+  "batch_37/b37_09_r2": {
+    "tier": "okay",
+    "subject": "a tulip field in stripes",
+    "ts": "2026-10-05T06:23:21.756Z"
+  },
+  "batch_41/b41_03_r0": {
+    "tier": "okay",
+    "subject": "an avenue of plane trees",
+    "ts": "2026-10-05T07:46:42.341Z"
+  },
+  "batch_37/b37_01_r1": {
+    "tier": "nope",
+    "subject": "a moorland with heather",
+    "ts": "2026-10-05T07:46:50.037Z"
+  },
+  "batch_39/b39_12_r2": {
+    "tier": "love",
+    "subject": "a bog with a wooden walkway",
+    "ts": "2026-10-05T07:46:52.469Z"
+  },
+  "batch_41/b41_08_r2": {
+    "tier": "love",
+    "subject": "an orange marigold",
+    "ts": "2026-10-05T07:46:53.749Z"
+  },
+  "batch_33/b33_05_r0": {
+    "tier": "love",
+    "subject": "a bamboo grove",
+    "ts": "2026-10-05T07:46:55.285Z"
+  },
+  "batch_35/b35_05_r2": {
+    "tier": "love",
+    "subject": "a ski slope at dusk",
+    "ts": "2026-10-05T07:46:57.964Z"
+  },
+  "batch_31/b31_10_r1": {
+    "tier": "love",
+    "subject": "a cave mouth opening onto the sea",
+    "ts": "2026-10-05T07:46:59.165Z"
+  },
+  "batch_30/b30_05_r2": {
+    "tier": "okay",
+    "subject": "a woman in a red coat crossing a bridge",
+    "ts": "2026-10-05T07:47:00.756Z"
+  },
+  "batch_41/b41_11_r0": {
+    "tier": "okay",
+    "subject": "a copper beech in summer",
+    "ts": "2026-10-05T07:47:02.005Z"
+  },
+  "batch_29/b29_04_r0": {
+    "tier": "okay",
+    "subject": "a beach hut in a row",
+    "ts": "2026-10-05T07:47:03.916Z"
+  },
+  "batch_32/b32_01_r0": {
+    "tier": "nope",
+    "subject": "a river delta from above",
+    "ts": "2026-10-05T07:47:05.813Z"
+  },
+  "batch_38/b38_04_r1": {
+    "tier": "love",
+    "subject": "a scarlet geranium",
+    "ts": "2026-10-05T07:47:07.717Z"
+  },
+  "batch_35/b35_06_r0": {
+    "tier": "nope",
+    "subject": "a frozen waterfall",
+    "ts": "2026-10-05T07:47:09.229Z"
+  },
+  "batch_29/b29_06_r1": {
+    "tier": "okay",
+    "subject": "a desert mountain at sunset",
+    "ts": "2026-10-05T07:47:10.941Z"
+  },
+  "sft_v7/b20_07_s0": {
+    "tier": "nope",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-05T07:47:12.796Z"
+  },
+  "batch_42/b42_11_r1": {
+    "tier": "okay",
+    "subject": "a single conical peak at dawn",
+    "ts": "2026-10-05T07:47:16.621Z"
+  },
+  "sft_v7/b22_08_s0": {
+    "tier": "okay",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-05T07:47:17.989Z"
+  },
+  "sft_v7/b23_05_s0": {
+    "tier": "okay",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-05T07:47:19.140Z"
+  },
+  "batch_32/b32_10_r2": {
+    "tier": "okay",
+    "subject": "a bamboo forest path",
+    "ts": "2026-10-05T07:47:20.221Z"
+  },
+  "batch_35/b35_02_r1": {
+    "tier": "okay",
+    "subject": "a canyon with red rock walls",
+    "ts": "2026-10-05T07:47:21.316Z"
+  },
+  "batch_37/b37_02_r0": {
+    "tier": "nope",
+    "subject": "a sandy cove with turquoise water",
+    "ts": "2026-10-05T07:47:22.492Z"
+  },
+  "batch_32/b32_03_r0": {
+    "tier": "okay",
+    "subject": "a figure in a doorway lit from behind",
+    "ts": "2026-10-05T07:47:24.013Z"
+  },
+  "batch_38/b38_08_r2": {
+    "tier": "okay",
+    "subject": "a sunset through a forest",
+    "ts": "2026-10-05T07:47:25.453Z"
+  },
+  "batch_41/b41_02_r2": {
+    "tier": "love",
+    "subject": "a marsh with tall grass",
+    "ts": "2026-10-05T07:47:27.261Z"
+  },
+  "batch_34/b34_06_r2": {
+    "tier": "love",
+    "subject": "a bird of paradise flower",
+    "ts": "2026-10-05T07:47:28.781Z"
+  },
+  "batch_38/b38_06_r0": {
+    "tier": "okay",
+    "subject": "a farmer with a scythe in a field",
+    "ts": "2026-10-05T07:47:30.533Z"
+  },
+  "batch_33/b33_01_r2": {
+    "tier": "okay",
+    "subject": "a mountain covered in autumn forest",
+    "ts": "2026-10-05T07:47:32.332Z"
+  },
+  "batch_36/b36_05_r1": {
+    "tier": "love",
+    "subject": "a kite seller with colourful kites",
+    "ts": "2026-10-05T07:47:34.069Z"
+  },
+  "batch_34/b34_12_r0": {
+    "tier": "nope",
+    "subject": "a dead tree on a moor",
+    "ts": "2026-10-05T07:47:36.789Z"
+  },
+  "batch_43/b43_12_r1": {
+    "tier": "okay",
+    "subject": "a fisherman casting a net at dawn",
+    "ts": "2026-10-05T07:47:39.685Z"
+  },
+  "batch_37/b37_05_r2": {
+    "tier": "okay",
+    "subject": "a passion flower",
+    "ts": "2026-10-05T07:47:40.573Z"
+  },
+  "batch_33/b33_04_r2": {
+    "tier": "nope",
+    "subject": "a geyser erupting",
+    "ts": "2026-10-05T07:47:41.749Z"
+  },
+  "sft_v7/b06_02_s0": {
+    "tier": "okay",
+    "subject": "a burgundy dahlia",
+    "ts": "2026-10-05T07:47:43.053Z"
+  },
+  "batch_43/b43_07_r2": {
+    "tier": "love",
+    "subject": "a mountain range under a full moon",
+    "ts": "2026-10-05T07:47:44.469Z"
+  },
+  "batch_30/b30_12_r2": {
+    "tier": "okay",
+    "subject": "a forest of aspens in gold",
+    "ts": "2026-10-05T07:47:46.773Z"
+  },
+  "batch_31/b31_02_r2": {
+    "tier": "okay",
+    "subject": "a dark volcano with glowing lava",
+    "ts": "2026-10-05T07:47:48.708Z"
+  },
+  "batch_30/b30_06_r2": {
+    "tier": "okay",
+    "subject": "a mountain reflected in a still tarn",
+    "ts": "2026-10-05T07:47:50.117Z"
+  },
+  "batch_32/b32_04_r2": {
+    "tier": "okay",
+    "subject": "a lantern-lit street at night",
+    "ts": "2026-10-05T07:47:51.813Z"
+  },
+  "batch_43/b43_02_r1": {
+    "tier": "okay",
+    "subject": "a terraced vineyard by a river",
+    "ts": "2026-10-05T07:47:53.013Z"
+  },
+  "batch_42/b42_04_r2": {
+    "tier": "okay",
+    "subject": "a white water lily",
+    "ts": "2026-10-05T07:47:54.124Z"
+  },
+  "batch_32/b32_05_r0": {
+    "tier": "okay",
+    "subject": "a rowan tree with red berries",
+    "ts": "2026-10-05T07:47:55.141Z"
+  },
+  "batch_28/b28_08_r0": {
+    "tier": "okay",
+    "subject": "a vineyard on rolling hills",
+    "ts": "2026-10-05T07:47:56.485Z"
+  },
+  "sft_v7/b22_05_s0": {
+    "tier": "okay",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-05T07:47:58.245Z"
+  },
+  "batch_30/b30_02_r2": {
+    "tier": "nope",
+    "subject": "a sunset seen through a window",
+    "ts": "2026-10-05T07:48:00.117Z"
+  },
+  "batch_28/b28_10_r0": {
+    "tier": "nope",
+    "subject": "a sunset over an island",
+    "ts": "2026-10-05T07:48:01.189Z"
+  },
+  "batch_42/b42_11_r2": {
+    "tier": "okay",
+    "subject": "a single conical peak at dawn",
+    "ts": "2026-10-05T07:48:02.397Z"
+  },
+  "batch_38/b38_08_r1": {
+    "tier": "love",
+    "subject": "a sunset through a forest",
+    "ts": "2026-10-05T07:48:03.844Z"
+  },
+  "batch_40/b40_12_r2": {
+    "tier": "love",
+    "subject": "a sunset behind a lighthouse",
+    "ts": "2026-10-05T07:48:05.037Z"
+  },
+  "batch_28/b28_03_r1": {
+    "tier": "okay",
+    "subject": "a deep purple lilac",
+    "ts": "2026-10-05T07:48:06.309Z"
+  },
+  "batch_39/b39_09_r2": {
+    "tier": "okay",
+    "subject": "a sunset over a snowy field",
+    "ts": "2026-10-05T07:48:58.829Z"
+  },
+  "sft_v7/b09_05_s0": {
+    "tier": "okay",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-05T07:49:01.076Z"
+  },
+  "sft_v7/b04_08_s1": {
+    "tier": "love",
+    "subject": "a blue anemone",
+    "ts": "2026-10-05T07:49:02.204Z"
+  },
+  "sft_v7/b06_09_s1": {
+    "tier": "okay",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-05T07:49:03.733Z"
+  },
+  "batch_37/b37_05_r0": {
+    "tier": "okay",
+    "subject": "a passion flower",
+    "ts": "2026-10-05T07:49:04.668Z"
+  },
+  "sft_v7/b09_05_s1": {
+    "tier": "nope",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-05T07:49:07.692Z"
+  },
+  "batch_42/b42_07_r1": {
+    "tier": "okay",
+    "subject": "a field of bluebells in a wood",
+    "ts": "2026-10-05T07:49:09.292Z"
+  },
+  "batch_36/b36_10_r1": {
+    "tier": "okay",
+    "subject": "a lagoon with a sandbar",
+    "ts": "2026-10-05T07:49:11.836Z"
+  },
+  "batch_29/b29_03_r1": {
+    "tier": "okay",
+    "subject": "a flamenco dancer in a red dress",
+    "ts": "2026-10-05T07:49:13.364Z"
+  },
+  "batch_41/b41_12_r0": {
+    "tier": "love",
+    "subject": "a city skyline at night with lit windows",
+    "ts": "2026-10-05T07:49:15.036Z"
+  },
+  "batch_42/b42_09_r1": {
+    "tier": "nope",
+    "subject": "a yellow ginkgo in autumn",
+    "ts": "2026-10-05T07:49:17.237Z"
+  },
+  "batch_39/b39_10_r0": {
+    "tier": "nope",
+    "subject": "a wind-bent cypress by the sea",
+    "ts": "2026-10-05T07:49:18.164Z"
+  },
+  "batch_31/b31_01_r0": {
+    "tier": "okay",
+    "subject": "a sunset over a desert road",
+    "ts": "2026-10-05T07:49:21.580Z"
+  },
+  "batch_35/b35_03_r0": {
+    "tier": "okay",
+    "subject": "a full moon over a snowy field",
+    "ts": "2026-10-05T07:49:22.941Z"
+  },
+  "batch_29/b29_08_r0": {
+    "tier": "love",
+    "subject": "a person stargazing on a hill",
+    "ts": "2026-10-05T07:49:24.540Z"
+  },
+  "batch_32/b32_04_r0": {
+    "tier": "okay",
+    "subject": "a lantern-lit street at night",
+    "ts": "2026-10-05T07:49:26.020Z"
+  },
+  "batch_29/b29_09_r0": {
+    "tier": "okay",
+    "subject": "a twisted juniper on a mountain",
+    "ts": "2026-10-05T07:49:27.324Z"
+  },
+  "batch_39/b39_08_r1": {
+    "tier": "okay",
+    "subject": "a eucalyptus grove",
+    "ts": "2026-10-05T07:49:28.340Z"
+  },
+  "batch_43/b43_01_r2": {
+    "tier": "okay",
+    "subject": "an oasis in the desert",
+    "ts": "2026-10-05T07:49:29.980Z"
+  },
+  "batch_40/b40_02_r0": {
+    "tier": "nope",
+    "subject": "a fjord between steep cliffs",
+    "ts": "2026-10-05T07:49:31.372Z"
+  },
+  "batch_43/b43_11_r0": {
+    "tier": "nope",
+    "subject": "a horse rider on a beach",
+    "ts": "2026-10-05T07:49:32.517Z"
+  },
+  "batch_41/b41_06_r1": {
+    "tier": "okay",
+    "subject": "a sunflower field under a storm",
+    "ts": "2026-10-05T07:49:34.364Z"
+  },
+  "batch_30/b30_03_r2": {
+    "tier": "okay",
+    "subject": "a greenhouse full of plants",
+    "ts": "2026-10-05T07:49:37.028Z"
+  },
+  "batch_38/b38_07_r0": {
+    "tier": "nope",
+    "subject": "a cloud-wrapped summit",
+    "ts": "2026-10-05T07:49:40.396Z"
+  },
+  "batch_30/b30_02_r0": {
+    "tier": "nope",
+    "subject": "a sunset seen through a window",
+    "ts": "2026-10-05T07:49:41.652Z"
+  },
+  "batch_39/b39_07_r1": {
+    "tier": "nope",
+    "subject": "an elm silhouetted at twilight",
+    "ts": "2026-10-05T07:49:43.388Z"
+  },
+  "batch_41/b41_08_r1": {
+    "tier": "love",
+    "subject": "an orange marigold",
+    "ts": "2026-10-05T07:49:44.676Z"
+  },
+  "batch_41/b41_06_r2": {
+    "tier": "love",
+    "subject": "a sunflower field under a storm",
+    "ts": "2026-10-05T07:49:45.868Z"
+  },
+  "batch_29/b29_05_r0": {
+    "tier": "okay",
+    "subject": "a cliff face with a waterfall",
+    "ts": "2026-10-05T07:49:48.500Z"
+  },
+  "sft_v7/b04_03_s0": {
+    "tier": "nope",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-05T07:49:50.164Z"
+  },
+  "batch_33/b33_07_r0": {
+    "tier": "nope",
+    "subject": "a sunset after rain with puddles",
+    "ts": "2026-10-05T07:49:51.500Z"
+  },
+  "batch_36/b36_09_r2": {
+    "tier": "okay",
+    "subject": "a grandmother knitting by a window",
+    "ts": "2026-10-05T07:49:53.452Z"
+  },
+  "batch_28/b28_03_r0": {
+    "tier": "okay",
+    "subject": "a deep purple lilac",
+    "ts": "2026-10-05T07:49:54.516Z"
   }
 }
