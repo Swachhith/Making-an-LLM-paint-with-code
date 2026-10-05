@@ -1,0 +1,98 @@
+[
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a desert road",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_01"
+ },
+ {
+  "category": "mountains",
+  "subject": "a dark volcano with glowing lava",
+  "composition": "a reflection in the lower half",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_02"
+ },
+ {
+  "category": "trees",
+  "subject": "an orchard of flowering almond trees",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_03"
+ },
+ {
+  "category": "night",
+  "subject": "a lone streetlamp in the rain",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_04"
+ },
+ {
+  "category": "people",
+  "subject": "a runner on a beach at sunrise",
+  "composition": "the figure small in a wide scene",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a cluster of forget-me-nots",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_06"
+ },
+ {
+  "category": "houses",
+  "subject": "a lighthouse keeper's cottage",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_07"
+ },
+ {
+  "category": "people",
+  "subject": "a cellist playing alone",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_08"
+ },
+ {
+  "category": "people",
+  "subject": "a tea picker on a green hillside",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a cave mouth opening onto the sea",
+  "composition": "a path or river leading into the distance",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_10"
+ },
+ {
+  "category": "mountains",
+  "subject": "a cable car over a valley",
+  "composition": "a wide view with a low horizon",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_11"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a glacier meeting the sea",
+  "composition": "a tall vertical composition",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b31_12"
+ }
+]

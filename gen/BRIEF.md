@@ -29,6 +29,12 @@ palettes ("lots of white paper showing") and white subjects are the usual
 failures: keep a background wash or strong shadows in them so the painting clears
 4%. Full-canvas paintings (a sky to every edge) are fine.
 
+Dark palettes ("near-black with a few warm lights", "deep jewel tones on dark
+paper", ...) are among the best-rated styles: set `background()` to the dark
+paper and build the painting with layered washes on top of it. Coverage is
+measured against your declared paper, so washes only a shade away from it can
+read as near-blank -- give dark paintings enough mid-tones and lights.
+
 ## Work loop -- three rounds, then stop
 
 For each item in the batch (`id`, `subject`, `composition`, `palette`):
@@ -79,3 +85,4 @@ Commit everything under `gen/out/<batch>/` (sketches, PNGs, contact sheets,
 sessions can only push there, and that is fine; do not ask to push elsewhere.
 Do not change any file outside `gen/out/<batch>/`. End with a few lines: gate
 pass count per round and anything you found wrong with the tooling or prompt.
+Also state which Claude model you are running as.

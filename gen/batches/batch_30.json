@@ -1,0 +1,98 @@
+[
+ {
+  "category": "houses",
+  "subject": "a treehouse in an oak",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_01"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset seen through a window",
+  "composition": "a reflection on water in the lower half",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_02"
+ },
+ {
+  "category": "houses",
+  "subject": "a greenhouse full of plants",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_03"
+ },
+ {
+  "category": "houses",
+  "subject": "a bell tower at dusk",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_04"
+ },
+ {
+  "category": "people",
+  "subject": "a woman in a red coat crossing a bridge",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_05"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain reflected in a still tarn",
+  "composition": "a wide view with a low horizon",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_06"
+ },
+ {
+  "category": "night",
+  "subject": "a night train crossing a bridge",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a log cabin by a lake",
+  "composition": "seen from a low angle",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_08"
+ },
+ {
+  "category": "people",
+  "subject": "a street musician playing a violin",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_09"
+ },
+ {
+  "category": "flowers",
+  "subject": "a yellow daffodil",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_10"
+ },
+ {
+  "category": "houses",
+  "subject": "a blue-domed church by the sea",
+  "composition": "seen from a low angle",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_11"
+ },
+ {
+  "category": "trees",
+  "subject": "a forest of aspens in gold",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b30_12"
+ }
+]

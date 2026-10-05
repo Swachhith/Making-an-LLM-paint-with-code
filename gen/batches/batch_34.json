@@ -1,0 +1,98 @@
+[
+ {
+  "category": "people",
+  "subject": "a couple dancing under a streetlight",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_01"
+ },
+ {
+  "category": "mountains",
+  "subject": "a high plateau with scattered rocks",
+  "composition": "one peak large and off-centre",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_02"
+ },
+ {
+  "category": "people",
+  "subject": "a woman painting at an easel outdoors",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_03"
+ },
+ {
+  "category": "mountains",
+  "subject": "a steep green karst peak",
+  "composition": "a reflection in the lower half",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_04"
+ },
+ {
+  "category": "people",
+  "subject": "a gardener kneeling among flowers",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_05"
+ },
+ {
+  "category": "flowers",
+  "subject": "a bird of paradise flower",
+  "composition": "a small cluster of three blooms",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_06"
+ },
+ {
+  "category": "people",
+  "subject": "a man rowing across a lake",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a farmhouse with a glowing porch",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_08"
+ },
+ {
+  "category": "flowers",
+  "subject": "a bunch of sweet peas",
+  "composition": "a bloom seen from the side",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_09"
+ },
+ {
+  "category": "flowers",
+  "subject": "a white gardenia",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_10"
+ },
+ {
+  "category": "people",
+  "subject": "a girl on a swing",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "deep jewel tones on dark paper",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_11"
+ },
+ {
+  "category": "trees",
+  "subject": "a dead tree on a moor",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b34_12"
+ }
+]

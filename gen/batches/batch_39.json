@@ -1,0 +1,98 @@
+[
+ {
+  "category": "houses",
+  "subject": "a desert adobe house",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a purple foxglove",
+  "composition": "two blooms at different angles",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_02"
+ },
+ {
+  "category": "night",
+  "subject": "an owl on a branch under the moon",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_03"
+ },
+ {
+  "category": "night",
+  "subject": "a castle under a starry sky",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a dense jungle canopy",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_05"
+ },
+ {
+  "category": "trees",
+  "subject": "a bonsai pine on a rock",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_06"
+ },
+ {
+  "category": "trees",
+  "subject": "an elm silhouetted at twilight",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_07"
+ },
+ {
+  "category": "trees",
+  "subject": "a eucalyptus grove",
+  "composition": "a tall vertical composition",
+  "palette": "cool teal and indigo",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_08"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a snowy field",
+  "composition": "the sun low and off-centre",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_09"
+ },
+ {
+  "category": "trees",
+  "subject": "a wind-bent cypress by the sea",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_10"
+ },
+ {
+  "category": "night",
+  "subject": "a moonlit forest path",
+  "composition": "the moon large and off-centre",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_11"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a bog with a wooden walkway",
+  "composition": "a path or river leading into the distance",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b39_12"
+ }
+]

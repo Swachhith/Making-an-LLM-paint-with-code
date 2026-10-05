@@ -1,0 +1,98 @@
+[
+ {
+  "category": "landscapes",
+  "subject": "a river delta from above",
+  "composition": "a path or river leading into the distance",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a red hibiscus at night",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_02"
+ },
+ {
+  "category": "people",
+  "subject": "a figure in a doorway lit from behind",
+  "composition": "the figure small in a wide scene",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_03"
+ },
+ {
+  "category": "night",
+  "subject": "a lantern-lit street at night",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a rowan tree with red berries",
+  "composition": "seen from far across a field",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_05"
+ },
+ {
+  "category": "trees",
+  "subject": "a solitary pine on a cliff edge",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a coconut grove at dusk",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_07"
+ },
+ {
+  "category": "trees",
+  "subject": "a mangrove at the water's edge",
+  "composition": "a tall vertical composition",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_08"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a wheat field",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a bamboo forest path",
+  "composition": "a path or river leading into the distance",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_10"
+ },
+ {
+  "category": "night",
+  "subject": "a night market with lanterns",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_11"
+ },
+ {
+  "category": "trees",
+  "subject": "a gnarled olive tree",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b32_12"
+ }
+]

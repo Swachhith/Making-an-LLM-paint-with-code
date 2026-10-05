@@ -1,0 +1,98 @@
+[
+ {
+  "category": "people",
+  "subject": "a ballerina on a dark stage",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_01"
+ },
+ {
+  "category": "trees",
+  "subject": "a lone acacia on the savanna",
+  "composition": "a tall vertical composition",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_02"
+ },
+ {
+  "category": "people",
+  "subject": "a skater on a frozen lake",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_03"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain hut in deep snow",
+  "composition": "a wide view with a low horizon",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_04"
+ },
+ {
+  "category": "people",
+  "subject": "a kite seller with colourful kites",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_05"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over the savanna with an acacia",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_06"
+ },
+ {
+  "category": "night",
+  "subject": "a tent glowing under the milky way",
+  "composition": "a tall vertical composition",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a bridge with houses on it",
+  "composition": "seen from a low angle",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_08"
+ },
+ {
+  "category": "people",
+  "subject": "a grandmother knitting by a window",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a lagoon with a sandbar",
+  "composition": "a path or river leading into the distance",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_10"
+ },
+ {
+  "category": "people",
+  "subject": "two children chasing bubbles",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_11"
+ },
+ {
+  "category": "trees",
+  "subject": "a banyan tree with hanging roots",
+  "composition": "a tall vertical composition",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b36_12"
+ }
+]

@@ -1,0 +1,98 @@
+[
+ {
+  "category": "houses",
+  "subject": "a farmhouse in a snowstorm",
+  "composition": "the building small in a wide landscape",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_01"
+ },
+ {
+  "category": "people",
+  "subject": "a gondolier on a canal",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_02"
+ },
+ {
+  "category": "trees",
+  "subject": "a lightning-struck oak",
+  "composition": "seen from far across a field",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a white water lily",
+  "composition": "a single stem arcing across the canvas",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_04"
+ },
+ {
+  "category": "people",
+  "subject": "a monk in orange robes walking",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_05"
+ },
+ {
+  "category": "houses",
+  "subject": "a Japanese temple among trees",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "cool light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_06"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a field of bluebells in a wood",
+  "composition": "a path or river leading into the distance",
+  "palette": "cool light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_07"
+ },
+ {
+  "category": "night",
+  "subject": "a harbour at night",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_08"
+ },
+ {
+  "category": "trees",
+  "subject": "a yellow ginkgo in autumn",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "cool teal and indigo",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a black sand beach",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_10"
+ },
+ {
+  "category": "mountains",
+  "subject": "a single conical peak at dawn",
+  "composition": "a wide view with a low horizon",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_11"
+ },
+ {
+  "category": "mountains",
+  "subject": "a snowy ridge with climbers",
+  "composition": "one peak large and off-centre",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b42_12"
+ }
+]

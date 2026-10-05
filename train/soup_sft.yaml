@@ -1,0 +1,44 @@
+# Supervised warm-start for Qwen3.5-4B on the rated p5.brush sketches.
+# Based on Soup's `qwen3.5-4b-sft` recipe; every change from it is commented.
+# Data: python train/build_sft.py  ->  data/sft_train.jsonl (531 rows)
+
+base: Qwen/Qwen3.5-4B
+task: sft
+modality: text
+
+data:
+  train: ./data/sft_train.jsonl
+  format: chatml            # recipe had `auto`; it detects chatml, pinned so it cannot drift
+  max_length: 3328          # longest templated example is 3,283 tokens; nothing is truncated
+  train_on_responses_only: true
+  # A random validation split would be pure leakage: loves are written twice
+  # and the three rounds of a prompt are near-duplicates. Evaluation is done by
+  # generating on 37 fully held-out prompts instead (data/sft_eval_prompts.jsonl).
+  val_split: 0.0
+
+training:
+  epochs: 2                 # recipe had 3; 531 rows with loves already doubled -- avoid memorising
+  lr: 2e-4
+  # Fixed, not `auto`: the auto search probes at full max_length and gave up at 1.
+  batch_size: 1
+  gradient_accumulation_steps: 16   # effective batch 16, ~66 optimizer steps
+  warmup_ratio: 0.05
+  scheduler: cosine
+  seed: 20261004
+  logging_steps: 5
+  save_steps: 50
+  quantization: 4bit
+  gradient_checkpointing: true   # ~3,300-token sequences on a 15 GB T4
+  # Qwen3.5's vocabulary is 248k tokens: the logits of one 3,300-token example
+  # are ~1.6 GB in fp16, and the loss upcasts and keeps a gradient for them.
+  # Without the fused cross-entropy this OOMs a T4 at batch size 1.
+  use_liger: true
+  lora:
+    r: 16
+    alpha: 32
+    # recipe had `auto` ("let peft decide"). Qwen3.5 mixes Gated DeltaNet and
+    # attention layers with non-standard projection names; a default or
+    # hand-written list can silently adapt only some of them.
+    target_modules: all-linear
+
+output: ./output/sft

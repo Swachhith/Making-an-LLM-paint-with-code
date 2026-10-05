@@ -1,0 +1,15 @@
+{
+  "id": "swachhithb/watercolors-sft-warmstart",
+  "title": "watercolors-sft-warmstart",
+  "code_file": "sft_train_eval.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["swachhithb/watercolors-sft"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

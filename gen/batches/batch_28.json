@@ -1,0 +1,98 @@
+[
+ {
+  "category": "trees",
+  "subject": "a row of poplars along a road",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a mossy boulder field",
+  "composition": "a wide view with a high horizon",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_02"
+ },
+ {
+  "category": "flowers",
+  "subject": "a deep purple lilac",
+  "composition": "a small cluster of three blooms",
+  "palette": "cool light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_03"
+ },
+ {
+  "category": "night",
+  "subject": "a campfire under the stars",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "rocky pinnacles in mist",
+  "composition": "one peak large and off-centre",
+  "palette": "warm light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_05"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over sand dunes",
+  "composition": "a reflection on water in the lower half",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_06"
+ },
+ {
+  "category": "people",
+  "subject": "a mother carrying a child",
+  "composition": "the figure small in a wide scene",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_07"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a vineyard on rolling hills",
+  "composition": "a path or river leading into the distance",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a cornfield at harvest",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_09"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over an island",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_10"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a red sun sinking into haze",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_11"
+ },
+ {
+  "category": "people",
+  "subject": "a woman in a kimono with a paper umbrella",
+  "composition": "the figure small in a wide scene",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b28_12"
+ }
+]

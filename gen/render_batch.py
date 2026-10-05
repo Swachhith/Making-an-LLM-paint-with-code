@@ -90,7 +90,7 @@ def main():
             code = extract_code(open(path, encoding="utf-8").read())
             fails, _ = check_source(code)
             e = {"stem": stem, "id": item_id, "round": args.round,
-                 **{k: items.get(item_id, {}).get(k) for k in ("category", "subject", "composition", "palette")},
+                 **{k: items.get(item_id, {}).get(k) for k in ("category", "subject", "composition", "palette", "generator")},
                  "chars": len(code)}
             if not fails:
                 res = r.render(code, seed=1, png_path=os.path.join(out_dir, stem + ".png"))

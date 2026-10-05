@@ -34,7 +34,7 @@ TIER = {"nope": 0, "okay": 1, "love": 2}
 def load_rows():
     ratings = json.load(open(os.path.join(ROOT, "gen", "ratings.json"), encoding="utf-8"))
     man = {}
-    for f in glob.glob(os.path.join(ROOT, "gen", "out", "batch_*", "manifest.json")):
+    for f in glob.glob(os.path.join(ROOT, "gen", "out", "[!_]*", "manifest.json")):
         b = os.path.basename(os.path.dirname(f))
         for s, e in json.load(open(f, encoding="utf-8")).items():
             man[f"{b}/{s}"] = e

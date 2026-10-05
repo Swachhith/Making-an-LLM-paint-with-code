@@ -1,0 +1,98 @@
+[
+ {
+  "category": "trees",
+  "subject": "a holly tree in winter",
+  "composition": "a tall vertical composition",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a canyon with red rock walls",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_02"
+ },
+ {
+  "category": "night",
+  "subject": "a full moon over a snowy field",
+  "composition": "a tall vertical composition",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_03"
+ },
+ {
+  "category": "houses",
+  "subject": "a mountain monastery",
+  "composition": "seen from a low angle",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "a ski slope at dusk",
+  "composition": "one peak large and off-centre",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_05"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a frozen waterfall",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a jacaranda in purple bloom",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_07"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a river with a bridge",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_08"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain silhouette against a red sky",
+  "composition": "one peak large and off-centre",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_09"
+ },
+ {
+  "category": "flowers",
+  "subject": "a dark red dahlia",
+  "composition": "a bloom seen from the side",
+  "palette": "cool light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_10"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over mountains with alpenglow",
+  "composition": "a reflection on water in the lower half",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_11"
+ },
+ {
+  "category": "people",
+  "subject": "a lone traveller with a suitcase at a station",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b35_12"
+ }
+]

@@ -1,0 +1,98 @@
+[
+ {
+  "category": "landscapes",
+  "subject": "an oasis in the desert",
+  "composition": "a tall vertical composition",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a terraced vineyard by a river",
+  "composition": "a wide view with a high horizon",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_02"
+ },
+ {
+  "category": "flowers",
+  "subject": "a crimson protea",
+  "composition": "a single bloom, close up, filling most of the canvas",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_03"
+ },
+ {
+  "category": "trees",
+  "subject": "a magnolia tree in early spring",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "deep teal with warm orange accents",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a fallen log in a forest",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_05"
+ },
+ {
+  "category": "houses",
+  "subject": "a stone cottage with smoke from the chimney",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_06"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain range under a full moon",
+  "composition": "a wide view with a low horizon",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_07"
+ },
+ {
+  "category": "houses",
+  "subject": "a corner caf\u00e9 with an awning",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_08"
+ },
+ {
+  "category": "night",
+  "subject": "the northern lights over a lake",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a pagoda reflected in a pond",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_10"
+ },
+ {
+  "category": "people",
+  "subject": "a horse rider on a beach",
+  "composition": "the figure small in a wide scene",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_11"
+ },
+ {
+  "category": "people",
+  "subject": "a fisherman casting a net at dawn",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b43_12"
+ }
+]

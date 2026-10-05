@@ -1,0 +1,98 @@
+[
+ {
+  "category": "mountains",
+  "subject": "a mountain covered in autumn forest",
+  "composition": "a wide view with a low horizon",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_01"
+ },
+ {
+  "category": "night",
+  "subject": "a meteor shower over a desert",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_02"
+ },
+ {
+  "category": "houses",
+  "subject": "a stilt house over water",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_03"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a geyser erupting",
+  "composition": "a tall vertical composition",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_04"
+ },
+ {
+  "category": "trees",
+  "subject": "a bamboo grove",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_05"
+ },
+ {
+  "category": "trees",
+  "subject": "a giant redwood trunk",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_06"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset after rain with puddles",
+  "composition": "the sun low and off-centre",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_07"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a harbour with boats",
+  "composition": "silhouettes against the sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_08"
+ },
+ {
+  "category": "houses",
+  "subject": "a tower house in fog",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_09"
+ },
+ {
+  "category": "trees",
+  "subject": "a lemon tree in a terracotta pot",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_10"
+ },
+ {
+  "category": "people",
+  "subject": "a jazz trumpeter in a smoky club",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "loose and splashy, with visible drips and blooms of colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_11"
+ },
+ {
+  "category": "trees",
+  "subject": "a red maple by a stream",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b33_12"
+ }
+]

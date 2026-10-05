@@ -8,3 +8,8 @@ __pycache__/
 gen/out/_selftest/
 gen/out/_selftest.json
 *.bak
+.venv-soup/
+# built by train/build_sft.py; kaggle/sft-data holds staging copies for upload
+data/
+kaggle/sft-data/*
+!kaggle/sft-data/dataset-metadata.json

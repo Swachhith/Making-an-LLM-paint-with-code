@@ -1,0 +1,98 @@
+[
+ {
+  "category": "people",
+  "subject": "a shepherd with sheep on a hillside",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_01"
+ },
+ {
+  "category": "flowers",
+  "subject": "a blue delphinium spike",
+  "composition": "an open bloom beside a closed bud",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_02"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a steppe with wild horses",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "deep jewel tones on dark paper",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_03"
+ },
+ {
+  "category": "flowers",
+  "subject": "a scarlet geranium",
+  "composition": "a bloom seen from above",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_04"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a hot spring steaming in snow",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "deep blue and violet",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_05"
+ },
+ {
+  "category": "people",
+  "subject": "a farmer with a scythe in a field",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_06"
+ },
+ {
+  "category": "mountains",
+  "subject": "a cloud-wrapped summit",
+  "composition": "one peak large and off-centre",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_07"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset through a forest",
+  "composition": "a reflection on water in the lower half",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_08"
+ },
+ {
+  "category": "people",
+  "subject": "a surfer carrying a board at dusk",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_09"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a tea plantation on steep hills",
+  "composition": "a wide view with a high horizon",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_10"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a prairie with a lone windpump",
+  "composition": "a path or river leading into the distance",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_11"
+ },
+ {
+  "category": "landscapes",
+  "subject": "an iceberg floating in dark water",
+  "composition": "a tall vertical composition",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b38_12"
+ }
+]

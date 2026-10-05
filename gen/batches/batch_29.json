@@ -1,0 +1,98 @@
+[
+ {
+  "category": "trees",
+  "subject": "a sycamore with peeling bark",
+  "composition": "a tall vertical composition",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a salt flat with a mirror sky",
+  "composition": "a path or river leading into the distance",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_02"
+ },
+ {
+  "category": "people",
+  "subject": "a flamenco dancer in a red dress",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_03"
+ },
+ {
+  "category": "houses",
+  "subject": "a beach hut in a row",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_04"
+ },
+ {
+  "category": "mountains",
+  "subject": "a cliff face with a waterfall",
+  "composition": "one peak large and off-centre",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_05"
+ },
+ {
+  "category": "mountains",
+  "subject": "a desert mountain at sunset",
+  "composition": "a reflection in the lower half",
+  "palette": "muted and earthy",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_06"
+ },
+ {
+  "category": "people",
+  "subject": "a market seller under an awning",
+  "composition": "the figure off-centre with lots of empty space",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_07"
+ },
+ {
+  "category": "people",
+  "subject": "a person stargazing on a hill",
+  "composition": "the figure large, seen from the waist up",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_08"
+ },
+ {
+  "category": "trees",
+  "subject": "a twisted juniper on a mountain",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "warm light",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a narrow alley of old houses",
+  "composition": "the building small in a wide landscape",
+  "palette": "high contrast with dark silhouettes",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_10"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain village with terraces",
+  "composition": "a wide view with a low horizon",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_11"
+ },
+ {
+  "category": "flowers",
+  "subject": "a black tulip",
+  "composition": "one bloom placed off-centre with lots of empty space",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b29_12"
+ }
+]

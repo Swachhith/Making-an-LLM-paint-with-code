@@ -1,0 +1,98 @@
+[
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a frozen lake",
+  "composition": "the sun low and off-centre",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a fjord between steep cliffs",
+  "composition": "a path or river leading into the distance",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_02"
+ },
+ {
+  "category": "people",
+  "subject": "a woman with a lantern on a dark path",
+  "composition": "the figure as a silhouette against the sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_03"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a stone wall winding over hills",
+  "composition": "a tall vertical composition",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_04"
+ },
+ {
+  "category": "houses",
+  "subject": "a ruined abbey",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_05"
+ },
+ {
+  "category": "night",
+  "subject": "a moonrise over the sea",
+  "composition": "dark silhouettes against the night sky",
+  "palette": "limited palette: two warm colours plus one dark",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_06"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset over a marsh with birds",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "cool teal and indigo",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_07"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a frozen lake with snowy banks",
+  "composition": "a tall vertical composition",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_08"
+ },
+ {
+  "category": "mountains",
+  "subject": "a sunrise lighting one peak",
+  "composition": "a reflection in the lower half",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_09"
+ },
+ {
+  "category": "houses",
+  "subject": "a castle on a rocky island",
+  "composition": "the building off-centre with lots of sky",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_10"
+ },
+ {
+  "category": "houses",
+  "subject": "a water mill by a stream",
+  "composition": "the building close up, filling much of the canvas",
+  "palette": "near-black with a few warm lights",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_11"
+ },
+ {
+  "category": "sunsets",
+  "subject": "a sunset behind a lighthouse",
+  "composition": "a wide view with a low horizon and a big sky",
+  "palette": "high contrast with deep shadows",
+  "generator": "claude-sonnet-5-5",
+  "id": "b40_12"
+ }
+]

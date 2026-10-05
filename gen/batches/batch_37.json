@@ -1,0 +1,98 @@
+[
+ {
+  "category": "landscapes",
+  "subject": "a moorland with heather",
+  "composition": "a wide view with a high horizon",
+  "palette": "crimson and black with one cream highlight",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_01"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a sandy cove with turquoise water",
+  "composition": "a path or river leading into the distance",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_02"
+ },
+ {
+  "category": "mountains",
+  "subject": "a mountain pass with a winding road",
+  "composition": "a wide view with a low horizon",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_03"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a waterfall in a green gorge",
+  "composition": "a wide view with a high horizon",
+  "palette": "indigo with one bright accent colour",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_04"
+ },
+ {
+  "category": "flowers",
+  "subject": "a passion flower",
+  "composition": "one open bloom with a stem and two leaves",
+  "palette": "dark green and gold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_05"
+ },
+ {
+  "category": "people",
+  "subject": "a woman reading on a train",
+  "composition": "the figure small in a wide scene",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_06"
+ },
+ {
+  "category": "trees",
+  "subject": "a snow-laden fir tree",
+  "composition": "the tree small and off-centre with lots of empty space",
+  "palette": "cool teal and indigo",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_07"
+ },
+ {
+  "category": "night",
+  "subject": "a lighthouse beam at night",
+  "composition": "a wide view with a low horizon and a huge sky",
+  "palette": "dark ground with a glowing sky",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_08"
+ },
+ {
+  "category": "landscapes",
+  "subject": "a tulip field in stripes",
+  "composition": "layered planes from foreground to far distance",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_09"
+ },
+ {
+  "category": "flowers",
+  "subject": "a red amaryllis",
+  "composition": "a bloom seen from the side",
+  "palette": "soft and pastel",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_10"
+ },
+ {
+  "category": "trees",
+  "subject": "a fig tree in a courtyard",
+  "composition": "the tree large, filling most of the canvas",
+  "palette": "saturated and bold",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_11"
+ },
+ {
+  "category": "mountains",
+  "subject": "a storm over the mountains",
+  "composition": "a reflection in the lower half",
+  "palette": "deep jewel tones on dark paper",
+  "generator": "claude-sonnet-5-5",
+  "id": "b37_12"
+ }
+]
