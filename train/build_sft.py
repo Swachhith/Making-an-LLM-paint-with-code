@@ -6,7 +6,7 @@ sketch that produced a painting the rater liked.
   * love and okay sketches only; nope sketches are excluded;
   * loves are written twice, so the taste signal is not diluted by the
     larger okay tier (110 loves vs 377 okays);
-  * ~12% of PROMPTS are held out entirely, stratified by category, for the
+  * 37 PROMPTS (train/heldout_prompts.json) are held out entirely for the
     before/after generation test -- all three rounds of a prompt go to the
     same side, or the test would measure memorisation;
   * the user message format here is the one the RL prompts will reuse.
@@ -31,6 +31,9 @@ from train.gate import extract_code  # noqa: E402
 SYSTEM = open(os.path.join(ROOT, "env", "prompt.md"), encoding="utf-8").read().strip()
 HOLDOUT = 0.12
 SEED = 20261004
+HELDOUT_FILE = os.path.join(HERE, "heldout_prompts.json")
+MAX_TOKENS = 3328   # = data.max_length in soup_sft.yaml; longer examples are dropped,
+                    # since truncating them would teach sketches that stop mid-code
 
 
 def request(item: dict) -> str:
@@ -60,15 +63,24 @@ def main():
             if tier in ("love", "okay") and os.path.exists(js):
                 examples[pid].append((tier, extract_code(open(js, encoding="utf-8").read()).strip()))
 
-    # Hold out prompts, stratified by category.
-    rng = random.Random(SEED)
-    by_cat = collections.defaultdict(list)
-    for pid, it in sorted(prompts.items()):
-        by_cat[it["category"]].append(pid)
-    held = set()
-    for cat, pids in by_cat.items():
-        rng.shuffle(pids)
-        held.update(pids[:max(1, round(len(pids) * HOLDOUT))])
+    # Held-out prompts: frozen in train/heldout_prompts.json so that adding
+    # batches never moves a prompt between train and evaluation. Only when the
+    # file is missing is a fresh split drawn (stratified by category).
+    if os.path.exists(HELDOUT_FILE):
+        held = set(json.load(open(HELDOUT_FILE, encoding="utf-8"))["ids"])
+    else:
+        rng = random.Random(SEED)
+        by_cat = collections.defaultdict(list)
+        for pid, it in sorted(prompts.items()):
+            by_cat[it["category"]].append(pid)
+        held = set()
+        for cat, pids in by_cat.items():
+            rng.shuffle(pids)
+            held.update(pids[:max(1, round(len(pids) * HOLDOUT))])
+
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained("Qwen/Qwen3.5-4B")
+    too_long = 0
 
     os.makedirs(os.path.join(ROOT, "data"), exist_ok=True)
     n_rows, tiers = 0, collections.Counter()
@@ -80,6 +92,9 @@ def main():
                 row = {"messages": [{"role": "system", "content": SYSTEM},
                                     {"role": "user", "content": request(prompts[pid])},
                                     {"role": "assistant", "content": code}]}
+                if len(tok.apply_chat_template(row["messages"], tokenize=True)) > MAX_TOKENS:
+                    too_long += 1
+                    continue
                 for _ in range(2 if tier == "love" else 1):
                     f.write(json.dumps(row) + "\n"); n_rows += 1
                 tiers[tier] += 1
@@ -91,7 +106,7 @@ def main():
     print(f"prompts: {len(prompts)} total, {len(held)} held out for evaluation "
           f"({dict(collections.Counter(prompts[p]['category'] for p in held))})")
     print(f"train: {tiers['love']} love (x2) + {tiers['okay']} okay = {n_rows} rows "
-          f"from {train_prompts} prompts")
+          f"from {train_prompts} prompts ({too_long} sketches over {MAX_TOKENS} tokens dropped)")
     print("example user turn:\n  " + request(prompts[sorted(prompts)[0]]).replace("\n", "\n  "))
 
 

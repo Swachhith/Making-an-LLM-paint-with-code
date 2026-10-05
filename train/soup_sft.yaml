@@ -1,6 +1,7 @@
 # Supervised warm-start for Qwen3.5-4B on the rated p5.brush sketches.
 # Based on Soup's `qwen3.5-4b-sft` recipe; every change from it is commented.
-# Data: python train/build_sft.py  ->  data/sft_train.jsonl (531 rows)
+# Data: python train/build_sft.py  ->  data/sft_train.jsonl
+#   run 1 (2026-10-04): 531 rows, 2 epochs.  run 2 (2026-10-05): 1,137 rows, 1 epoch.
 
 base: Qwen/Qwen3.5-4B
 task: sft
@@ -17,11 +18,13 @@ data:
   val_split: 0.0
 
 training:
-  epochs: 2                 # recipe had 3; 531 rows with loves already doubled -- avoid memorising
+  # recipe had 3. Run 1 used 2 on 531 rows; its loss flattened after the first.
+  # Run 2 has twice the rows, so 1 epoch is the same number of steps (~4 h on a T4).
+  epochs: 1
   lr: 2e-4
   # Fixed, not `auto`: the auto search probes at full max_length and gave up at 1.
   batch_size: 1
-  gradient_accumulation_steps: 16   # effective batch 16, ~66 optimizer steps
+  gradient_accumulation_steps: 16   # effective batch 16
   warmup_ratio: 0.05
   scheduler: cosine
   seed: 20261004

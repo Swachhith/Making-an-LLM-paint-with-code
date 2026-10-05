@@ -3,7 +3,7 @@
 Inputs: Kaggle dataset swachhithb/watercolors-sft (built by train/build_sft.py).
 Outputs in /kaggle/working:
     adapter/                 the LoRA adapter
-    gen_base.jsonl           2 sketches per held-out prompt, adapter OFF
+    gen_base.jsonl           2 sketches per held-out prompt, adapter OFF (only if SKIP_BASE=0)
     gen_sft.jsonl            2 sketches per held-out prompt, adapter ON
     soup_train.log           the full training log
 
@@ -152,7 +152,10 @@ def generate(tag, batch=10):
     return out_path
 
 
-for tag in ("base", "sft"):
+# The base model's sketches on these prompts and this seed were generated in
+# run 1 (results/sft_eval/v7/gen_base.jsonl); regenerating them costs ~1.3 h.
+VARIANTS = ("sft",) if os.environ.get("SKIP_BASE", "1") == "1" else ("base", "sft")
+for tag in VARIANTS:
     log(f"generating {tag}")
     generate(tag)
 log("done")
