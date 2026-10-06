@@ -1,0 +1,381 @@
+"""GRPO for the watercolour painter on Modal, with Soup as the trainer.
+
+    modal run train/modal_grpo.py::merge --adapter results/sft_eval/v7/adapter
+    modal run --detach train/modal_grpo.py::train_trl --smoke    # TRL + vLLM (option B)
+    modal run train/modal_grpo.py::train --smoke        # Soup: 8 prompts = 2 steps, ~$1
+    WC_MODAL_GPU=L40S modal run train/modal_grpo.py::train --smoke --quant 4bit
+    modal run --detach train/modal_grpo.py::train       # the real run (~120 steps)
+    modal run train/modal_grpo.py::fetch --run <name>   # pull logs + adapter back
+
+Modelled on the app `soup train --cloud modal` renders (image with soup-cli,
+`soup train --config ... --yes` on one GPU, outputs on a Volume), extended with
+what this reward needs and Soup's stub does not ship: the render harness and a
+headless Chromium, the taste-model weights, the prompt data, and the merged
+SFT model to start from.
+
+Everything lives on the Volume "watercolors-grpo":
+    /vol/models/qwen3.5-4b-sft-<tag>   merged SFT model (thinking forced off)
+    /vol/runs/<run>/                   soup output, reward_log.jsonl, train.log
+"""
+import os
+import subprocess
+import sys
+import threading
+import time
+
+import modal
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+REPO = "/root/wc"                 # repo copy inside the container; soup runs from here
+VOL = "/vol"
+BASE_MODEL = "Qwen/Qwen3.5-4B"
+GPU = os.environ.get("WC_MODAL_GPU", "A100-80GB")
+
+app = modal.App("watercolors-grpo")
+vol = modal.Volume.from_name("watercolors-grpo", create_if_missing=True)
+hf_cache = modal.Volume.from_name("watercolors-hf-cache", create_if_missing=True)
+
+_SKIP = ["**/__pycache__/**", "**/*.pyc", "**/checkpoint-*/**"]
+
+
+def _build_causal_conv1d():
+    """Compile causal-conv1d (source-only on PyPI) for the A100 (sm_80).
+
+    Without it Qwen3.5's short-convolution layers run a reference torch path;
+    fla, installed alongside, already covers the gated-delta-rule kernels.
+    """
+    import subprocess as sp
+    t = time.time()
+    sp.run(["pip", "install", "--no-build-isolation", "causal-conv1d"], check=True,
+           env={**os.environ, "MAX_JOBS": "16"})
+    import causal_conv1d
+    print(f"causal_conv1d {causal_conv1d.__version__} built in {(time.time() - t) / 60:.1f} min", flush=True)
+
+
+image = (
+    # CUDA *devel* base: causal-conv1d ships only as source and needs nvcc. Its
+    # absence put Qwen3.5's conv layers on the slow torch path in the smoke test
+    # (fla, also installed here, covers the gated-delta-rule kernels).
+    modal.Image.from_registry("nvidia/cuda:13.0.3-devel-ubuntu22.04", add_python="3.12")
+    .apt_install("git", "build-essential")      # g++ for the causal-conv1d build
+    .pip_install("soup-cli[train,liger]==0.75.2", "flash-linear-attention", "playwright", "pillow",
+                 "numpy", "ninja", "packaging", "wheel")
+    .env({"TORCH_CUDA_ARCH_LIST": "8.0", "CAUSAL_CONV1D_FORCE_BUILD": "TRUE", "CC": "gcc", "CXX": "g++"})
+    # The default image builder is too small for nvcc: the same build ran 40+
+    # minutes in `run_commands`. A build function gets explicit CPUs and RAM.
+    .run_function(_build_causal_conv1d, cpu=16, memory=32768, timeout=3600)
+    # TRL's GRPO trainer imports requests; the debian_slim base had it, the CUDA
+    # base does not. Added after the build so its cached layer is reused.
+    .pip_install("requests")
+    .run_commands("playwright install --with-deps chromium")
+    .env({"HF_HOME": "/hf", "PYTHONUNBUFFERED": "1", "TOKENIZERS_PARALLELISM": "false",
+          "WC_REWARD_TERMS": "gate,length,taste", "WC_RENDER_WORKERS": "8"})
+    .add_local_dir(os.path.join(ROOT, "env"), f"{REPO}/env", ignore=_SKIP)
+    .add_local_dir(os.path.join(ROOT, "train"), f"{REPO}/train", ignore=_SKIP)
+    .add_local_file(os.path.join(ROOT, "data", "grpo_prompts.jsonl"), f"{REPO}/data/grpo_prompts.jsonl")
+    .add_local_file(os.path.join(ROOT, "data", "grpo_smoke.jsonl"), f"{REPO}/data/grpo_smoke.jsonl")
+)
+volumes = {VOL: vol, "/hf": hf_cache}
+
+# Option B: TRL 1.x + vLLM. Soup's TRL (< 1.0) supports vLLM <= 0.12, which has
+# no Qwen3.5; TRL 1.14 supports vLLM 0.20-0.30, and Qwen3.5 arrived in 0.28.
+# vLLM pins torch 2.13, so this is a separate image (the causal-conv1d build
+# above targets torch 2.14; vLLM brings its own Qwen3.5 kernels for generation).
+image_trl = (
+    modal.Image.debian_slim(python_version="3.12")
+    .pip_install("vllm==0.30.0", "trl==1.14.1", "peft", "liger-kernel>=0.8.2", "flash-linear-attention",
+                 "playwright", "pillow", "numpy", "requests", "pyyaml")
+    .run_commands("playwright install --with-deps chromium")
+    .env({"HF_HOME": "/hf", "PYTHONUNBUFFERED": "1", "TOKENIZERS_PARALLELISM": "false",
+          "WC_REWARD_TERMS": "gate,length,taste", "WC_RENDER_WORKERS": "8"})
+    .add_local_dir(os.path.join(ROOT, "env"), f"{REPO}/env", ignore=_SKIP)
+    .add_local_dir(os.path.join(ROOT, "train"), f"{REPO}/train", ignore=_SKIP)
+    .add_local_file(os.path.join(ROOT, "data", "grpo_prompts.jsonl"), f"{REPO}/data/grpo_prompts.jsonl")
+    .add_local_file(os.path.join(ROOT, "data", "grpo_smoke.jsonl"), f"{REPO}/data/grpo_smoke.jsonl")
+)
+
+
+def _model_dir(tag: str) -> str:
+    return f"{VOL}/models/qwen3.5-4b-sft-{tag}"
+
+
+# ---------------------------------------------------------------------------
+# 1. Merge the SFT adapter into the base model
+# ---------------------------------------------------------------------------
+@app.function(image=image, volumes=volumes, cpu=4, memory=32768, timeout=3600)
+def _merge(adapter_files: dict, tag: str) -> str:
+    import torch
+    from peft import PeftModel
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    adir = "/tmp/adapter"
+    os.makedirs(adir, exist_ok=True)
+    for name, blob in adapter_files.items():
+        with open(os.path.join(adir, name), "wb") as f:
+            f.write(blob)
+    # Same class the SFT run trained (Soup loads AutoModelForCausalLM), so the
+    # adapter's module names match.
+    model = AutoModelForCausalLM.from_pretrained(BASE_MODEL, dtype=torch.bfloat16)
+    model = PeftModel.from_pretrained(model, adir).merge_and_unload()
+    out = _model_dir(tag)
+    model.save_pretrained(out, safe_serialization=True)
+
+    tok = AutoTokenizer.from_pretrained(BASE_MODEL)
+    # Thinking OFF regardless of caller: TRL applies the template with no
+    # chat_template_kwargs, and Qwen3.5 defaults to thinking. Verified locally
+    # to reproduce build_sft.py's format exactly (prompt and assistant turn).
+    tok.chat_template = "{%- set enable_thinking = false %}\n" + tok.chat_template
+    tok.save_pretrained(out)
+    vol.commit()
+    return out
+
+
+@app.local_entrypoint()
+def merge(adapter: str = "results/sft_eval/v7/adapter", tag: str = "v1"):
+    files = {}
+    for name in os.listdir(adapter):
+        p = os.path.join(adapter, name)
+        if os.path.isfile(p) and name.startswith(("adapter_", "tokenizer", "chat_template")):
+            files[name] = open(p, "rb").read()
+    assert "adapter_model.safetensors" in files and "adapter_config.json" in files, f"no adapter in {adapter}"
+    print(f"merging {adapter} ({sum(map(len, files.values())) / 2**20:.0f} MB) as {tag} ...")
+    print("saved to", _merge.remote(files, tag))
+
+
+def _supervise(cmd: list, out: str) -> int:
+    """Run a training command, streaming its log to the volume.
+
+    Commits the volume every 10 minutes (a crash or timeout keeps what was
+    done), samples peak GPU memory, and prints the per-term reward report.
+    """
+    env = {**os.environ, "WC_REWARD_LOG": f"{out}/reward_log.jsonl",
+           "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True"}
+    stop = threading.Event()
+
+    def checkpoint_volume():
+        while not stop.wait(600):
+            try:
+                vol.commit()
+            except Exception as e:     # noqa: BLE001
+                print("volume commit failed:", e, flush=True)
+
+    peak = {"mib": 0}
+
+    def sample_gpu_memory():
+        while not stop.wait(2):
+            try:
+                used = subprocess.run(["nvidia-smi", "--query-gpu=memory.used,memory.total",
+                                       "--format=csv,noheader,nounits"],
+                                      capture_output=True, text=True).stdout.split(",")
+                peak["mib"] = max(peak["mib"], int(used[0])); peak["total"] = int(used[1])
+            except Exception:          # noqa: BLE001
+                pass
+
+    threading.Thread(target=checkpoint_volume, daemon=True).start()
+    threading.Thread(target=sample_gpu_memory, daemon=True).start()
+    t0 = time.time()
+    with open(f"{out}/train.log", "w") as log:
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env)
+        for line in p.stdout:
+            log.write(line); log.flush()
+            sys.stdout.write(line)
+        rc = p.wait()
+    stop.set()
+    if os.path.exists(env["WC_REWARD_LOG"]):       # per-term report: the plateau diagnostic
+        subprocess.run([sys.executable, "-c", "import sys; sys.path.insert(0, '.'); "
+                        "from train.reward import report; report(sys.argv[1])", env["WC_REWARD_LOG"]], env=env)
+    mem = f"peak GPU memory {peak['mib'] / 1024:.1f} of {peak.get('total', 0) / 1024:.0f} GiB"
+    with open(f"{out}/train.log", "a") as log:
+        print(mem, file=log)
+    vol.commit()
+    print(f"exit {rc} after {(time.time() - t0) / 60:.1f} min; {mem}; outputs in {out}", flush=True)
+    return rc
+
+
+# ---------------------------------------------------------------------------
+# 2. GRPO with Soup
+# ---------------------------------------------------------------------------
+@app.function(image=image, volumes=volumes, gpu=GPU, cpu=10, memory=65536, timeout=24 * 3600)
+def _train(tag: str, run: str, smoke: bool, quant: str = "") -> str:
+    import yaml
+
+    os.chdir(REPO)
+    out = f"{VOL}/runs/{run}"
+    os.makedirs(out, exist_ok=True)
+    cfg = yaml.safe_load(open("train/soup_grpo.yaml", encoding="utf-8"))
+    cfg["base"] = _model_dir(tag)
+    cfg["output"] = f"{out}/output"
+    if quant:
+        cfg["training"]["quantization"] = quant
+    if smoke:
+        cfg["data"]["train"] = "./data/grpo_smoke.jsonl"
+        cfg["training"]["save_steps"] = 1000
+    yaml.safe_dump(cfg, open(f"{out}/soup_grpo.yaml", "w"), sort_keys=False)
+    if not os.path.isdir(cfg["base"]):
+        raise SystemExit(f"{cfg['base']} not found -- run the merge step first")
+
+    rc = _supervise([sys.executable, "train/soup_launch.py", "--verbose", "train",
+                     "--config", f"{out}/soup_grpo.yaml", "--yes"], out)
+    if rc != 0:
+        raise SystemExit(rc)
+    return out
+
+
+@app.local_entrypoint()
+def train(tag: str = "v1", run: str = "", smoke: bool = False, quant: str = ""):
+    """quant overrides training.quantization ("4bit" or "none").
+    The GPU comes from WC_MODAL_GPU (default A100-80GB), e.g. L40S, A10G, L4."""
+    run = run or f"{'smoke' if smoke else 'grpo'}-{tag}-{time.strftime('%m%d-%H%M')}"
+    print(f"run {run} on {GPU} (smoke={smoke}, quantization={quant or 'from yaml'})")
+    print("outputs:", _train.with_options(gpu=GPU).remote(tag, run, smoke, quant))
+
+
+# ---------------------------------------------------------------------------
+# 2b. GRPO with TRL + vLLM (option B; see train/grpo_trl.py)
+# ---------------------------------------------------------------------------
+@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=10, memory=65536, timeout=24 * 3600)
+def _train_trl(tag: str, run: str, smoke: bool, max_steps: int = -1) -> str:
+    os.chdir(REPO)
+    out = f"{VOL}/runs/{run}"
+    os.makedirs(out, exist_ok=True)
+    model = _model_dir(tag)
+    if not os.path.isdir(model):
+        raise SystemExit(f"{model} not found -- run the merge step first")
+    data = "data/grpo_smoke.jsonl" if smoke else "data/grpo_prompts.jsonl"
+    rc = _supervise([sys.executable, "train/grpo_trl.py", "--model", model, "--data", data, "--out", out,
+                     "--max-steps", str(max_steps), "--save-steps", "1000" if smoke else "20"], out)
+    if rc != 0:
+        raise SystemExit(rc)
+    return out
+
+
+@app.local_entrypoint()
+def train_trl(tag: str = "v1", run: str = "", smoke: bool = False, max_steps: int = -1):
+    run = run or f"{'smoke' if smoke else 'grpo'}-trl-{tag}-{time.strftime('%m%d-%H%M')}"
+    print(f"run {run} on {GPU} (TRL + vLLM, smoke={smoke}, max_steps={max_steps})")
+    print("outputs:", _train_trl.with_options(gpu=GPU).remote(tag, run, smoke, max_steps))
+
+
+# ---------------------------------------------------------------------------
+# Evaluation: generate on the held-out prompts, SFT vs SFT+RL, same sampler
+# ---------------------------------------------------------------------------
+@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=8, memory=65536, timeout=3600)
+def _generate(tag: str, run: str, prompts: list, samples: int = 2) -> dict:
+    """Sketches for each held-out prompt from the SFT model and from SFT + the
+    run's final RL adapter, through one vLLM sampler with identical settings
+    (temperature 0.7, top_p 0.8, top_k 20, seed 1234 -- as the SFT evaluation),
+    so the comparison isolates what RL changed. The adapter is merged first:
+    plain weights are what the policy will be served as anyway."""
+    import gc
+
+    # top-k/top-p sampling defaults to FlashInfer's sampler, which JIT-compiles
+    # with nvcc at warm-up; this slim image has no CUDA toolkit. vLLM's own
+    # sampler needs none (training's colocated vLLM samples without top-k/p).
+    os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+    import torch
+    from peft import PeftModel
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from vllm import LLM, SamplingParams
+
+    sft = _model_dir(tag)
+    rl = "/tmp/rl-merged"
+    m = AutoModelForCausalLM.from_pretrained(sft, dtype=torch.bfloat16)
+    m = PeftModel.from_pretrained(m, f"{VOL}/runs/{run}/final").merge_and_unload()
+    m.save_pretrained(rl, safe_serialization=True)
+    AutoTokenizer.from_pretrained(sft).save_pretrained(rl)
+    del m; gc.collect()
+
+    params = SamplingParams(n=samples, temperature=0.7, top_p=0.8, top_k=20, max_tokens=3000, seed=1234)
+    msgs = [[{"role": "system", "content": p["system"]}, {"role": "user", "content": p["request"]}]
+            for p in prompts]
+    out = {}
+    for variant, path in (("sft", sft), ("grpo", rl)):
+        llm = LLM(model=path, dtype="bfloat16", max_model_len=4096, gpu_memory_utilization=0.85, seed=1234)
+        res = llm.chat(msgs, params, chat_template_kwargs={"enable_thinking": False})
+        rows = []
+        for p, r in zip(prompts, res):
+            for k, o in enumerate(r.outputs):
+                rows.append({"id": p["id"], "category": p["category"], "subject": p["subject"],
+                             "request": p["request"], "sample": k, "variant": variant, "completion": o.text,
+                             "gen_tokens": len(o.token_ids), "hit_limit": o.finish_reason == "length"})
+        out[variant] = rows
+        del llm; gc.collect(); torch.cuda.empty_cache()
+    return out
+
+
+@app.local_entrypoint()
+def evaluate(run: str, tag: str = "v1", dest: str = "results/grpo_eval"):
+    """modal run train/modal_grpo.py::evaluate --run grpo-trl-v1-full
+    then: modal run train/modal_grpo.py::score --files <dest>/gen_sft.jsonl,<dest>/gen_grpo.jsonl --dest <dest>"""
+    import json
+    sys.path.insert(0, ROOT)
+    from train.build_sft import SYSTEM
+    prompts = [{**json.loads(l), "system": SYSTEM}
+               for l in open(os.path.join(ROOT, "data", "sft_eval_prompts.jsonl"), encoding="utf-8")]
+    res = _generate.remote(tag, run, prompts)
+    d = os.path.join(dest, run)
+    os.makedirs(d, exist_ok=True)
+    for variant, rows in res.items():
+        with open(os.path.join(d, f"gen_{variant}.jsonl"), "w", encoding="utf-8") as f:
+            for r in rows:
+                print(json.dumps(r), file=f)
+        print(f"{variant}: {len(rows)} sketches -> {d}/gen_{variant}.jsonl")
+
+
+# ---------------------------------------------------------------------------
+# Evaluation: render + score generations off the local machine
+# ---------------------------------------------------------------------------
+@app.function(image=image, volumes={"/hf": hf_cache}, cpu=8, memory=16384, timeout=3600)
+def _score(files: dict) -> dict:
+    """Run train/score_generations.py on uploaded generation files (CPU only)."""
+    work = "/tmp/eval"
+    os.makedirs(work, exist_ok=True)
+    paths = []
+    for name, text in files.items():
+        with open(f"{work}/{name}", "w", encoding="utf-8") as f:
+            f.write(text)
+        paths.append(f"{work}/{name}")
+    r = subprocess.run([sys.executable, "train/score_generations.py", *paths], cwd=REPO,
+                       capture_output=True, text=True)
+    out = {"stdout": r.stdout[-20000:], "stderr": r.stderr[-4000:], "files": {}}
+    import glob
+    for path in [f"{work}/scored.json", *glob.glob(f"{work}/renders/sheet_*.png")]:
+        out["files"][os.path.relpath(path, work)] = open(path, "rb").read()
+    return out
+
+
+@app.local_entrypoint()
+def score(files: str, dest: str):
+    """modal run train/modal_grpo.py::score --files a.jsonl,b.jsonl --dest results/x"""
+    payload = {os.path.basename(p): open(p, encoding="utf-8").read() for p in files.split(",")}
+    res = _score.remote(payload)
+    print(res["stdout"])
+    if res["stderr"].strip():
+        print("--- stderr (tail) ---")
+        print(res["stderr"][-1500:])
+    for rel, blob in res["files"].items():
+        local = os.path.join(dest, rel)
+        os.makedirs(os.path.dirname(local), exist_ok=True)
+        open(local, "wb").write(blob)
+        print("saved", local)
+
+
+# ---------------------------------------------------------------------------
+# 3. Fetch results
+# ---------------------------------------------------------------------------
+@app.local_entrypoint()
+def fetch(run: str, dest: str = "results/grpo"):
+    """Download a run's logs and final adapter (not intermediate checkpoints)."""
+    n = 0
+    for entry in vol.listdir(f"/runs/{run}", recursive=True):
+        path = entry.path.lstrip("/")
+        if entry.type != modal.volume.FileEntryType.FILE or "/checkpoint-" in path:
+            continue
+        local = os.path.join(ROOT, dest, os.path.relpath(path, "runs"))
+        os.makedirs(os.path.dirname(local), exist_ok=True)
+        with open(local, "wb") as f:
+            for chunk in vol.read_file(path):
+                f.write(chunk)
+        n += 1
+    print(f"fetched {n} files into {dest}/{run}")

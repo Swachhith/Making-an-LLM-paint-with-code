@@ -117,15 +117,37 @@ def _hps_normaliser() -> Callable[[float], float]:
 # ---------------------------------------------------------------------------
 _renderer = None
 _renderer_lock = threading.Lock()
+_pool = None
 
 
 def local_render_fn(codes: list) -> list:
-    global _renderer
+    """Render every sketch, in WC_RENDER_WORKERS browser processes (default 1).
+
+    A GRPO step renders 32+ sketches at ~1-3 s each; one browser leaves the GPU
+    idle for a minute or more. Workers are separate processes, each with its own
+    Chromium (Playwright's sync API is not thread-safe), started with "spawn" so
+    they never inherit the trainer's CUDA context. The worker functions live in
+    train/render.py because Soup imports this file under another module name,
+    which a spawned process could not re-import.
+    """
+    global _renderer, _pool
+    workers = int(os.environ.get("WC_RENDER_WORKERS", "1"))
     with _renderer_lock:
+        if workers > 1:
+            if _pool is None:
+                import concurrent.futures
+                import multiprocessing
+                from train.render import pool_worker_init
+                _pool = concurrent.futures.ProcessPoolExecutor(
+                    max_workers=workers, mp_context=multiprocessing.get_context("spawn"),
+                    initializer=pool_worker_init)
+                atexit.register(lambda: _pool.shutdown(cancel_futures=True))
+            from train.render import pool_worker_render
+            return list(_pool.map(pool_worker_render, codes, [RENDER_SEED] * len(codes)))
         if _renderer is None:
             from train.render import Renderer
             _renderer = Renderer().__enter__()
-            atexit.register(lambda: _renderer.__exit__(None, None, None))
+            atexit.register(lambda: _renderer and _renderer.__exit__(None, None, None))
         return [_renderer.render(c, seed=RENDER_SEED) for c in codes]
 
 

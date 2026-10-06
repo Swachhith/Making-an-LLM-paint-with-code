@@ -161,6 +161,21 @@ class Renderer:
         return result
 
 
+# Process-pool workers for reward.local_render_fn: one Renderer per process.
+_pool_renderer = None
+
+
+def pool_worker_init():
+    global _pool_renderer
+    import atexit
+    _pool_renderer = Renderer().__enter__()
+    atexit.register(lambda: _pool_renderer.__exit__(None, None, None))
+
+
+def pool_worker_render(source: str, seed: int) -> dict:
+    return _pool_renderer.render(source, seed=seed)
+
+
 def _demo():
     """Smoke test: render one sketch and report what came back."""
     src = """

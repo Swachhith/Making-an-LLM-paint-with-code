@@ -1,0 +1,56 @@
+# GRPO for the watercolour painter, run by train/modal_grpo.py on Modal.
+# Based on Soup's `qwen3.5-*-grpo` recipes; every change from them is commented.
+#
+# `base`, `data.train` and `output` are rewritten by modal_grpo.py to paths on
+# the Modal volume; the values here are what it substitutes into.
+
+# The SFT adapter merged into Qwen3.5-4B (modal_grpo.py `merge`). Its tokenizer's
+# chat template has thinking forced OFF -- Soup passes no chat_template_kwargs,
+# and with Qwen3.5's default the policy would reason before painting instead
+# of writing code in the format it was fine-tuned on.
+base: /vol/models/qwen3.5-4b-sft
+task: grpo
+modality: text
+
+data:
+  train: ./data/grpo_prompts.jsonl   # python train/build_grpo_prompts.py: 479 prompts
+  format: chatml
+  # = max_completion_length for GRPO. Rated sketches run to ~2,600 tokens; SFT
+  # outputs have a median of 1,328 and hit a 3,000 cap 3% of the time.
+  max_length: 3072
+  # Soup's default 0.1 silently held back 48 prompts; evaluation is the 37
+  # held-out prompts (train/heldout_prompts.json), scored after the run
+  val_split: 0.0
+
+training:
+  epochs: 1                 # 479 prompts / 4 per step = ~120 steps
+  # recipes use 1e-5; LoRA wants a higher rate than full fine-tuning
+  # ("LoRA without regret"), and ~120 steps is a short run
+  lr: 2e-5
+  # 8 completions per micro-batch = one prompt's group; x4 accumulation = 4
+  # prompts (32 paintings) per optimizer step. Soup forces batch_size >=
+  # num_generations.
+  batch_size: 8
+  gradient_accumulation_steps: 4
+  num_generations: 8        # recipes use 4; 8 gives a usable group baseline
+  # recipes use 0.1. KL to the SFT model is the main guard against reward
+  # hacking a taste model with 0.71 love/okay AUC -- kept, but lighter
+  grpo_beta: 0.05
+  warmup_ratio: 0.05
+  scheduler: cosine
+  seed: 20261005
+  logging_steps: 1
+  save_steps: 20
+  # recipes use 4bit. On an 80 GB GPU bf16 generates much faster (no
+  # dequantisation in the decode loop), and generation dominates a GRPO step.
+  quantization: none
+  lora:
+    r: 16
+    alpha: 32
+    target_modules: all-linear   # as in SFT: Qwen3.5 mixes DeltaNet and attention layers
+  # gate 0.05 . length 0.05 . taste 0.60, renormalised over enabled terms
+  # (WC_REWARD_TERMS=gate,length,taste). HPSv3 and the pairwise judge are off
+  # for the first run: no extra 7B model to host, no API in the loop.
+  reward_fn: ./train/reward.py
+
+output: ./output/grpo
