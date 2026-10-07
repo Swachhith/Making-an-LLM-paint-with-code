@@ -31,6 +31,10 @@ MAX_COMPLETION = 3072      # rated sketches run to ~2,600 tokens
 NUM_GENERATIONS = 8        # paintings per prompt; the group baseline
 PROMPTS_PER_STEP = 4       # -> 32 paintings per optimizer step
 MICRO_BATCH = 8            # completions per forward/backward
+# Run 1 used T=1.0 and LR 2e-5: at T=1.0, 69% of the within-group reward spread
+# was broken-vs-working sketches (train/grpo_signal.py), so it learned reliability
+# and taste stayed flat. At T=0.8 taste is most of the signal (37% pass/fail).
+TEMPERATURE = 0.8
 LR = 2e-5                  # LoRA wants ~10x a full fine-tune's rate
 BETA = 0.05                # KL to the SFT model: the guard against gaming the taste model
 LORA_R, LORA_ALPHA = 16, 32
@@ -45,6 +49,12 @@ def main():
     ap.add_argument("--epochs", type=float, default=1.0)
     ap.add_argument("--max-steps", type=int, default=-1)
     ap.add_argument("--save-steps", type=int, default=20)
+    ap.add_argument("--resume", action="store_true", help="continue from the latest checkpoint in --out")
+    ap.add_argument("--temperature", type=float, default=TEMPERATURE)
+    ap.add_argument("--lr", type=float, default=LR)
+    ap.add_argument("--beta", type=float, default=BETA)
+    ap.add_argument("--stop-at", type=int, default=0,
+                    help="stop (and save) after this many steps, keeping the full run's LR schedule")
     args = ap.parse_args()
 
     from datasets import Dataset
@@ -66,11 +76,11 @@ def main():
         gradient_accumulation_steps=PROMPTS_PER_STEP * NUM_GENERATIONS // MICRO_BATCH,
         num_generations=NUM_GENERATIONS,
         max_completion_length=MAX_COMPLETION,
-        learning_rate=LR,
+        learning_rate=args.lr,
         lr_scheduler_type="cosine",
         warmup_steps=0.05,
-        beta=BETA,
-        temperature=1.0,
+        beta=args.beta,
+        temperature=args.temperature,
         bf16=True,
         gradient_checkpointing=True,
         use_liger_kernel=True,
@@ -89,9 +99,23 @@ def main():
     )
     peft = LoraConfig(r=LORA_R, lora_alpha=LORA_ALPHA, lora_dropout=0.05,
                       target_modules="all-linear", task_type="CAUSAL_LM")
+    callbacks = []
+    if args.stop_at:
+        from transformers import TrainerCallback
+
+        class StopAt(TrainerCallback):
+            def on_step_end(self, a, state, control, **kw):
+                if state.global_step >= args.stop_at:
+                    control.should_save = control.should_training_stop = True
+                return control
+
+        callbacks.append(StopAt())
+    print(f"T={args.temperature} lr={args.lr} beta={args.beta} stop_at={args.stop_at or 'end'}", flush=True)
     trainer = GRPOTrainer(model=args.model, reward_funcs=reward_fn, args=cfg,
-                          train_dataset=ds, peft_config=peft)
-    trainer.train()
+                          train_dataset=ds, peft_config=peft, callbacks=callbacks)
+    # resume_from_checkpoint=True picks the latest checkpoint-N in output_dir and
+    # restores adapter, optimizer, LR schedule, RNG and the data position.
+    trainer.train(resume_from_checkpoint=True if args.resume else None)
     trainer.save_model(os.path.join(args.out, "final"))
     print("saved adapter to", os.path.join(args.out, "final"), flush=True)
 

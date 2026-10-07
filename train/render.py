@@ -168,6 +168,11 @@ _pool_renderer = None
 def pool_worker_init():
     global _pool_renderer
     import atexit
+    # Lead a process group, so the browser and node driver this worker starts
+    # share it: reward._kill_pool can then kill a worker stuck on a sketch
+    # that never returns together with the spinning Chromium (POSIX only).
+    if hasattr(os, "setpgrp"):
+        os.setpgrp()
     _pool_renderer = Renderer().__enter__()
     atexit.register(lambda: _pool_renderer.__exit__(None, None, None))
 

@@ -119,6 +119,65 @@ _renderer = None
 _renderer_lock = threading.Lock()
 _pool = None
 
+# A sketch whose setup()/draw() never returns (e.g. `while (true)`) blocks the
+# page's JS thread, so the harness's own 15 s render timeout can never fire, and
+# Playwright's evaluate() has no timeout of its own. One such sketch froze a
+# GRPO run for 2 h 20 min on an idle A100. Past this many seconds a render is a
+# hang: the sketch's fault, so "render failed [hang]" -- a gate failure scoring
+# 0 -- not "[timeout]", which is treated as infrastructure and imputed.
+HANG_SECONDS = 60
+
+
+def _kill_pool():
+    """Kill every worker and its Chromium (each worker leads its own process
+    group, see render.pool_worker_init), then drop the pool so the next call
+    builds a fresh one."""
+    global _pool
+    import signal
+    for p in list(getattr(_pool, "_processes", {}).values()):
+        try:
+            os.killpg(p.pid, signal.SIGKILL)
+        except Exception:      # noqa: BLE001 -- already gone, or no process groups
+            try:
+                p.kill()
+            except Exception:  # noqa: BLE001
+                pass
+    try:
+        _pool.shutdown(wait=False, cancel_futures=True)
+    except Exception:          # noqa: BLE001
+        pass
+    _pool = None
+
+
+def _render_pool(codes: list, workers: int) -> list:
+    import concurrent.futures
+    import multiprocessing
+    from train.render import pool_worker_init, pool_worker_render
+    global _pool
+    if _pool is None:
+        _pool = concurrent.futures.ProcessPoolExecutor(
+            max_workers=workers, mp_context=multiprocessing.get_context("spawn"),
+            initializer=pool_worker_init)
+        atexit.register(lambda: _pool is not None and _pool.shutdown(cancel_futures=True))
+    futs = [_pool.submit(pool_worker_render, c, RENDER_SEED) for c in codes]
+    # every worker can be busy with a legitimate slow render before a hung one is
+    # reached, so the budget grows with the batch
+    budget = HANG_SECONDS + 20 * math.ceil(len(codes) / workers)
+    done, pending = concurrent.futures.wait(futs, timeout=budget)
+    out = []
+    for f in futs:
+        if f in done and f.exception() is None:
+            out.append(f.result())
+        elif f in done:
+            out.append({"ok": False, "stage": "driver", "error": repr(f.exception())[:300]})
+        else:
+            out.append({"ok": False, "stage": "hang",
+                        "error": f"no result after {budget} s: the sketch never returns"})
+    if pending:
+        print(f"[reward] {len(pending)} render(s) hung; restarting the render pool", flush=True)
+        _kill_pool()
+    return out
+
 
 def local_render_fn(codes: list) -> list:
     """Render every sketch, in WC_RENDER_WORKERS browser processes (default 1).
@@ -134,16 +193,7 @@ def local_render_fn(codes: list) -> list:
     workers = int(os.environ.get("WC_RENDER_WORKERS", "1"))
     with _renderer_lock:
         if workers > 1:
-            if _pool is None:
-                import concurrent.futures
-                import multiprocessing
-                from train.render import pool_worker_init
-                _pool = concurrent.futures.ProcessPoolExecutor(
-                    max_workers=workers, mp_context=multiprocessing.get_context("spawn"),
-                    initializer=pool_worker_init)
-                atexit.register(lambda: _pool.shutdown(cancel_futures=True))
-            from train.render import pool_worker_render
-            return list(_pool.map(pool_worker_render, codes, [RENDER_SEED] * len(codes)))
+            return _render_pool(codes, workers)
         if _renderer is None:
             from train.render import Renderer
             _renderer = Renderer().__enter__()
@@ -211,7 +261,15 @@ class Reward:
 
     @staticmethod
     def _group_keys(n: int, kwargs: dict) -> list:
-        """Group rollouts by the prompt they answer, whatever order TRL uses."""
+        """Group rollouts by the prompt they answer, whatever order TRL uses.
+
+        The dataset's prompt `id` column first: short and exact. The full prompt
+        JSON also groups correctly, but every key starts with the shared system
+        prompt, so the 80-character copy in the log merged all groups of a step.
+        """
+        ids = kwargs.get("id")
+        if ids and len(ids) == n:
+            return [str(i) for i in ids]
         prompts = kwargs.get("prompts")
         if prompts and len(prompts) == n:
             return [json.dumps(p, sort_keys=True, default=str) for p in prompts]

@@ -31,6 +31,7 @@ REPO = "/root/wc"                 # repo copy inside the container; soup runs fr
 VOL = "/vol"
 BASE_MODEL = "Qwen/Qwen3.5-4B"
 GPU = os.environ.get("WC_MODAL_GPU", "A100-80GB")
+STALL_MINUTES = 20        # no training output for this long = hung; see _supervise
 
 app = modal.App("watercolors-grpo")
 vol = modal.Volume.from_name("watercolors-grpo", create_if_missing=True)
@@ -103,7 +104,7 @@ def _model_dir(tag: str) -> str:
 # ---------------------------------------------------------------------------
 # 1. Merge the SFT adapter into the base model
 # ---------------------------------------------------------------------------
-@app.function(image=image, volumes=volumes, cpu=4, memory=32768, timeout=3600)
+@app.function(image=image_trl, volumes=volumes, cpu=4, memory=32768, timeout=3600)
 def _merge(adapter_files: dict, tag: str) -> str:
     import torch
     from peft import PeftModel
@@ -175,9 +176,24 @@ def _supervise(cmd: list, out: str) -> int:
     threading.Thread(target=checkpoint_volume, daemon=True).start()
     threading.Thread(target=sample_gpu_memory, daemon=True).start()
     t0 = time.time()
-    with open(f"{out}/train.log", "w") as log:
+    with open(f"{out}/train.log", "a") as log:          # append: a resumed run keeps the old log
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, env=env)
+        last = {"t": time.time()}
+
+        def stall_watchdog():
+            # A training step prints within ~3 min (the first, with vLLM start-up,
+            # within ~8). Silence for STALL_MINUTES means a hang: kill it instead
+            # of billing an idle GPU -- a hung render once cost 2 h 20 min.
+            while not stop.wait(30):
+                if time.time() - last["t"] > STALL_MINUTES * 60 and p.poll() is None:
+                    msg = f"\nSTALLED: no output for {STALL_MINUTES} min; killing the run\n"
+                    log.write(msg); log.flush(); sys.stdout.write(msg)
+                    p.kill()
+                    return
+
+        threading.Thread(target=stall_watchdog, daemon=True).start()
         for line in p.stdout:
+            last["t"] = time.time()
             log.write(line); log.flush()
             sys.stdout.write(line)
         rc = p.wait()
@@ -196,46 +212,50 @@ def _supervise(cmd: list, out: str) -> int:
 # ---------------------------------------------------------------------------
 # 2. GRPO with Soup
 # ---------------------------------------------------------------------------
-@app.function(image=image, volumes=volumes, gpu=GPU, cpu=10, memory=65536, timeout=24 * 3600)
-def _train(tag: str, run: str, smoke: bool, quant: str = "") -> str:
-    import yaml
+# Registered only with WC_SOUP=1 (see image_trl for why Soup is not the default)
+if os.environ.get("WC_SOUP") == "1":
+    @app.function(image=image, volumes=volumes, gpu=GPU, cpu=10, memory=65536, timeout=24 * 3600)
+    def _train(tag: str, run: str, smoke: bool, quant: str = "") -> str:
+        import yaml
 
-    os.chdir(REPO)
-    out = f"{VOL}/runs/{run}"
-    os.makedirs(out, exist_ok=True)
-    cfg = yaml.safe_load(open("train/soup_grpo.yaml", encoding="utf-8"))
-    cfg["base"] = _model_dir(tag)
-    cfg["output"] = f"{out}/output"
-    if quant:
-        cfg["training"]["quantization"] = quant
-    if smoke:
-        cfg["data"]["train"] = "./data/grpo_smoke.jsonl"
-        cfg["training"]["save_steps"] = 1000
-    yaml.safe_dump(cfg, open(f"{out}/soup_grpo.yaml", "w"), sort_keys=False)
-    if not os.path.isdir(cfg["base"]):
-        raise SystemExit(f"{cfg['base']} not found -- run the merge step first")
+        os.chdir(REPO)
+        out = f"{VOL}/runs/{run}"
+        os.makedirs(out, exist_ok=True)
+        cfg = yaml.safe_load(open("train/soup_grpo.yaml", encoding="utf-8"))
+        cfg["base"] = _model_dir(tag)
+        cfg["output"] = f"{out}/output"
+        if quant:
+            cfg["training"]["quantization"] = quant
+        if smoke:
+            cfg["data"]["train"] = "./data/grpo_smoke.jsonl"
+            cfg["training"]["save_steps"] = 1000
+        yaml.safe_dump(cfg, open(f"{out}/soup_grpo.yaml", "w"), sort_keys=False)
+        if not os.path.isdir(cfg["base"]):
+            raise SystemExit(f"{cfg['base']} not found -- run the merge step first")
 
-    rc = _supervise([sys.executable, "train/soup_launch.py", "--verbose", "train",
-                     "--config", f"{out}/soup_grpo.yaml", "--yes"], out)
-    if rc != 0:
-        raise SystemExit(rc)
-    return out
+        rc = _supervise([sys.executable, "train/soup_launch.py", "--verbose", "train",
+                         "--config", f"{out}/soup_grpo.yaml", "--yes"], out)
+        if rc != 0:
+            raise SystemExit(rc)
+        return out
 
 
-@app.local_entrypoint()
-def train(tag: str = "v1", run: str = "", smoke: bool = False, quant: str = ""):
-    """quant overrides training.quantization ("4bit" or "none").
-    The GPU comes from WC_MODAL_GPU (default A100-80GB), e.g. L40S, A10G, L4."""
-    run = run or f"{'smoke' if smoke else 'grpo'}-{tag}-{time.strftime('%m%d-%H%M')}"
-    print(f"run {run} on {GPU} (smoke={smoke}, quantization={quant or 'from yaml'})")
-    print("outputs:", _train.with_options(gpu=GPU).remote(tag, run, smoke, quant))
+    @app.local_entrypoint()
+    def train(tag: str = "v1", run: str = "", smoke: bool = False, quant: str = ""):
+        """quant overrides training.quantization ("4bit" or "none").
+        The GPU comes from WC_MODAL_GPU (default A100-80GB), e.g. L40S, A10G, L4."""
+        run = run or f"{'smoke' if smoke else 'grpo'}-{tag}-{time.strftime('%m%d-%H%M')}"
+        print(f"run {run} on {GPU} (smoke={smoke}, quantization={quant or 'from yaml'})")
+        print("outputs:", _train.with_options(gpu=GPU).remote(tag, run, smoke, quant))
 
 
 # ---------------------------------------------------------------------------
 # 2b. GRPO with TRL + vLLM (option B; see train/grpo_trl.py)
 # ---------------------------------------------------------------------------
-@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=10, memory=65536, timeout=24 * 3600)
-def _train_trl(tag: str, run: str, smoke: bool, max_steps: int = -1) -> str:
+# 6 CPUs / 32 GB: 8 render workers mostly wait on Chromium; 10 / 64 GB added ~$1/h
+@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=6, memory=32768, timeout=24 * 3600)
+def _train_trl(tag: str, run: str, smoke: bool, max_steps: int = -1, resume: bool = False,
+               extra: list | None = None) -> str:
     os.chdir(REPO)
     out = f"{VOL}/runs/{run}"
     os.makedirs(out, exist_ok=True)
@@ -244,24 +264,33 @@ def _train_trl(tag: str, run: str, smoke: bool, max_steps: int = -1) -> str:
         raise SystemExit(f"{model} not found -- run the merge step first")
     data = "data/grpo_smoke.jsonl" if smoke else "data/grpo_prompts.jsonl"
     rc = _supervise([sys.executable, "train/grpo_trl.py", "--model", model, "--data", data, "--out", out,
-                     "--max-steps", str(max_steps), "--save-steps", "1000" if smoke else "20"], out)
+                     "--max-steps", str(max_steps), "--save-steps", "1000" if smoke else "20",
+                     *(["--resume"] if resume else []), *(extra or [])], out)
     if rc != 0:
         raise SystemExit(rc)
     return out
 
 
 @app.local_entrypoint()
-def train_trl(tag: str = "v1", run: str = "", smoke: bool = False, max_steps: int = -1):
+def train_trl(tag: str = "v1", run: str = "", smoke: bool = False, max_steps: int = -1, resume: bool = False,
+              temperature: float = 0.0, lr: float = 0.0, beta: float = -1.0, stop_at: int = 0):
+    """Submits the run and returns. `.spawn()`, not `.remote()`: with `.remote()`
+    the call belongs to this local process, and when that process was stopped
+    (even under `modal run --detach`) Modal cancelled the training at step 48.
+    Use with `modal run --detach` so the app outlives this process."""
     run = run or f"{'smoke' if smoke else 'grpo'}-trl-{tag}-{time.strftime('%m%d-%H%M')}"
-    print(f"run {run} on {GPU} (TRL + vLLM, smoke={smoke}, max_steps={max_steps})")
-    print("outputs:", _train_trl.with_options(gpu=GPU).remote(tag, run, smoke, max_steps))
+    extra = [*(["--temperature", str(temperature)] if temperature else []), *(["--lr", str(lr)] if lr else []),
+             *(["--beta", str(beta)] if beta >= 0 else []), *(["--stop-at", str(stop_at)] if stop_at else [])]
+    call = _train_trl.with_options(gpu=GPU).spawn(tag, run, smoke, max_steps, resume, extra)
+    print(f"submitted {run} on {GPU} (TRL + vLLM, smoke={smoke}, resume={resume}, {extra}); call {call.object_id}")
+    print(f"follow: modal volume get watercolors-grpo runs/{run}/train.log  (committed every 10 min)")
 
 
 # ---------------------------------------------------------------------------
 # Evaluation: generate on the held-out prompts, SFT vs SFT+RL, same sampler
 # ---------------------------------------------------------------------------
-@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=8, memory=65536, timeout=3600)
-def _generate(tag: str, run: str, prompts: list, samples: int = 2) -> dict:
+@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=4, memory=32768, timeout=3600)
+def _generate(tag: str, run: str, prompts: list, samples: int = 2, adapter: str = "final") -> dict:
     """Sketches for each held-out prompt from the SFT model and from SFT + the
     run's final RL adapter, through one vLLM sampler with identical settings
     (temperature 0.7, top_p 0.8, top_k 20, seed 1234 -- as the SFT evaluation),
@@ -281,7 +310,7 @@ def _generate(tag: str, run: str, prompts: list, samples: int = 2) -> dict:
     sft = _model_dir(tag)
     rl = "/tmp/rl-merged"
     m = AutoModelForCausalLM.from_pretrained(sft, dtype=torch.bfloat16)
-    m = PeftModel.from_pretrained(m, f"{VOL}/runs/{run}/final").merge_and_unload()
+    m = PeftModel.from_pretrained(m, f"{VOL}/runs/{run}/{adapter}").merge_and_unload()
     m.save_pretrained(rl, safe_serialization=True)
     AutoTokenizer.from_pretrained(sft).save_pretrained(rl)
     del m; gc.collect()
@@ -305,7 +334,7 @@ def _generate(tag: str, run: str, prompts: list, samples: int = 2) -> dict:
 
 
 @app.local_entrypoint()
-def evaluate(run: str, tag: str = "v1", dest: str = "results/grpo_eval"):
+def evaluate(run: str, tag: str = "v1", dest: str = "results/grpo_eval", adapter: str = "final"):
     """modal run train/modal_grpo.py::evaluate --run grpo-trl-v1-full
     then: modal run train/modal_grpo.py::score --files <dest>/gen_sft.jsonl,<dest>/gen_grpo.jsonl --dest <dest>"""
     import json
@@ -313,8 +342,8 @@ def evaluate(run: str, tag: str = "v1", dest: str = "results/grpo_eval"):
     from train.build_sft import SYSTEM
     prompts = [{**json.loads(l), "system": SYSTEM}
                for l in open(os.path.join(ROOT, "data", "sft_eval_prompts.jsonl"), encoding="utf-8")]
-    res = _generate.remote(tag, run, prompts)
-    d = os.path.join(dest, run)
+    res = _generate.remote(tag, run, prompts, 2, adapter)
+    d = os.path.join(dest, run if adapter == "final" else f"{run}-{adapter}")
     os.makedirs(d, exist_ok=True)
     for variant, rows in res.items():
         with open(os.path.join(d, f"gen_{variant}.jsonl"), "w", encoding="utf-8") as f:
@@ -324,9 +353,66 @@ def evaluate(run: str, tag: str = "v1", dest: str = "results/grpo_eval"):
 
 
 # ---------------------------------------------------------------------------
+# Hyperparameter diagnostic: what does each sampling temperature give GRPO?
+# ---------------------------------------------------------------------------
+@app.function(image=image_trl, volumes=volumes, gpu=GPU, cpu=4, memory=32768, timeout=3600)
+def _sample(tag: str, prompts: list, temps: list, n: int = 8) -> dict:
+    """n sketches per prompt from the SFT model at each temperature, sampled as
+    GRPO samples (top_p 1.0, no top-k, 3,072 tokens) -- one vLLM engine."""
+    os.environ["VLLM_USE_FLASHINFER_SAMPLER"] = "0"     # see _generate
+    from vllm import LLM, SamplingParams
+    llm = LLM(model=_model_dir(tag), dtype="bfloat16", max_model_len=4096, gpu_memory_utilization=0.85, seed=1234)
+    msgs = [[{"role": "system", "content": p["system"]}, {"role": "user", "content": p["request"]}]
+            for p in prompts]
+    out = {}
+    for t in temps:
+        res = llm.chat(msgs, SamplingParams(n=n, temperature=t, top_p=1.0, max_tokens=3072, seed=1234),
+                       chat_template_kwargs={"enable_thinking": False})
+        out[f"T{t}"] = [{"id": p["id"], "category": p["category"], "subject": p["subject"],
+                         "request": p["request"], "sample": k, "variant": f"T{t}", "completion": o.text,
+                         "gen_tokens": len(o.token_ids), "hit_limit": o.finish_reason == "length"}
+                        for p, r in zip(prompts, res) for k, o in enumerate(r.outputs)]
+    return out
+
+
+@app.local_entrypoint()
+def tsweep(tag: str = "v1", temps: str = "0.7,0.8,0.9,1.0", n_prompts: int = 32,
+           dest: str = "results/hparam/tsweep"):
+    """Sample at each temperature, then render + taste-score each in parallel."""
+    import json
+    import random
+    sys.path.insert(0, ROOT)
+    from train.build_sft import SYSTEM, request
+    rows = [json.loads(l) for l in open(os.path.join(ROOT, "data", "grpo_prompts.jsonl"), encoding="utf-8")]
+    rng = random.Random(7)
+    by_cat = {}
+    for r in rows:
+        by_cat.setdefault(r["category"], []).append(r)
+    pick = []                                    # stratified: 4 prompts per category
+    for cat in sorted(by_cat):
+        pick += rng.sample(by_cat[cat], n_prompts // len(by_cat))
+    prompts = [{"id": r["id"], "category": r["category"], "subject": r["subject"],
+                "request": r["messages"][1]["content"], "system": SYSTEM} for r in pick]
+    res = _sample.remote(tag, prompts, [float(t) for t in temps.split(",")])
+    os.makedirs(dest, exist_ok=True)
+    payloads = []
+    for variant, rws in res.items():
+        text = "".join(json.dumps(r) + chr(10) for r in rws)
+        open(os.path.join(dest, f"gen_{variant}.jsonl"), "w", encoding="utf-8").write(text)
+        payloads.append({f"gen_{variant}.jsonl": text})
+    for variant, out in zip(res, _score.map(payloads)):
+        d = os.path.join(dest, variant)
+        os.makedirs(d, exist_ok=True)
+        for rel, blob in out["files"].items():
+            os.makedirs(os.path.dirname(os.path.join(d, rel)), exist_ok=True)
+            open(os.path.join(d, rel), "wb").write(blob)
+        print(f"{variant}: scored -> {d}")
+
+
+# ---------------------------------------------------------------------------
 # Evaluation: render + score generations off the local machine
 # ---------------------------------------------------------------------------
-@app.function(image=image, volumes={"/hf": hf_cache}, cpu=8, memory=16384, timeout=3600)
+@app.function(image=image_trl, volumes={"/hf": hf_cache}, cpu=8, memory=16384, timeout=3600)
 def _score(files: dict) -> dict:
     """Run train/score_generations.py on uploaded generation files (CPU only)."""
     work = "/tmp/eval"

@@ -25,25 +25,37 @@ from train.gate import check_render, check_source, extract_code  # noqa: E402
 _THINK = re.compile(r"<think>.*?</think>", re.S | re.I)
 
 
-def score_file(path, renderer, taste, out_dir):
+def score_file(path, render_fn, taste, out_dir):
+    """render_fn: reward.local_render_fn -- batched, parallel with
+    WC_RENDER_WORKERS, and a sketch that never returns becomes a [hang] failure
+    instead of freezing the scorer (it once ran into Modal's 1 h timeout)."""
+    import base64
     rows = [json.loads(l) for l in open(path, encoding="utf-8")]
     variant = rows[0]["variant"] if rows else os.path.basename(path)
     os.makedirs(out_dir, exist_ok=True)
-    pngs, idx = [], []
+    fails_by, todo = {}, []
     for i, r in enumerate(rows):
         code = extract_code(_THINK.sub("", r["completion"]))
         fails, facts = check_source(code)
         r.update({"chars": len(code), "invented": facts.get("invented_methods", [])})
+        fails_by[i] = fails
         if not fails:
-            png = os.path.join(out_dir, f"{variant}_{r['id']}_s{r['sample']}.png")
-            res = renderer.render(code, seed=1, png_path=png)
-            rf, rfacts = check_render(res)
-            fails += rf
-            r["coverage"] = rfacts.get("coverage")
-            if not rf:
-                pngs.append(png); idx.append(i)
-        r["passed"] = not fails
-        r["failure"] = fails[0] if fails else None
+            todo.append((i, code))
+    pngs, idx = [], []
+    for (i, _), res in zip(todo, render_fn([c for _, c in todo])):
+        rf, rfacts = check_render(res)
+        fails_by[i] += rf
+        rows[i]["coverage"] = rfacts.get("coverage")
+        if not rf and res.get("png_b64"):
+            png = os.path.join(out_dir, f"{variant}_{rows[i]['id']}_s{rows[i]['sample']}.png")
+            with open(png, "wb") as f:
+                f.write(base64.b64decode(res["png_b64"]))
+            pngs.append(png); idx.append(i)
+        elif not rf:
+            fails_by[i].append("render returned no image")
+    for i, r in enumerate(rows):
+        r["passed"] = not fails_by[i]
+        r["failure"] = fails_by[i][0] if fails_by[i] else None
     for i, s in zip(idx, taste.score(pngs)):
         rows[i]["taste"] = s
     return variant, rows
@@ -100,17 +112,16 @@ def contact_sheet(rows, variant, out_dir, cols=8, px=160):
 
 
 def main():
-    from train.render import Renderer
+    from train.reward import local_render_fn
     from train.taste_model import TasteModel
     paths = sys.argv[1:]
     out_dir = os.path.join(os.path.dirname(os.path.abspath(paths[0])), "renders")
     taste = TasteModel()
     results = {}
-    with Renderer() as renderer:
-        for p in paths:
-            v, rows = score_file(p, renderer, taste, out_dir)
-            results[v] = rows
-            print(f"scored {v}: {len(rows)} completions", flush=True)
+    for p in paths:
+        v, rows = score_file(p, local_render_fn, taste, out_dir)
+        results[v] = rows
+        print(f"scored {v}: {len(rows)} completions", flush=True)
 
     print(f"\n{'variant':8s} {'gate pass':>9s} {'taste|pass':>10s} {'taste/attempt':>13s} "
           f"{'love-like':>9s} {'hit limit':>9s} {'invented':>8s}  failures")
