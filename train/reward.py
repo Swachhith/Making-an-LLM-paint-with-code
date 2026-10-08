@@ -45,6 +45,7 @@ Configuration is by environment variable so the same file serves every phase:
 
     WC_REWARD_TERMS    gate,length,hpsv3,taste   (phase 1: gate,length)
     WC_TASTE_MODEL     env/taste_model.npz       (refit: python train/taste_model.py fit)
+    WC_ADHERENCE       1                         (SigLIP subject check, multiplies taste)
     WC_JUDGE           nvidia:google/gemma-4-31b-it   (only if "pairwise" is enabled)
     WC_FALLBACK_JUDGE  openrouter:z-ai/glm-5.3-flash
     WC_REWARD_LOG      results/reward_log.jsonl
@@ -232,6 +233,11 @@ class Reward:
                 raise ValueError(f"taste is enabled but {path} does not exist -- "
                                  "run `python train/taste_model.py fit`")
             self.taste = TasteModel(path)   # encoders load lazily, on first use
+        # WC_ADHERENCE=0 turns the subject check off (it multiplies taste)
+        self.adherence = None
+        if "taste" in self.terms and os.environ.get("WC_ADHERENCE", "1") == "1":
+            from train.adherence import Adherence
+            self.adherence = Adherence()
 
         self.judge = judge
         if "pairwise" in self.terms and judge is None:
@@ -340,16 +346,28 @@ class Reward:
             idx = [i for i in good if not infra[i]]
             if idx:
                 try:
-                    scores = self.taste.score([renders[i]["png_b64"] for i in idx])
+                    X = self.taste._embed([renders[i]["png_b64"] for i in idx])
+                    scores = [float(v) for v in self.taste.score_embeddings(X)]
+                    # Subject adherence multiplies taste: taste only counts when the
+                    # painting shows what was asked. Without it the first full run
+                    # painted flowers into beach, hiker and birch-grove prompts
+                    # (SigLIP match ~0) and the taste model scored them up.
+                    if self.adherence is not None:
+                        adh = self.adherence.factor(X[:, -768:], [subjects[i] for i in idx])
+                    else:
+                        adh = [None] * len(idx)
                 except Exception as e:
-                    scores = [None] * len(idx)
+                    scores, adh = [None] * len(idx), [None] * len(idx)
                     for i in idx:
                         rows[i]["failures"].append(f"INFRA: taste model: {type(e).__name__}: {e}")
-                for i, s in zip(idx, scores):
+                for i, s, a in zip(idx, scores, adh):
                     if s is None:
                         infra[i] = True
-                    else:
+                    elif a is None:
                         rows[i]["terms"]["taste"] = s
+                    else:
+                        rows[i]["taste_raw"], rows[i]["adherence"] = s, float(a)
+                        rows[i]["terms"]["taste"] = s * float(a)
 
         # 6. pairwise judge -- one reference pair and one judge per group
         if "pairwise" in self.terms and good:

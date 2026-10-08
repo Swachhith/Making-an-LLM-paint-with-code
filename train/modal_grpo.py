@@ -86,7 +86,8 @@ volumes = {VOL: vol, "/hf": hf_cache}
 image_trl = (
     modal.Image.debian_slim(python_version="3.12")
     .pip_install("vllm==0.30.0", "trl==1.14.1", "peft", "liger-kernel>=0.8.2", "flash-linear-attention",
-                 "playwright", "pillow", "numpy", "requests", "pyyaml")
+                 "playwright", "pillow", "numpy", "requests", "pyyaml",
+                 "sentencepiece")   # SigLIP tokenizer (subject adherence)
     .run_commands("playwright install --with-deps chromium")
     .env({"HF_HOME": "/hf", "PYTHONUNBUFFERED": "1", "TOKENIZERS_PARALLELISM": "false",
           "WC_REWARD_TERMS": "gate,length,taste", "WC_RENDER_WORKERS": "8"})
@@ -413,7 +414,7 @@ def tsweep(tag: str = "v1", temps: str = "0.7,0.8,0.9,1.0", n_prompts: int = 32,
 # Evaluation: render + score generations off the local machine
 # ---------------------------------------------------------------------------
 @app.function(image=image_trl, volumes={"/hf": hf_cache}, cpu=8, memory=16384, timeout=3600)
-def _score(files: dict) -> dict:
+def _score(files: dict, images: bool = False) -> dict:
     """Run train/score_generations.py on uploaded generation files (CPU only)."""
     work = "/tmp/eval"
     os.makedirs(work, exist_ok=True)
@@ -426,16 +427,17 @@ def _score(files: dict) -> dict:
                        capture_output=True, text=True)
     out = {"stdout": r.stdout[-20000:], "stderr": r.stderr[-4000:], "files": {}}
     import glob
-    for path in [f"{work}/scored.json", *glob.glob(f"{work}/renders/sheet_*.png")]:
+    pattern = "*.png" if images else "sheet_*.png"     # images=True: every render, for rating
+    for path in [f"{work}/scored.json", *glob.glob(f"{work}/renders/{pattern}")]:
         out["files"][os.path.relpath(path, work)] = open(path, "rb").read()
     return out
 
 
 @app.local_entrypoint()
-def score(files: str, dest: str):
+def score(files: str, dest: str, images: bool = False):
     """modal run train/modal_grpo.py::score --files a.jsonl,b.jsonl --dest results/x"""
     payload = {os.path.basename(p): open(p, encoding="utf-8").read() for p in files.split(",")}
-    res = _score.remote(payload)
+    res = _score.remote(payload, images)
     print(res["stdout"])
     if res["stderr"].strip():
         print("--- stderr (tail) ---")
