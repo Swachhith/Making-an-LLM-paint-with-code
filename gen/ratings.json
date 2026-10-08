@@ -8053,5 +8053,710 @@
     "tier": "okay",
     "subject": "a deep purple lilac",
     "ts": "2026-10-05T07:49:54.516Z"
+  },
+  "eval_sft_v1/b23_05_s0": {
+    "tier": "nope",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-07T12:45:36.983Z"
+  },
+  "eval_sft_v1/b04_08_s0": {
+    "tier": "okay",
+    "subject": "a blue anemone",
+    "ts": "2026-10-07T12:45:41.527Z"
+  },
+  "eval_sft_v1/b24_03_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:45:44.062Z"
+  },
+  "grpo_v1/b12_04_s0": {
+    "tier": "nope",
+    "subject": "a violet iris",
+    "ts": "2026-10-07T12:45:47.687Z"
+  },
+  "eval_sft_v1/b27_12_s0": {
+    "tier": "okay",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-07T12:45:51.767Z"
+  },
+  "grpo_v1/b12_08_s1": {
+    "tier": "nope",
+    "subject": "snow-capped mountains",
+    "ts": "2026-10-07T12:45:55.175Z"
+  },
+  "grpo_v1/b23_07_s0": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:45:59.470Z"
+  },
+  "eval_sft_v1/b02_06_s0": {
+    "tier": "nope",
+    "subject": "a white poppy",
+    "ts": "2026-10-07T12:46:02.166Z"
+  },
+  "grpo_v1/b02_06_s1": {
+    "tier": "love",
+    "subject": "a white poppy",
+    "ts": "2026-10-07T12:46:04.990Z"
+  },
+  "grpo_v1/b04_03_s1": {
+    "tier": "love",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-07T12:46:07.342Z"
+  },
+  "eval_sft_v1/b20_07_s0": {
+    "tier": "okay",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-07T12:46:11.030Z"
+  },
+  "eval_sft_v1/b02_06_s1": {
+    "tier": "nope",
+    "subject": "a white poppy",
+    "ts": "2026-10-07T12:46:13.086Z"
+  },
+  "eval_sft_v1/b26_02_s0": {
+    "tier": "nope",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-07T12:46:15.478Z"
+  },
+  "eval_sft_v1/b27_12_s1": {
+    "tier": "nope",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-07T12:46:18.678Z"
+  },
+  "eval_sft_v1/b06_02_s0": {
+    "tier": "love",
+    "subject": "a burgundy dahlia",
+    "ts": "2026-10-07T12:46:22.422Z"
+  },
+  "grpo_v1/b06_07_s1": {
+    "tier": "love",
+    "subject": "a red camellia",
+    "ts": "2026-10-07T12:46:24.342Z"
+  },
+  "grpo_v1/b25_11_s0": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:46:29.054Z"
+  },
+  "grpo_v1/b26_02_s0": {
+    "tier": "nope",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-07T12:46:32.686Z"
+  },
+  "grpo_v1/b27_12_s0": {
+    "tier": "nope",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-07T12:46:34.598Z"
+  },
+  "grpo_v1/b14_04_s1": {
+    "tier": "okay",
+    "subject": "an old windmill",
+    "ts": "2026-10-07T12:46:36.974Z"
+  },
+  "eval_sft_v1/b09_05_s0": {
+    "tier": "nope",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-07T12:46:39.758Z"
+  },
+  "eval_sft_v1/b04_03_s0": {
+    "tier": "nope",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-07T12:46:45.182Z"
+  },
+  "eval_sft_v1/b17_09_s0": {
+    "tier": "nope",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-07T12:46:46.598Z"
+  },
+  "grpo_v1/b17_09_s1": {
+    "tier": "nope",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-07T12:46:49.110Z"
+  },
+  "grpo_v1/b22_08_s1": {
+    "tier": "okay",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-07T12:46:54.086Z"
+  },
+  "eval_sft_v1/b10_03_s0": {
+    "tier": "nope",
+    "subject": "two people sitting on a park bench",
+    "ts": "2026-10-07T12:46:56.982Z"
+  },
+  "grpo_v1/b04_08_s1": {
+    "tier": "okay",
+    "subject": "a blue anemone",
+    "ts": "2026-10-07T12:47:00.294Z"
+  },
+  "eval_sft_v1/b12_04_s0": {
+    "tier": "okay",
+    "subject": "a violet iris",
+    "ts": "2026-10-07T12:47:02.423Z"
+  },
+  "grpo_v1/b27_12_s1": {
+    "tier": "nope",
+    "subject": "a quiet lake with reeds",
+    "ts": "2026-10-07T12:47:06.182Z"
+  },
+  "eval_sft_v1/b14_04_s1": {
+    "tier": "nope",
+    "subject": "an old windmill",
+    "ts": "2026-10-07T12:47:07.926Z"
+  },
+  "eval_sft_v1/b26_02_s1": {
+    "tier": "nope",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-07T12:47:09.158Z"
+  },
+  "grpo_v1/b12_02_s1": {
+    "tier": "nope",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-07T12:47:12.846Z"
+  },
+  "eval_sft_v1/b09_07_s1": {
+    "tier": "nope",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-07T12:47:15.622Z"
+  },
+  "eval_sft_v1/b06_07_s0": {
+    "tier": "nope",
+    "subject": "a red camellia",
+    "ts": "2026-10-07T12:47:17.198Z"
+  },
+  "grpo_v1/b01_02_s1": {
+    "tier": "nope",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-07T12:47:21.830Z"
+  },
+  "eval_sft_v1/b23_03_s1": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-07T12:47:23.926Z"
+  },
+  "grpo_v1/b08_12_s0": {
+    "tier": "nope",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-07T12:47:29.902Z"
+  },
+  "grpo_v1/b10_03_s0": {
+    "tier": "nope",
+    "subject": "two people sitting on a park bench",
+    "ts": "2026-10-07T12:47:31.814Z"
+  },
+  "grpo_v1/b12_02_s0": {
+    "tier": "okay",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-07T12:47:34.166Z"
+  },
+  "eval_sft_v1/b01_02_s1": {
+    "tier": "love",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-07T12:47:39.470Z"
+  },
+  "grpo_v1/b05_12_s1": {
+    "tier": "nope",
+    "subject": "a coral peony",
+    "ts": "2026-10-07T12:47:40.910Z"
+  },
+  "grpo_v1/b08_06_s0": {
+    "tier": "okay",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-07T12:47:43.486Z"
+  },
+  "grpo_v1/b08_06_s1": {
+    "tier": "nope",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-07T12:47:47.685Z"
+  },
+  "grpo_v1/b22_04_s0": {
+    "tier": "nope",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-07T12:47:52.086Z"
+  },
+  "eval_sft_v1/b07_10_s0": {
+    "tier": "nope",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-07T12:47:55.710Z"
+  },
+  "eval_sft_v1/b16_06_s1": {
+    "tier": "okay",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:48:06.214Z"
+  },
+  "grpo_v1/b01_02_s0": {
+    "tier": "okay",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-07T12:48:07.862Z"
+  },
+  "eval_sft_v1/b22_04_s1": {
+    "tier": "love",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-07T12:48:11.902Z"
+  },
+  "eval_sft_v1/b06_09_s0": {
+    "tier": "okay",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-07T12:48:16.702Z"
+  },
+  "eval_sft_v1/b12_04_s1": {
+    "tier": "okay",
+    "subject": "a violet iris",
+    "ts": "2026-10-07T12:48:18.726Z"
+  },
+  "eval_sft_v1/b23_03_s0": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-07T12:48:23.542Z"
+  },
+  "grpo_v1/b24_03_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:48:25.070Z"
+  },
+  "eval_sft_v1/b23_07_s1": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:48:27.709Z"
+  },
+  "eval_sft_v1/b14_04_s0": {
+    "tier": "nope",
+    "subject": "an old windmill",
+    "ts": "2026-10-07T12:48:29.350Z"
+  },
+  "eval_sft_v1/b13_06_s0": {
+    "tier": "nope",
+    "subject": "a golden sunflower",
+    "ts": "2026-10-07T12:48:30.605Z"
+  },
+  "grpo_v1/b06_02_s0": {
+    "tier": "nope",
+    "subject": "a burgundy dahlia",
+    "ts": "2026-10-07T12:48:32.790Z"
+  },
+  "grpo_v1/b01_06_s1": {
+    "tier": "love",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-07T12:48:34.910Z"
+  },
+  "eval_sft_v1/b12_02_s1": {
+    "tier": "nope",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-07T12:48:36.645Z"
+  },
+  "grpo_v1/b16_06_s0": {
+    "tier": "love",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:48:39.390Z"
+  },
+  "eval_sft_v1/b08_12_s0": {
+    "tier": "nope",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-07T12:48:41.830Z"
+  },
+  "grpo_v1/b20_07_s1": {
+    "tier": "nope",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-07T12:48:42.958Z"
+  },
+  "eval_sft_v1/b11_03_s1": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-07T12:48:44.054Z"
+  },
+  "grpo_v1/b06_09_s0": {
+    "tier": "nope",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-07T12:48:45.838Z"
+  },
+  "grpo_v1/b04_08_s0": {
+    "tier": "love",
+    "subject": "a blue anemone",
+    "ts": "2026-10-07T12:48:47.510Z"
+  },
+  "grpo_v1/b18_09_s1": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:48:49.590Z"
+  },
+  "eval_sft_v1/b02_03_s0": {
+    "tier": "love",
+    "subject": "a deep red rose",
+    "ts": "2026-10-07T12:48:51.838Z"
+  },
+  "grpo_v1/b22_05_s0": {
+    "tier": "okay",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:48:55.270Z"
+  },
+  "eval_sft_v1/b16_06_s0": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:48:57.518Z"
+  },
+  "grpo_v1/b22_05_s1": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:48:59.230Z"
+  },
+  "grpo_v1/b08_12_s1": {
+    "tier": "nope",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-07T12:49:00.534Z"
+  },
+  "eval_sft_v1/b08_06_s0": {
+    "tier": "nope",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-07T12:49:03.750Z"
+  },
+  "grpo_v1/b18_09_s0": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:49:05.430Z"
+  },
+  "grpo_v1/b11_03_s1": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-07T12:49:07.902Z"
+  },
+  "eval_sft_v1/b08_06_s1": {
+    "tier": "nope",
+    "subject": "a seaside village on a hill",
+    "ts": "2026-10-07T12:49:10.190Z"
+  },
+  "grpo_v1/b13_06_s0": {
+    "tier": "okay",
+    "subject": "a golden sunflower",
+    "ts": "2026-10-07T12:49:14.325Z"
+  },
+  "grpo_v1/b06_09_s1": {
+    "tier": "nope",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-07T12:49:15.974Z"
+  },
+  "eval_sft_v1/b08_04_s0": {
+    "tier": "nope",
+    "subject": "a figure walking alone along a beach",
+    "ts": "2026-10-07T12:49:18.974Z"
+  },
+  "grpo_v1/b08_04_s1": {
+    "tier": "nope",
+    "subject": "a figure walking alone along a beach",
+    "ts": "2026-10-07T12:49:22.606Z"
+  },
+  "eval_sft_v1/b22_04_s0": {
+    "tier": "okay",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-07T12:49:24.462Z"
+  },
+  "grpo_v1/b23_05_s1": {
+    "tier": "nope",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-07T12:49:25.870Z"
+  },
+  "eval_sft_v1/b05_12_s1": {
+    "tier": "nope",
+    "subject": "a coral peony",
+    "ts": "2026-10-07T12:49:27.366Z"
+  },
+  "grpo_v1/b02_03_s0": {
+    "tier": "okay",
+    "subject": "a deep red rose",
+    "ts": "2026-10-07T12:49:30.262Z"
+  },
+  "grpo_v1/b02_06_s0": {
+    "tier": "nope",
+    "subject": "a white poppy",
+    "ts": "2026-10-07T12:49:31.389Z"
+  },
+  "eval_sft_v1/b24_03_s0": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:49:32.670Z"
+  },
+  "grpo_v1/b05_12_s0": {
+    "tier": "nope",
+    "subject": "a coral peony",
+    "ts": "2026-10-07T12:49:35.238Z"
+  },
+  "grpo_v1/b22_04_s1": {
+    "tier": "nope",
+    "subject": "a field of red poppies",
+    "ts": "2026-10-07T12:49:36.926Z"
+  },
+  "eval_sft_v1/b01_06_s1": {
+    "tier": "nope",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-07T12:49:38.589Z"
+  },
+  "eval_sft_v1/b22_08_s0": {
+    "tier": "nope",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-07T12:49:40.662Z"
+  },
+  "eval_sft_v1/b01_02_s0": {
+    "tier": "nope",
+    "subject": "a buttercup yellow ranunculus",
+    "ts": "2026-10-07T12:49:42.606Z"
+  },
+  "eval_sft_v1/b12_08_s1": {
+    "tier": "nope",
+    "subject": "snow-capped mountains",
+    "ts": "2026-10-07T12:49:44.486Z"
+  },
+  "grpo_v1/b22_08_s0": {
+    "tier": "nope",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-07T12:49:50.622Z"
+  },
+  "eval_sft_v1/b17_09_s1": {
+    "tier": "nope",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-07T12:49:51.726Z"
+  },
+  "eval_sft_v1/b06_07_s1": {
+    "tier": "nope",
+    "subject": "a red camellia",
+    "ts": "2026-10-07T12:49:53.790Z"
+  },
+  "eval_sft_v1/b11_03_s0": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-07T12:49:55.526Z"
+  },
+  "grpo_v1/b17_09_s0": {
+    "tier": "nope",
+    "subject": "misty mountain peaks above clouds",
+    "ts": "2026-10-07T12:49:58.878Z"
+  },
+  "eval_sft_v1/b12_02_s0": {
+    "tier": "okay",
+    "subject": "a full moon over a dark sea",
+    "ts": "2026-10-07T12:50:02.302Z"
+  },
+  "eval_sft_v1/b01_06_s0": {
+    "tier": "nope",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-07T12:50:04.790Z"
+  },
+  "grpo_v1/b14_04_s0": {
+    "tier": "nope",
+    "subject": "an old windmill",
+    "ts": "2026-10-07T12:50:06.181Z"
+  },
+  "grpo_v1/b23_07_s1": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:50:07.862Z"
+  },
+  "grpo_v1/b16_06_s1": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:50:10.142Z"
+  },
+  "eval_sft_v1/b04_08_s1": {
+    "tier": "love",
+    "subject": "a blue anemone",
+    "ts": "2026-10-07T12:50:11.886Z"
+  },
+  "eval_sft_v1/b07_10_s1": {
+    "tier": "nope",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-07T12:50:13.485Z"
+  },
+  "grpo_v1/b07_10_s1": {
+    "tier": "love",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-07T12:50:16.109Z"
+  },
+  "grpo_v1/b01_06_s0": {
+    "tier": "okay",
+    "subject": "a blue and gold iris",
+    "ts": "2026-10-07T12:50:18.230Z"
+  },
+  "grpo_v1/b08_04_s0": {
+    "tier": "nope",
+    "subject": "a figure walking alone along a beach",
+    "ts": "2026-10-07T12:50:19.381Z"
+  },
+  "grpo_v1/b02_03_s1": {
+    "tier": "nope",
+    "subject": "a deep red rose",
+    "ts": "2026-10-07T12:50:20.758Z"
+  },
+  "grpo_v1/b23_05_s0": {
+    "tier": "nope",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-07T12:50:22.086Z"
+  },
+  "grpo_v1/b23_03_s1": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-07T12:50:23.182Z"
+  },
+  "eval_sft_v1/b25_11_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:50:24.205Z"
+  },
+  "grpo_v1/b11_03_s0": {
+    "tier": "nope",
+    "subject": "a desert sunset with a lone cactus",
+    "ts": "2026-10-07T12:50:25.533Z"
+  },
+  "grpo_v1/b12_04_s1": {
+    "tier": "nope",
+    "subject": "a violet iris",
+    "ts": "2026-10-07T12:50:27.093Z"
+  },
+  "grpo_v1/b09_05_s1": {
+    "tier": "nope",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-07T12:50:28.629Z"
+  },
+  "grpo_v1/b23_03_s0": {
+    "tier": "nope",
+    "subject": "rolling green hills under a cloudy sky",
+    "ts": "2026-10-07T12:50:33.709Z"
+  },
+  "eval_sft_v1/b23_07_s0": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:50:36.773Z"
+  },
+  "grpo_v1/b06_07_s0": {
+    "tier": "okay",
+    "subject": "a red camellia",
+    "ts": "2026-10-07T12:50:38.853Z"
+  },
+  "grpo_v1/b04_03_s0": {
+    "tier": "nope",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-07T12:50:40.661Z"
+  },
+  "eval_sft_v1/b08_12_s1": {
+    "tier": "nope",
+    "subject": "a hiker standing on a mountain top",
+    "ts": "2026-10-07T12:50:44.469Z"
+  },
+  "grpo_v1/b09_07_s0": {
+    "tier": "nope",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-07T12:50:46.509Z"
+  },
+  "grpo_v1/b25_11_s1": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:50:48.149Z"
+  },
+  "eval_sft_v1/b22_05_s0": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:50:49.573Z"
+  },
+  "grpo_v1/b24_03_s0": {
+    "tier": "nope",
+    "subject": "a baobab tree at dusk",
+    "ts": "2026-10-07T12:50:50.981Z"
+  },
+  "eval_sft_v1/b18_09_s1": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:50:56.693Z"
+  },
+  "eval_sft_v1/b12_08_s0": {
+    "tier": "nope",
+    "subject": "snow-capped mountains",
+    "ts": "2026-10-07T12:50:58.749Z"
+  },
+  "eval_sft_v1/b18_09_s0": {
+    "tier": "nope",
+    "subject": "a sunset through palm trees",
+    "ts": "2026-10-07T12:51:01.269Z"
+  },
+  "grpo_v1/b20_07_s0": {
+    "tier": "nope",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-07T12:51:02.782Z"
+  },
+  "eval_sft_v1/b20_07_s1": {
+    "tier": "nope",
+    "subject": "a pale pink cherry blossom branch",
+    "ts": "2026-10-07T12:51:03.726Z"
+  },
+  "eval_sft_v1/b22_08_s1": {
+    "tier": "okay",
+    "subject": "a tiger orange lily",
+    "ts": "2026-10-07T12:51:06.693Z"
+  },
+  "grpo_v1/b09_05_s0": {
+    "tier": "okay",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-07T12:51:11.557Z"
+  },
+  "eval_sft_v1/b23_05_s1": {
+    "tier": "nope",
+    "subject": "a grove of white birch trees",
+    "ts": "2026-10-07T12:51:12.581Z"
+  },
+  "eval_sft_v1/b06_02_s1": {
+    "tier": "nope",
+    "subject": "a burgundy dahlia",
+    "ts": "2026-10-07T12:51:13.509Z"
+  },
+  "eval_sft_v1/b22_05_s1": {
+    "tier": "nope",
+    "subject": "a crescent moon above pine trees",
+    "ts": "2026-10-07T12:51:14.989Z"
+  },
+  "eval_sft_v1/b09_05_s1": {
+    "tier": "nope",
+    "subject": "a small cottage with a red roof",
+    "ts": "2026-10-07T12:51:17.269Z"
+  },
+  "eval_sft_v1/b05_12_s0": {
+    "tier": "nope",
+    "subject": "a coral peony",
+    "ts": "2026-10-07T12:51:18.277Z"
+  },
+  "eval_sft_v1/b06_09_s1": {
+    "tier": "nope",
+    "subject": "a white with a dark centre anemone",
+    "ts": "2026-10-07T12:51:20.045Z"
+  },
+  "eval_sft_v1/b09_07_s0": {
+    "tier": "nope",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-07T12:51:22.141Z"
+  },
+  "grpo_v1/b07_10_s0": {
+    "tier": "okay",
+    "subject": "a blush pink peony",
+    "ts": "2026-10-07T12:51:25.782Z"
+  },
+  "grpo_v1/b13_06_s1": {
+    "tier": "okay",
+    "subject": "a golden sunflower",
+    "ts": "2026-10-07T12:51:31.517Z"
+  },
+  "grpo_v1/b09_07_s1": {
+    "tier": "okay",
+    "subject": "a mountain valley in autumn",
+    "ts": "2026-10-07T12:51:38.446Z"
+  },
+  "grpo_v1/b10_03_s1": {
+    "tier": "nope",
+    "subject": "two people sitting on a park bench",
+    "ts": "2026-10-07T12:51:41.213Z"
+  },
+  "eval_sft_v1/b04_03_s1": {
+    "tier": "nope",
+    "subject": "a pale pink tulip",
+    "ts": "2026-10-07T12:51:42.229Z"
+  },
+  "grpo_v1/b26_02_s1": {
+    "tier": "nope",
+    "subject": "a plum hellebore",
+    "ts": "2026-10-07T12:51:44.453Z"
   }
 }
