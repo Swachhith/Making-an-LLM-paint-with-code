@@ -13,3 +13,5 @@ gen/out/_selftest.json
 data/
 kaggle/sft-data/*
 !kaggle/sft-data/dataset-metadata.json
+kaggle/grpo-data/*
+!kaggle/grpo-data/dataset-metadata.json

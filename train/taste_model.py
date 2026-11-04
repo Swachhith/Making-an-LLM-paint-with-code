@@ -47,7 +47,8 @@ class Embedder:
         import torch
         from transformers import AutoImageProcessor, AutoModel, SiglipVisionModel
         self.torch = torch
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        # WC_REWARD_DEVICE=cpu keeps the encoders off a GPU that training needs (Kaggle T4)
+        self.device = device or os.environ.get("WC_REWARD_DEVICE") or ("cuda" if torch.cuda.is_available() else "cpu")
         if self.device == "cpu":
             torch.set_num_threads(max(1, (os.cpu_count() or 4) - 1))
         self.dino = AutoModel.from_pretrained(DINO, low_cpu_mem_usage=True).eval().to(self.device)

@@ -274,7 +274,10 @@ def _train_trl(tag: str, run: str, smoke: bool, max_steps: int = -1, resume: boo
 
 @app.local_entrypoint()
 def train_trl(tag: str = "v1", run: str = "", smoke: bool = False, max_steps: int = -1, resume: bool = False,
-              temperature: float = 0.0, lr: float = 0.0, beta: float = -1.0, stop_at: int = 0):
+              temperature: float = 0.0, lr: float = 0.0, beta: float = -1.0, stop_at: int = 0,
+              hours: float = 24.0):
+    """`hours` caps the run's wall time -- and so its cost (~$3.4/h on an A100 80 GB);
+    checkpoints every 20 steps survive the cut."""
     """Submits the run and returns. `.spawn()`, not `.remote()`: with `.remote()`
     the call belongs to this local process, and when that process was stopped
     (even under `modal run --detach`) Modal cancelled the training at step 48.
@@ -282,7 +285,7 @@ def train_trl(tag: str = "v1", run: str = "", smoke: bool = False, max_steps: in
     run = run or f"{'smoke' if smoke else 'grpo'}-trl-{tag}-{time.strftime('%m%d-%H%M')}"
     extra = [*(["--temperature", str(temperature)] if temperature else []), *(["--lr", str(lr)] if lr else []),
              *(["--beta", str(beta)] if beta >= 0 else []), *(["--stop-at", str(stop_at)] if stop_at else [])]
-    call = _train_trl.with_options(gpu=GPU).spawn(tag, run, smoke, max_steps, resume, extra)
+    call = _train_trl.with_options(gpu=GPU, timeout=int(hours * 3600)).spawn(tag, run, smoke, max_steps, resume, extra)
     print(f"submitted {run} on {GPU} (TRL + vLLM, smoke={smoke}, resume={resume}, {extra}); call {call.object_id}")
     print(f"follow: modal volume get watercolors-grpo runs/{run}/train.log  (committed every 10 min)")
 

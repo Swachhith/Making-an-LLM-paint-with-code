@@ -27,7 +27,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
 SIGLIP = "google/siglip-base-patch16-224"
-ADHERENCE_L0, ADHERENCE_WIDTH = -7.0, 1.5
+ADHERENCE_L0, ADHERENCE_WIDTH = -10.0, 0.75
 CACHE = {n: os.path.join(ROOT, "results", f"emb_{n}.npz") for n in ("dinov2_base", "siglip_base")}
 
 
@@ -43,7 +43,7 @@ class Adherence:
         import torch
         from transformers import AutoTokenizer, SiglipModel
         self.torch = torch
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = device or os.environ.get("WC_REWARD_DEVICE") or ("cuda" if torch.cuda.is_available() else "cpu")
         m = SiglipModel.from_pretrained(SIGLIP, low_cpu_mem_usage=True).eval()
         self.text = m.text_model.to(self.device)
         self.scale = float(m.logit_scale.detach().exp())
@@ -64,12 +64,16 @@ class Adherence:
         return np.stack([self._cache[s] for s in subjects])
 
     def factor(self, image_sig: np.ndarray, subjects: list) -> np.ndarray:
-        """Reward multiplier in (0, 1): a soft threshold on SigLIP's logit.
+        """Reward multiplier in (0, 1): a clear-miss penalty on SigLIP's logit.
 
-        L0 = -7, width 1.5 (chosen on the 1,752 rated paintings): a painting
-        offered a random subject from another category keeps 14% on average,
-        its own subject 85%; 12% of own-subject paintings fall below 0.5
-        (some genuinely miss their subject), 10% of wrong-subject ones above.
+        L0 = -10, width 0.75. The first setting (-7, 1.5) was chosen on the
+        rated, mostly Claude-made paintings, where it cut 12% of own-subject
+        ones -- but the policy's looser paintings sit lower: it cut 37% of
+        them, put SigLIP's noise into every group, and a 119-step run stayed
+        flat (reward 0.28 throughout vs 0.40 -> 0.49 without it). At -10/0.75:
+        14% of policy paintings and 4% of rated own-subject ones fall below
+        0.5, while wrong-subject paintings keep ~30% (flowers painted for a
+        beach-walk prompt sit near -12).
         """
         logit = self.scale * np.sum(image_sig * self.text_embed(subjects), axis=1) + self.bias
         return 1.0 / (1.0 + np.exp(-(logit - ADHERENCE_L0) / ADHERENCE_WIDTH))

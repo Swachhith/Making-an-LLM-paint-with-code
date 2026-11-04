@@ -53,6 +53,14 @@ def main():
     ap.add_argument("--temperature", type=float, default=TEMPERATURE)
     ap.add_argument("--lr", type=float, default=LR)
     ap.add_argument("--beta", type=float, default=BETA)
+    # Kaggle (2x T4): vLLM serves on the second GPU (`trl vllm-serve`), training
+    # runs in fp16 (no bf16 on a T4) with a small micro-batch to fit 15 GB
+    ap.add_argument("--vllm-mode", default="colocate", choices=["colocate", "server"])
+    ap.add_argument("--vllm-port", type=int, default=8000)
+    ap.add_argument("--micro-batch", type=int, default=MICRO_BATCH)
+    ap.add_argument("--fp16", action="store_true")
+    ap.add_argument("--stop-after-hours", type=float, default=0,
+                    help="save and stop after this long (Kaggle sessions end at 12 h)")
     ap.add_argument("--stop-at", type=int, default=0,
                     help="stop (and save) after this many steps, keeping the full run's LR schedule")
     args = ap.parse_args()
@@ -72,8 +80,8 @@ def main():
         output_dir=args.out,
         num_train_epochs=args.epochs,
         max_steps=args.max_steps,
-        per_device_train_batch_size=MICRO_BATCH,
-        gradient_accumulation_steps=PROMPTS_PER_STEP * NUM_GENERATIONS // MICRO_BATCH,
+        per_device_train_batch_size=args.micro_batch,
+        gradient_accumulation_steps=PROMPTS_PER_STEP * NUM_GENERATIONS // args.micro_batch,
         num_generations=NUM_GENERATIONS,
         max_completion_length=MAX_COMPLETION,
         learning_rate=args.lr,
@@ -81,11 +89,15 @@ def main():
         warmup_steps=0.05,
         beta=args.beta,
         temperature=args.temperature,
-        bf16=True,
+        bf16=not args.fp16,
+        fp16=args.fp16,
+        model_init_kwargs={"dtype": "float16" if args.fp16 else "bfloat16"},
         gradient_checkpointing=True,
         use_liger_kernel=True,
         use_vllm=True,
-        vllm_mode="colocate",
+        vllm_mode=args.vllm_mode,
+        vllm_server_host="127.0.0.1",
+        vllm_server_port=args.vllm_port,
         vllm_gpu_memory_utilization=0.3,
         vllm_enable_sleep_mode=True,
         vllm_max_model_length=4096,       # ~770-token prompt + 3,072 completion
@@ -100,6 +112,19 @@ def main():
     peft = LoraConfig(r=LORA_R, lora_alpha=LORA_ALPHA, lora_dropout=0.05,
                       target_modules="all-linear", task_type="CAUSAL_LM")
     callbacks = []
+    if args.stop_after_hours:
+        import time as _time
+        from transformers import TrainerCallback
+        t_end = _time.time() + args.stop_after_hours * 3600
+
+        class StopAfter(TrainerCallback):
+            def on_step_end(self, a, state, control, **kw):
+                if _time.time() > t_end:
+                    print(f"time budget reached at step {state.global_step}: saving and stopping", flush=True)
+                    control.should_save = control.should_training_stop = True
+                return control
+
+        callbacks.append(StopAfter())
     if args.stop_at:
         from transformers import TrainerCallback
 

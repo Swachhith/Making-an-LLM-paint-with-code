@@ -1,0 +1,15 @@
+{
+  "id": "swachhithb/watercolors-grpo-train",
+  "title": "watercolors-grpo-train",
+  "code_file": "grpo_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["swachhithb/watercolors-grpo"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
