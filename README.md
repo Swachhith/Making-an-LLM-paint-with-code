@@ -1,4 +1,4 @@
-# Watercolours
+# Making an LLM paint with code 
 
 Teaching a small language model to **paint watercolours in code**.
 
